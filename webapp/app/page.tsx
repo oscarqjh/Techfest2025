@@ -41,7 +41,12 @@ export default function Home() {
     } catch (error) {
       setError("An error occurred, please try again later.");
     } finally {
-      setLoading(false);
+      // setLoading(false);
+      setTimeout(() => {
+        setError("");
+        setResult("");
+        setLoading(false);
+      }, 5000);
     }
   };
 
@@ -100,6 +105,7 @@ export default function Home() {
             placeholders={placeholders}
             onChange={(e) => setUrl(e.target.value)}
             onSubmit={handleSubmit}
+            isLoading={loading}
           />
         </div>
       </div>
