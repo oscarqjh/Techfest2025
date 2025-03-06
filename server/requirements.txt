@@ -3,4 +3,3 @@
 crewai==0.102.0
 fastapi==0.115.11
 pydantic==2.6.1
-uvicorn==0.34.0
