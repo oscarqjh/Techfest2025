@@ -6,23 +6,22 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "https://techfest2025-red.vercel.app/",
+    template: "%s | techfest2025-red.vercel.app/",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Fake news detection using AI agents",
   openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
-    images: [
-      {
-        url: "https://chronark.com/og.png",
-        width: 1920,
-        height: 1080,
-      },
-    ],
+    title: "Techfest 2025 project",
+    description: "Fake news detection using AI agents",
+    url: "/https://techfest2025-red.vercel.app",
+    siteName: "techfest2025",
+    // images: [
+    //   {
+    //     url: "https://chronark.com/og.png",
+    //     width: 1920,
+    //     height: 1080,
+    //   },
+    // ],
     locale: "en-US",
     type: "website",
   },
@@ -37,10 +36,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
+  // twitter: {
+  //   title: "Chronark",
+  //   card: "summary_large_image",
+  // },
   icons: {
     shortcut: "/favicon.png",
   },
@@ -66,8 +65,9 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
+        className={`bg-black ${
+          process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        }`}
       >
         {children}
       </body>
