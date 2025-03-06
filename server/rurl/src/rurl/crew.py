@@ -80,7 +80,7 @@ class Rurl():
 			config=self.tasks_config['news_analysis_task'],
 		)
 	
-		@task
+	@task
 	def web_research_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['web_research_task'],
