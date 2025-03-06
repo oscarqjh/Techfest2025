@@ -35,6 +35,7 @@ misinformation_task:
   expected_output: >
     An output of whether the article is misinformation or not.
   agent: misinformation_expert
+  context: [web_research_task]
 
 blacklist_task:
   description: >
@@ -43,6 +44,7 @@ blacklist_task:
   expected_output: >
     A dictionary of website domain name, author's name, article title, and date.
   agent: blacklister
+  tools:[dwdwdw]
 
 
 # research_task:

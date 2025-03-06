@@ -18,33 +18,84 @@ class Rurl():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def researcher(self) -> Agent:
+	def web_parser(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
+			config=self.agents_config['web_parser'],
 			verbose=True
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def image_forgery_expert(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
+			config=self.agents_config['image_forgery_expert'],
 			verbose=True
 		)
 
+	@agent
+	def news_analyst(self) -> Agent:
+		return Agent(
+			config=self.agents_config['news_analyst'],
+			verbose=True
+		)
+
+	@agent
+	def web_researcher(self) -> Agent:
+		return Agent(
+			config=self.agents_config['web_researcher'],
+			verbose=True
+		)
+
+	@agent
+	def misinformation_expert(self) -> Agent:
+		return Agent(
+			config=self.agents_config['misinformation_expert'],
+			verbose=True
+		)
+	
+	@agent
+	def blacklister(self) -> Agent:
+		return Agent(
+			config=self.agents_config['blacklister'],
+			verbose=True
+		)
+	
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def research_task(self) -> Task:
+	def web_parsing_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config['web_parsing_task'],
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def image_forgery_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
+			config=self.tasks_config['image_forgery_task'],
+		)
+	
+	@task
+	def news_analysis_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['news_analysis_task'],
+		)
+	
+		@task
+	def web_research_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['web_research_task'],
+		)
+	
+	@task
+	def misinformation_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['misinformation_task'],
+		)
+
+	@task
+	def blacklist_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['blacklist_task'],
 		)
 
 	@crew
