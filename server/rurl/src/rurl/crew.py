@@ -49,7 +49,12 @@ class Rurl():
 	def misinformation_expert(self) -> Agent:
 		return Agent(
 			config=self.agents_config['misinformation_expert'],
-			verbose=True
+			verbose=True,
+			# llm = LLM(
+			# 	model="openai/gpt-4o-mini",
+			# 	temperature=0.2,
+			# 	# response_format=MisinformationToolOutput # Uncomment after importing all tool output classes
+        	# )
 		)
 	
 	@agent

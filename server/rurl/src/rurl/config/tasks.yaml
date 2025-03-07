@@ -9,8 +9,10 @@ image_forgery_task:
   description: >
     Analyze the image {image} and detect signs of forgery, manipulation, or tampering.
   expected_output: >
-    A classification of the image (Original, Manipulated, Deepfake) and a confidence score of the prediction.
+    A classification of the image and a confidence score of the prediction.
   agent: image_forgery_expert
+  tools: [detect_forgery_tool]
+  async_execution: true
 
 news_analysis_task:
   description: >
@@ -44,7 +46,7 @@ blacklist_task:
   expected_output: >
     A dictionary of website domain name, author's name, article title, and date.
   agent: blacklister
-  tools:[dwdwdw]
+  tools:[]
 
 
 # research_task:
