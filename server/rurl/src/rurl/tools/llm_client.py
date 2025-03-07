@@ -2,7 +2,7 @@ from .globals import client
 import json
 
 # 3 different api calls are defined here:
-#     1. web_analyser
+#     1. web_analyser #not done yet
 #     2. image_analyser
 #     3. text_analyser
 
