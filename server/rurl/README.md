@@ -1,15 +1,24 @@
 ## Agents:
 
-- **Web_parser**
+### NamingConventionIsLikeThis
+
+- **WebParser**
+- **WebAnalyser**
+- **TextAnalyser**
+- **ImageAnalyser**
 - **Image_forgery_expert**
 - **News_analyst**
+- **Web_analyser**
 - **Web_researcher**
 - **Misinformation_expert**
 - **Blacklist**
 
 ## Tasks:
 
-- **Web_parsing_task**
+### NamingConventionIsLikeThis
+
+- **WebParsingTask**
+- **WebAnalyserTask**
 - **Image_forgery_task**
 - **News_analysis_task**
 - **Web_research_task**
