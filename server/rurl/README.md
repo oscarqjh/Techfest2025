@@ -1,8 +1,48 @@
-# Rurl Crew
+## Agents:
 
-Welcome to the Rurl Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+- **Web_parser**
+- **Image_forgery_expert**
+- **News_analyst**
+- **Web_researcher**
+- **Misinformation_expert**
+- **Blacklist**
 
-## Installation
+## Tasks:
+
+- **Web_parsing_task**
+- **Image_forgery_task**
+- **News_analysis_task**
+- **Web_research_task**
+- **Misinformation_task**
+- **Blacklist_task**
+
+# **AI Agent System - Quick Guide**
+
+## **Components**
+
+1. **Agent** - The entity performing tasks.
+2. **Task** - A mission assigned to an agent.
+3. **Tool** - Functions used by agents to complete tasks.
+
+## **Structure**
+
+- **Agents** execute **Tasks**.
+- **Tasks** can use **Tools** to complete their objectives.
+- **Tasks** can link to other tasks through structured inputs/outputs.
+- **Tools** contain functions relevant to specific tasks (e.g., `analyze_web_tool`).
+
+## **Configuration**
+
+- **YML Files**: Initialize default settings for agents, tasks, and tools.
+  - Can be edited to add/remove configurations as needed.
+
+## **Crew (Team Execution)**
+
+- Combines all **Agents** into a team.
+- Executes tasks **sequentially** by default.
+- The final output is from the **last executed task**.
+
+# **Installation**
 
 Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
@@ -15,9 +55,11 @@ pip install uv
 Next, navigate to your project directory and install the dependencies:
 
 (Optional) Lock the dependencies and install them by using the CLI command:
+
 ```bash
 crewai install
 ```
+
 ### Customizing
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
@@ -42,13 +84,3 @@ This example, unmodified, will run the create a `report.md` file with the output
 ## Understanding Your Crew
 
 The rurl Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the Rurl Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
