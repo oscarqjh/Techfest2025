@@ -6,6 +6,11 @@ import json
 #     2. image_analyser
 #     3. text_analyser
 
+# example output
+# {'image_analysis': [{'evaluation': [{'image_url': 'https://example.com/image1.jpg', 
+# 'is_fake': True, 'confidence_score': 0.2, 
+# 'reason': 'The image shows a surreal scene with a giant hand controlling a cityscape, which is clearly manipulated and not realistic.'}]}], 
+# 'text_analysis': {'evaluation': [{'is_fake': False, 'confidence_score': 0.65, 'reason': "The text presents a critical analysis of Singapore's sovereignty and its relationship with the U.S., but it shows bias against U.S. influence and lacks multiple viewpoints. It raises valid points but does not provide sufficient factual references to support all claims."}]}}
 
 response_format_image = {
     "type": "object",
