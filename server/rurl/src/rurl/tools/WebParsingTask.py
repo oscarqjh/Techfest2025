@@ -5,6 +5,13 @@ from .globals import firecrawl_app
 
 """
 This is a tool that extracts data from a URL.
+
+Returns:
+    weblink: str
+    title: str
+    content: str
+    image_url: list[str]
+    date: str
 """
 
 class ExtractSchema(BaseModel): #acts as output schema as well

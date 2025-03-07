@@ -5,6 +5,11 @@ import LlmClient
 
 """
 This is a tool that analyzes text content to determine its credibility and accuracy.
+
+Returns:
+    is_fake: bool
+    confidence_score: float
+    reason: str
 """
 
 class TextEvaluationItem(BaseModel):

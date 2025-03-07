@@ -5,6 +5,12 @@ import LlmClient
 
 """
 This is a tool that analyzes images to determine their authenticity.
+
+Returns:
+    image_url: str
+    is_fake: bool
+    confidence_score: float
+    reason: str
 """
 
 class ImageEvaluationItem(BaseModel):

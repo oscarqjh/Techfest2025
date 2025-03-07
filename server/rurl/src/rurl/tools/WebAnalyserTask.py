@@ -6,6 +6,11 @@ import LlmClient
 
 """
 This is a tool that extracts data from a URL.
+
+Returns:
+    id: str
+    content: str
+    to_fact_check: bool
 """
 
 class ArticleBodyItem(BaseModel):
