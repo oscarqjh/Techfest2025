@@ -1,9 +1,18 @@
-web_parsing_task:
+WebParsingTask:
   description: >
     Parse the webpage of {url} and extract the main text content, noting any images.
   expected_output: >
-    A dictionary of Website domain name, News Title, Author name, Date (if any), Main text content, Images.
-  agent: web_parser
+    A dictionary of weblink, title, content, image_url, date.
+  agent: WebParsingTool
+  tools: [WebParsingTool]
+  
+WebAnalyserTask:
+  description: >
+    Analyse the content and retrieve topics of the webpage and article body to be fact_checked.
+  expected_output: >
+    A dictionary of topic and article_body.
+  agent: WebAnalyser
+  tools: [WebParsingTool]
 
 image_forgery_task:
   description: >
