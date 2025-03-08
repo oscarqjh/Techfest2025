@@ -2,7 +2,7 @@ from crewai.tools import BaseTool
 from typing import Type, List
 from pydantic import BaseModel, Field
 from .globals import client  # openai client
-import LlmClient
+from . import LlmClient
 
 """
 This is a tool that extracts data from a URL.
