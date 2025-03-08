@@ -2,24 +2,16 @@ from .globals import client
 import json
 
 """3 different api calls are defined here:
-    1. WebAnalyser to see which para to factcheck
+    1. WebAnalyser to see which para to factcheck and get topic and entities
     2. ImageAnalyser to check if image is fake or real
     3. TextAnalyser to analyse if text is fake or real
-
-example output
-{'image_analysis': [{'evaluation': [{'image_url': 'https://example.com/image1.jpg', 
-'is_fake': True, 'confidence_score': 0.2
-'reason': 'The image shows a surreal scene with a giant hand controlling a cityscape, which is clearly manipulated and not realistic.'}]}], 
-'text_analysis': {'evaluation': [{'is_fake': False, 'confidence_score': 0.65, 'reason': "The text presents a critical analysis of Singapore's sovereignty and its relationship with the U.S., but it shows bias against U.S. influence and lacks multiple viewpoints. It raises valid points but does not provide sufficient factual references to support all claims."}]}}
 """
 
 response_format_web = {
     "type": "object",
     "properties": {
-        "topic": {
-            "type": "array",
-            "items": {"type": "string"}
-        },
+        "topic": {"type": "array", "items": {"type": "string"}},
+        "entities": {"type": "array", "items": {"type": "string"}},
         "article_body": {
             "type": "array",
             "items": {
@@ -27,43 +19,43 @@ response_format_web = {
                 "properties": {
                     "id": {"type": "string"},
                     "content": {"type": "string"},
-                    "to_fact_check": {"type": "boolean"}
+                    "to_fact_check": {"type": "boolean"},
                 },
-                "required": ["id", "content", "to_fact_check"]
-            }
-        }
+                "required": ["id", "content", "to_fact_check"],
+            },
+        },
     },
-    "required": ["article_body", "topic"]
+    "required": ["article_body", "topic"],
 }
 
 response_format_image = {
     "type": "object",
     "properties": {
         "evaluation": {
-            "type": "object",  
+            "type": "object",
             "properties": {
                 "image_url": {"type": "string"},  # The image being evaluated
-                "is_fake": {"type": "boolean"},   # True if fake, False if real
+                "is_fake": {"type": "boolean"},  # True if fake, False if real
                 "confidence_score": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "multipleOf": 0.1  # 1dp
+                    "multipleOf": 0.1,  # 1dp
                 },
                 "reason": {
-                    "type": "string",  
-                    "description": "Explanation of why the image was classified as fake or real"
-                }
+                    "type": "string",
+                    "description": "Explanation of why the image was classified as fake or real",
+                },
             },
-            "required": ["image_url", "is_fake", "confidence_score", "reason"]
+            "required": ["image_url", "is_fake", "confidence_score", "reason"],
         }
-    }
+    },
 }
 
 response_format_text = {
     "type": "object",
     "properties": {
-        "evaluation": { 
+        "evaluation": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -73,49 +65,50 @@ response_format_text = {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 1,
-                        "multipleOf": 0.1  # 1dp
+                        "multipleOf": 0.1,  # 1dp
                     },
-                    "reason": {  
-                        "type": "string",  
-                        "description": "Explanation of why the text was classified as fake or real"
-                    }
+                    "reason": {
+                        "type": "string",
+                        "description": "Explanation of why the text was classified as fake or real",
+                    },
                 },
-                "required": ["is_fake", "confidence_score", "reason"]
-            }
+                "required": ["is_fake", "confidence_score", "reason"],
+            },
         }
-    }
+    },
 }
 
 functions = [
     {
         "name": "WebAnalyser",
-        "description": "Determine if each paragraph needs to be fact-checked",
-        "parameters": response_format_web
+        "description": "Determine if each paragraph needs to be fact-checked and retrieve topics and entities",
+        "parameters": response_format_web,
     },
     {
         "name": "ImageAnalyser",
         "description": "Analyse the image(s) and return scores with explanation",
-        "parameters": response_format_image
+        "parameters": response_format_image,
     },
     {
         "name": "TextAnalyser",
         "description": "Analyse the text and return scores with explanation",
-        "parameters": response_format_text       
-    }
+        "parameters": response_format_text,
+    },
 ]
 
+
 def prepare_message(function_name, **kwargs):
-    website_link = kwargs.get('weblink', '')
-    
+    website_link = kwargs.get("weblink", "")
+
     if function_name == "WebAnalyser":
-        title = kwargs.get('title', '')
-        content = kwargs.get('content', '')
-        
+        title = kwargs.get("title", "")
+        content = kwargs.get("content", "")
+
         return [
             {
                 "role": "system",
                 "content": """You are an expert in fact-checking web content and extracting key information.
-                              You are given a webpage link and need to provide an analysis of the article body and identify paragraphs that need to be fact-checked."""
+                              You are given a webpage link and need to provide an analysis of the article body and identify paragraphs that need to be fact-checked.""",
             },
             {
                 "role": "user",
@@ -156,6 +149,8 @@ def prepare_message(function_name, **kwargs):
                             {{
                               "type": "object",
                               "properties": {{
+                                "topic": ["climate change", "food security", "global impact"],
+                                "entities": ["United Nations", "World Health Organization"],
                                 "article_body": [
                                   {{
                                     "id": "1",
@@ -167,25 +162,24 @@ def prepare_message(function_name, **kwargs):
                                     "content": "This is the second paragraph.",
                                     "to_fact_check": true
                                   }}
-                                ],
-                                "topic": ["climate change", "food security", "global impact"]
+                                ]
                               }},
                               "required": ["article_body", "topic"]
                             }}
-                        """
+                        """,
                     }
-                ]
-            }
+                ],
+            },
         ]
 
     if function_name == "ImageAnalyser":
-        image = kwargs.get('image')
+        image = kwargs.get("image")
 
         return [
             {
                 "role": "system",
                 "content": """You are an expert in analyzing images and determining whether they are real or fake. 
-                              You are given a list of image(s) and you need to evaluate them using reasoning."""
+                              You are given a list of image(s) and you need to evaluate them using reasoning.""",
             },
             {
                 "role": "user",
@@ -258,31 +252,25 @@ def prepare_message(function_name, **kwargs):
                               ]
                             }}
 
-                        """
+                        """,
                     },
-                    {
-                        "type": "image_url",
-                        "image_url": {  
-                            "url": image
-                        }
-                    }                    
-                ]
-            
-            }
+                    {"type": "image_url", "image_url": {"url": image}},
+                ],
+            },
         ]
-    
+
     if function_name == "TextAnalyser":
-        text = kwargs.get('text', '')
-        title = kwargs.get('title', '')
-        date = kwargs.get('date', '')
-        weblink = kwargs.get('weblink', '')
-        
+        text = kwargs.get("text", "")
+        title = kwargs.get("title", "")
+        date = kwargs.get("date", "")
+        weblink = kwargs.get("weblink", "")
+
         return [
             {
                 "role": "system",
                 "content": """You are an expert in analyzing text and determining whether it is real or fake.
                               You are given a text content and you need to evaluate it using reasoning based on the following rubrics and assign a score from 0 to 1.
-                              The score should be provided with two decimal points (e.g., 0.92)."""
+                              The score should be provided with two decimal points (e.g., 0.92).""",
             },
             {
                 "role": "user",
@@ -360,94 +348,103 @@ def prepare_message(function_name, **kwargs):
                                 }},
                               ]
                             }}
-                        """
+                        """,
                     }
-                ]
-            }
+                ],
+            },
         ]
-        
-def call_openai_api(data, function_name): 
-    title = data['data']['title']
-    weblink = data['data']['weblink']
-    images = data['data']['image_url']
-    text = data['data']['content']
-    date = data['data']['date']
-    
+
+
+def call_openai_api(data, function_name):
+    title = data["data"]["title"]
+    weblink = data["data"]["weblink"]
+    images = data["data"]["image_url"]
+    text = data["data"]["content"]
+    date = data["data"]["date"]
+
     output = {}  # Store both image and text results
     if function_name == "WebAnalyser":
-        model = 'gpt-4o-mini'
-        messages = prepare_message(title=title, content=text, function_name="WebAnalyser")
-        
+        model = "gpt-4o"
+        messages = prepare_message(
+            title=title, content=text, function_name="WebAnalyser"
+        )
+
         try:
             response = client.chat.completions.create(
-                model=model,  
+                model=model,
                 messages=messages,
                 functions=functions,
                 function_call={"name": "WebAnalyser"},
-                temperature=0.1
+                temperature=0.1,
             )
             function_args = response.choices[0].message.function_call.arguments
             web_data = json.loads(function_args)
-            
+
             output["web_analysis"] = web_data  # Store web analysis results
-        
+
         except Exception as e:
             print(f"Error occurred while calling OpenAI API for web content: {e}")
-            
+
     if function_name == "ImageAnalyser":
         if images:
             image_output = []
-            model = 'gpt-4o'
-            
+            model = "gpt-4o"
+
             try:
                 for image in images:
                     messages = prepare_message(
-                        title=title, 
-                        weblink=weblink, 
-                        image=image,  
-                        text=text, 
-                        function_name="ImageAnalyser"
+                        title=title,
+                        weblink=weblink,
+                        image=image,
+                        text=text,
+                        function_name="ImageAnalyser",
                     )
                     response = client.chat.completions.create(
-                        model=model,  
+                        model=model,
                         messages=messages,
                         functions=functions,
                         function_call={"name": "ImageAnalyser"},
-                        temperature=0.1
+                        temperature=0.1,
                     )
                     function_args = response.choices[0].message.function_call.arguments
                     image_data = json.loads(function_args)
                     image_output.append(image_data)
-                
+
                 output["image_analysis"] = image_output  # Store image analysis results
-            
+
             except Exception as e:
                 print(f"Error occurred while calling OpenAI API for images: {e}")
 
     if function_name == "TextAnalyser":
         if text:
-            model = 'gpt-4o-mini'
-            
+            model = "gpt-4o-mini"
+
             try:
-                messages = prepare_message(title=title, text=text, date=date, weblink=weblink, function_name="TextAnalyser")
+                messages = prepare_message(
+                    title=title,
+                    text=text,
+                    date=date,
+                    weblink=weblink,
+                    function_name="TextAnalyser",
+                )
                 response = client.chat.completions.create(
-                    model=model,  
+                    model=model,
                     messages=messages,
                     functions=functions,
                     function_call={"name": "TextAnalyser"},
-                    temperature=0.1
+                    temperature=0.1,
                 )
                 function_args = response.choices[0].message.function_call.arguments
                 text_data = json.loads(function_args)
 
                 output["text_analysis"] = text_data  # Store text analysis results
-            
+
             except Exception as e:
                 print(f"Error occurred while calling OpenAI API for text: {e}")
 
     if output:
         return output
-    
+
     else:
         print("No valid input provided for either text or images.")
         return None
