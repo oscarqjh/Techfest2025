@@ -10,8 +10,8 @@ from .crews.image_forensics.src.image_forensics.image_forensics import ImageFore
 from .crews.researchers.src.researchers.researchers import Researchers
 from .crews.validators.src.validators.validators import Validators
 
-from .crews.analysts.src.analysts.tools.WebParsingTask import WebParsingTask
-from .crews.analysts.src.analysts.tools.WebAnalyserTask import WebAnalyserTask
+from .tools.web_parsing_tool import WebParsingTool
+from .tools.web_analyser_tool import WebAnalyserTool
 
 
 class RURLState(BaseModel):
@@ -19,7 +19,7 @@ class RURLState(BaseModel):
     domain: str = ""
     title: str = ""
     content: str = ""
-    image_links: list[str] = []
+    image_urls: list[str] = []
     date: str = ""
 
 class RURLFlow(Flow[RURLState]):
@@ -28,19 +28,29 @@ class RURLFlow(Flow[RURLState]):
     def parse_web(self):
         print("Parsing contents of the web article: ", self.state.weblink)
 
-        web_parser = WebParsingTask()
+        web_parser = WebParsingTool()
         result = web_parser._run(self.state.weblink)
         print("Result = ",  result)
-        self.state.title = result.title
-        self.state.content = result.content
-        self.state.image_links = result.image_links
-        self.state.date = result.date
+        self.state.title = result.get("title","")
+        self.state.content = result.get("content","")
+        self.state.image_links = result.get("image_links","")
+        self.state.date = result.get("date","")
 
     @listen(parse_web)
     async def web_analyse(self):
         print("Analysing the web article")
-        web_analyser = WebAnalyserTask()
-        result = await web_analyser._run(self.state.content)
+        web_analyser = WebAnalyserTool()
+        analyser_input = {
+            "data": {
+                "title": self.state.title,
+                "weblink": self.state.weblink,
+                "image_urls": self.state.image_urls,
+                "content": self.state.content,
+                "date": self.state.image_links
+            }
+        }
+
+        result = await web_analyser._run()
         self.state.web_analyse_results = result
 
     # Analysts crew
@@ -91,7 +101,6 @@ class RURLFlow(Flow[RURLState]):
     def generate_insights(self):
         print("Generating insights on the credibility of the article")
         
-
 
 def kickoff():
     rurl_flow = RURLFlow()

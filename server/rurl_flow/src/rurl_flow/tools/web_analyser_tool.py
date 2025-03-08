@@ -36,7 +36,7 @@ class WebAnalyserOutput(BaseModel):
     topic: List[str]
 
 
-class WebAnalyserTask(BaseTool):
+class WebAnalyserTool(BaseTool):
     name: str = "WebAnalyser"
     description: str = "This tool analyses the content of a webpage"
     args_schema: Type[BaseModel] = WebAnalyserInput
