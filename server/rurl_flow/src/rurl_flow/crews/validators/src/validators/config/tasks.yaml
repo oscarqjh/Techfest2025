@@ -1,12 +1,21 @@
-misinformation_task:
+query_db_task:
   description: >
-    Get the a list of news articles most similar to {article_title}.
-    Analyze the text data and detect signs of misinformation given external sources for validation.
-    Identify if the given article is misinformation or not.
+    Query the database to retrieve the list of reliable sources and blacklisted sources.
+    Return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.
   expected_output: >
     An output of whether the article is misinformation or not.
-  agent: misinformation_expert
-  context: [web_research_task]
+  agent: database_checker
+  tools: [query_credible_tool, query_blacklist_tool]
+
+misinformation_task:
+  description: >
+    Given lists of reliable and blacklisted sources, classify the given article as misinformation or not.
+    If the domain is not in the reliable sources or blacklisted sources, it is unreliable.
+    Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.
+  expected_output: >
+    An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']
+  agent: misinformation_auditor
+  tools: [misinformation_tool]
 
 blacklist_task:
   description: >
@@ -15,4 +24,4 @@ blacklist_task:
   expected_output: >
     A dictionary of website domain name, author's name, article title, and date.
   agent: blacklister
-  tools:[blacklist_tool]
+  tools: [blacklist_tool]
