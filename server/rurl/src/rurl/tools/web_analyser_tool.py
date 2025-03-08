@@ -2,7 +2,7 @@ from crewai.tools import BaseTool
 from typing import Type, List
 from pydantic import BaseModel, Field
 from .globals import client  # openai client
-from . import LlmClient
+from . import llm_client
 
 """
 This is a tool that extracts data from a URL.
@@ -42,6 +42,6 @@ class WebAnalyserTask(BaseTool):
     args_schema: Type[BaseModel] = WebAnalyserInput
 
     def _run(self, data: dict) -> dict:
-        data = LlmClient.call_openai_api(data, "WebAnalyser")
+        data = llm_client.call_openai_api(data, "WebAnalyser")
         structured_data = WebAnalyserOutput(**data["web_analysis"])
         return structured_data.model_dump()
