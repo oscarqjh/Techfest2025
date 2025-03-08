@@ -1,0 +1,18 @@
+misinformation_task:
+  description: >
+    Get the a list of news articles most similar to {article_title}.
+    Analyze the text data and detect signs of misinformation given external sources for validation.
+    Identify if the given article is misinformation or not.
+  expected_output: >
+    An output of whether the article is misinformation or not.
+  agent: misinformation_expert
+  context: [web_research_task]
+
+blacklist_task:
+  description: >
+    Blacklist a website that contains misinformation or fake news.
+    Given a fake article, get its website domain name, author's name, article title, and date in the blacklist database.
+  expected_output: >
+    A dictionary of website domain name, author's name, article title, and date.
+  agent: blacklister
+  tools:[blacklist_tool]
