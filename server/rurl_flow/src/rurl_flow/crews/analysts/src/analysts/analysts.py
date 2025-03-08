@@ -18,16 +18,23 @@ class Analysts():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def researcher(self) -> Agent:
+	def web_parser(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
+			config=self.agents_config['web_parser'],
 			verbose=True
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def web_analyser(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
+			config=self.agents_config['web_analyser'],
+			verbose=True
+		)
+
+	@agent
+	def text_analyser(self) -> Agent:
+		return Agent(
+			config=self.agents_config['text_analyser'],
 			verbose=True
 		)
 
@@ -35,17 +42,23 @@ class Analysts():
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def research_task(self) -> Task:
+	def web_parsing_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config['web_parsing_task'],
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def web_analyser_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
+			config=self.tasks_config['web_analyser_task'],
 		)
+	
+	# Add in config if done
+	# @task
+	# def text_analyser_task(self) -> Task:
+	# 	return Task(
+	# 		config=self.tasks_config['text_analyser_task'],
+	# 	)
 
 	@crew
 	def crew(self) -> Crew:
