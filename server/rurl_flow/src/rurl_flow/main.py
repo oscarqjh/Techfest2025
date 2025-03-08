@@ -3,51 +3,113 @@ from random import randint
 
 from pydantic import BaseModel
 
-from crewai.flow import Flow, listen, start
+from crewai.flow import Flow, listen, start, and_
 
-from rurl_flow.crews.poem_crew.poem_crew import PoemCrew
+from .crews.analysts.src.analysts.analysts import Analysts
+from .crews.image_forensics.src.image_forensics.image_forensics import ImageForensics
+from .crews.researchers.src.researchers.researchers import Researchers
+from .crews.validators.src.validators.validators import Validators
+
+from .tools.web_parsing_tool import WebParsingTool
+from .tools.web_analyser_tool import WebAnalyserTool
 
 
-class PoemState(BaseModel):
-    sentence_count: int = 1
-    poem: str = ""
+class RURLState(BaseModel):
+    weblink: str = ""
+    domain: str = ""
+    title: str = ""
+    content: str = ""
+    image_urls: list[str] = []
+    date: str = ""
 
-
-class PoemFlow(Flow[PoemState]):
+class RURLFlow(Flow[RURLState]):
 
     @start()
-    def generate_sentence_count(self):
-        print("Generating sentence count")
-        self.state.sentence_count = randint(1, 5)
+    def parse_web(self):
+        print("Parsing contents of the web article: ", self.state.weblink)
 
-    @listen(generate_sentence_count)
-    def generate_poem(self):
-        print("Generating poem")
+        web_parser = WebParsingTool()
+        result = web_parser._run(self.state.weblink)
+        print("Result = ",  result)
+        self.state.title = result.get("title","")
+        self.state.content = result.get("content","")
+        self.state.image_links = result.get("image_links","")
+        self.state.date = result.get("date","")
+
+    @listen(parse_web)
+    async def web_analyse(self):
+        print("Analysing the web article")
+        web_analyser = WebAnalyserTool()
+        analyser_input = {
+            "data": {
+                "title": self.state.title,
+                "weblink": self.state.weblink,
+                "image_urls": self.state.image_urls,
+                "content": self.state.content,
+                "date": self.state.image_links
+            }
+        }
+
+        result = await web_analyser._run()
+        self.state.web_analyse_results = result
+
+    # Analysts crew
+    @listen(parse_web)
+    def analyse_image_and_text(self):
+        print("Analysing the image and text")
         result = (
-            PoemCrew()
+            Analysts()
             .crew()
-            .kickoff(inputs={"sentence_count": self.state.sentence_count})
+            .kickoff(inputs={"url": self.state.w})
         )
+        self.state.analysed_image_text_results = result
+    
+    # Image Forensics crew
+    @listen(parse_web)
+    async def detect_forgery(self):
+        print("Analysing image for forgery or deepfakes")
+        result = await (
+            ImageForensics()
+            .crew()
+            .kickoff_async(inputs={"image_links": self.state.image_urls})
+        )
+        self.state.forgery_results = result
 
-        print("Poem generated", result.raw)
-        self.state.poem = result.raw
+    # Validator crew
+    @listen(parse_web)
+    async def internal_validation(self):
+        print("Validating source credibility")
+        result = await (
+            Validators()
+            .crew()
+            .kickoff_async(inputs={"domain": self.state.domain})
+        )
+        self.state.internal_validation_results = result # is_blacklisted, is_credible
 
-    @listen(generate_poem)
-    def save_poem(self):
-        print("Saving poem")
-        with open("poem.txt", "w") as f:
-            f.write(self.state.poem)
+    # Researchers crew
+    @listen(web_analyse)
+    async def web_research(self):
+        print("Generating fact checks")
+        result = await (
+            Researchers()
+            .crew()
+            .kickoff(inputs={"content": self.state.content})
+        )
+        self.state.web_research_results = result
 
+    @listen(and_(analyse_image_and_text, detect_forgery, internal_validation, web_research))
+    def generate_insights(self):
+        print("Generating insights on the credibility of the article")
+        
 
 def kickoff():
-    poem_flow = PoemFlow()
-    poem_flow.kickoff()
+    rurl_flow = RURLFlow()
+    rurl_flow.kickoff(inputs={"weblink":"https://www.example.com"})
 
 
 def plot():
-    poem_flow = PoemFlow()
-    poem_flow.plot()
-
+    rurl_flow = RURLFlow()
+    rurl_flow.plot()
 
 if __name__ == "__main__":
     kickoff()

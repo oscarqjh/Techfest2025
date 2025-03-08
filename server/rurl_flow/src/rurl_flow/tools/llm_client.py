@@ -369,7 +369,7 @@ def prepare_message(function_name, **kwargs):
 def call_openai_api(data, function_name): 
     title = data['data']['title']
     weblink = data['data']['weblink']
-    images = data['data']['image_url']
+    images = data['data']['image_urls']
     text = data['data']['content']
     date = data['data']['date']
     

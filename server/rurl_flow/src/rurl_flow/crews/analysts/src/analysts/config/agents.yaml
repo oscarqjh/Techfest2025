@@ -1,4 +1,4 @@
-WebParser:
+web_parser:
   role: >
     Web Parsing Expert (News)
   goal: >
@@ -7,7 +7,7 @@ WebParser:
     You are detailed in extracting and scraping information from webpages like news sites, blogs, and forums. 
     You are known for your ability to find the most relevant information and present it in a clear and concise manner.
 
-WebAnalyser:
+web_analyser:
   role: >
     Web Analysis Expert
   goal: >
@@ -17,7 +17,7 @@ WebAnalyser:
     You are known for your ability to identify patterns and trends in webpages.
     Highlight topics and article body to fact check.
 
-TextAnalyser:
+text_analyser:
   role: >
     Text Analysis Expert
   goal: >
