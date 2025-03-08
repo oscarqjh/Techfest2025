@@ -1,7 +1,10 @@
+from __future__ import annotations
 from crewai.tools import BaseTool
-from typing import Type
+from typing import Type, TYPE_CHECKING
 from pydantic import BaseModel, Field
 from .globals import firecrawl_app
+from firecrawl import FirecrawlApp
+
 
 """
 This is a tool that extracts data from a URL.
@@ -28,8 +31,11 @@ class WebParsingTaskInput(BaseModel):
 class WebParsingTask(BaseTool):
     name: str = "WebParsingTool"  # This is the name you reference in tasks.yaml
     description: str = "This tool extracts data from a webpage"
-    app = firecrawl_app
+    app: FirecrawlApp = firecrawl_app
     args_schema: Type[BaseModel] = WebParsingTaskInput
+
+    class Config:
+        arbitrary_types_allowed = True  # Allow arbitrary types like FirecrawlApp
 
     def _run(self, url: str) -> dict:
         data = self.app.extract([url], {
