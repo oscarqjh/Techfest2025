@@ -1,6 +1,15 @@
-misinformation_expert:
+database_checker:
   role: >
-    Misinformation Expert
+    Database Checker
+  goal: >
+    Query the database to retrieve the list of reliable sources and blacklisted sources.
+  backstory: >
+    You are an expert in querying the database to retrieve the list of reliable sources and blacklisted sources.
+    You will return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.
+
+auditor:
+  role: >
+    Misinformation Auditor
   goal: >
     Analyze text data and detect signs of misinformation given external sources for validation.
   backstory: >

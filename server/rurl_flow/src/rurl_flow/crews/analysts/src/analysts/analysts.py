@@ -1,6 +1,9 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
+from .....tools.web_parsing_tool import WebParsingTool
+from .....tools.web_analyser_tool import WebAnalyserTool
+
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -17,6 +20,10 @@ class Analysts():
 
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
+	# Create tools
+	web_parsing_tool = WebParsingTool()
+	web_analyser_tool = WebAnalyserTool()
+
 	@agent
 	def web_parser(self) -> Agent:
 		return Agent(
@@ -53,6 +60,7 @@ class Analysts():
 			config=self.tasks_config['web_analyser_task'],
 		)
 	
+
 	# Add in config if done
 	# @task
 	# def text_analyser_task(self) -> Task:
