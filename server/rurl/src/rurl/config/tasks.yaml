@@ -8,11 +8,27 @@ WebParsingTask:
   
 WebAnalyserTask:
   description: >
-    Analyse the content and retrieve topics of the webpage and article body to be fact_checked.
+    Analyse the content and retrieve topics and entities of the webpage and article body to be fact_checked.
   expected_output: >
     A dictionary of topic and article_body.
   agent: WebAnalyser
   tools: [WebParsingTool]
+
+  TextAnalyserTask:
+  description: >
+    Analyse the content of the webpage and retrieve the summary, topics, and entities.
+  expected_output: >
+    A dictionary of summary, topics, and entities.
+  agent: TextAnalyser
+  tools: [TextAnalyserTool]
+
+  ImageAnalyserTask:
+  description: >
+    Analyse the image and detect signs of forgery, manipulation or deepfake.
+  expected_output: >
+    A classification of the image and a confidence score of the prediction.
+  agent: ImageAnalyser
+  tools: [ImageAnalyserTool]
 
 image_forgery_task:
   description: >

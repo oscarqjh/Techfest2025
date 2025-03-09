@@ -61,8 +61,5 @@ class DetectForgeryTool(BaseTool):
 
 if __name__ == "__main__":
     tool = DetectForgeryTool("umm-maybe/AI-image-detector")
-    data = DetectForgeryToolInput(image_links=['https://i0.wp.com/www.rojakpot.com/wp-content/uploads/2017/01/Fried-bananas.jpg?w=1000&ssl=1']
-
-
-)
+    data = DetectForgeryToolInput(image_links=[])
     print(tool.run(image_links=data.image_links))
