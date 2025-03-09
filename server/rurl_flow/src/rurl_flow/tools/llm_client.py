@@ -6,12 +6,6 @@ import json
     2. ImageAnalyser to check if image is fake or real
     3. TextAnalyser to analyse if text is fake or real
     4. WikiAnalyser analyses entities and returns summaries
-
-example output
-{'image_analysis': [{'evaluation': [{'image_url': 'https://example.com/image1.jpg', 
-'is_fake': True, 'confidence_score': 0.2
-'reason': 'The image shows a surreal scene with a giant hand controlling a cityscape, which is clearly manipulated and not realistic.'}]}], 
-'text_analysis': {'evaluation': [{'is_fake': False, 'confidence_score': 0.65, 'reason': "The text presents a critical analysis of Singapore's sovereignty and its relationship with the U.S., but it shows bias against U.S. influence and lacks multiple viewpoints. It raises valid points but does not provide sufficient factual references to support all claims."}]}}
 """
 
 response_format_web = {
@@ -30,9 +24,24 @@ response_format_web = {
                 "required": ["id", "content", "to_fact_check"],
             },
         },
+        "entities": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the entity detected in the text",
+                    }
+                },
+                "required": ["name"],
+            },
+            "description": "List of named entities mentioned in the entire text",
+        },
     },
-    "required": ["article_body", "topic"],
+    "required": ["article_body", "topic", "entities"],
 }
+
 
 response_format_image = {
     "type": "object",
@@ -78,7 +87,7 @@ response_format_text = {
                         "description": "Explanation of why the text was classified as fake or real",
                     },
                 },
-                "required": ["is_fake", "confidence_score", "reason"],
+                "required": ["is_fake", "confidence_score", "reason", "entities"],
             },
         }
     },
@@ -102,7 +111,7 @@ response_format_wiki = {
 functions = [
     {
         "name": "WebAnalyser",
-        "description": "Determine if each paragraph needs to be fact-checked",
+        "description": "Determine if each paragraph needs to be fact-checked and returns entities",
         "parameters": response_format_web,
     },
     {
@@ -134,7 +143,8 @@ def prepare_message(function_name, **kwargs):
             {
                 "role": "system",
                 "content": """You are an expert in fact-checking web content and extracting key information.
-                              You are given a webpage link and need to provide an analysis of the article body and identify paragraphs that need to be fact-checked.""",
+                            You are given a webpage link and need to provide an analysis of the article body 
+                            and identify paragraphs that need to be fact-checked.""",
             },
             {
                 "role": "user",
@@ -155,9 +165,10 @@ def prepare_message(function_name, **kwargs):
                         </Content>
                         
                         ### **Instructions:**
-                        1. You are tasked with doing a paragraph level analysis of the content of the webpage.
+                        1. You are tasked with doing a paragraph-level analysis of the content of the webpage.
                         2. For each paragraph, provide an ID, the content, and whether it needs to be fact-checked.
                         3. If a paragraph needs to be fact-checked, set the value of `to_fact_check` to `true`.
+                        4. Extract all entities in the text and provide them in the output.
                                                 
                         ### **Safeguards**
                         1. Start the id of the paragraph from 0, followed by 1, 2, etc.
@@ -172,25 +183,29 @@ def prepare_message(function_name, **kwargs):
                         
                         ### **Example Output:**
                         The output will be:
-                            {{
-                              "type": "object",
-                              "properties": {{
-                                "article_body": [
-                                  {{
+                        {{
+                            "article_body": [
+                                {{
                                     "id": "1",
                                     "content": "This is the first paragraph.",
                                     "to_fact_check": false
-                                  }},
-                                  {{
+                                }},
+                                {{
                                     "id": "2",
                                     "content": "This is the second paragraph.",
                                     "to_fact_check": true
-                                  }}
-                                ],
-                                "topic": ["climate change", "food security", "global impact"]
-                              }},
-                              "required": ["article_body", "topic"]
-                            }}
+                                }}
+                            ],
+                            "topic": ["climate change", "food security", "global impact"],
+                            "entities": [
+                                {{
+                                    "name": "United Nations"
+                                }},
+                                {{
+                                    "name": "Singapore"
+                                }}
+                            ]
+                        }}
                         """,
                     }
                 ],
