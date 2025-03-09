@@ -6,6 +6,11 @@ authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
     "crewai[tools]>=0.102.0,<1.0.0",
+    "firecrawl-py>=1.13.5",
+    "sqlmodel>=0.0.24",
+    "tavily-python>=0.5.1",
+    "torch>=2.6.0",
+    "transformers==4.45.0",
 ]
 
 [project.scripts]
