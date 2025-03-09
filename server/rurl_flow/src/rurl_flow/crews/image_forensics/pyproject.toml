@@ -1,0 +1,23 @@
+[project]
+name = "image_forensics"
+version = "0.1.0"
+description = "image_forensics using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.102.0,<1.0.0"
+]
+
+[project.scripts]
+image_forensics = "image_forensics.main:run"
+run_crew = "image_forensics.main:run"
+train = "image_forensics.main:train"
+replay = "image_forensics.main:replay"
+test = "image_forensics.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
