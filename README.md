@@ -19,8 +19,8 @@
 
 
 <p align="center">
-  <img src="./Homepage.png" alt="Homepage" width="400px" height="auto">
-  <img src="./AnalysisPage.png" alt="Analysis Page" width="400px" height="auto">
+  <img src="./Homepage.png" alt="Homepage" width="auto" height="300px">
+  <img src="./AnalysisPage.png" alt="Analysis Page" width="auto" height="300px">
 </p>
 
 
