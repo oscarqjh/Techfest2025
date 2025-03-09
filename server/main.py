@@ -7,12 +7,6 @@ import sys
 from pathlib import Path
 
 
-# Dynamically determine the path
-project_root = Path(__file__).resolve().parent.parent
-rurl_flow_path = project_root / 'rurl_flow' / 'src' / 'rurl_flow'
-sys.path.append(str(rurl_flow_path))
-
-
 class CredibilityRequest(BaseModel):
     url: str
 
@@ -44,8 +38,8 @@ def sample_output():
 
 @app.post("/analyse_credibility")
 def analyse_credibility(data: CredibilityRequest):
-    from main import kickoff
+    from rurl_flow.src.rurl_flow.main import RunFlow
     url = data.url
-    res = kickoff(url=url)
+    res = RunFlow().kickoff(url=url)
 
     return res
