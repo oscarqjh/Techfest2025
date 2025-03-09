@@ -21,3 +21,8 @@ def test_endpoint(data: TestAPIRequest) -> TestAPIResponse:
 def validate_endpoint(data: ValidationAPIRequest):
     print(data)
     return {"message": "Validation successful!"}
+
+@app.get("/sample_output")
+def sample_output():
+    parsed_data = json.loads("./results.json")
+    return parsed_data
