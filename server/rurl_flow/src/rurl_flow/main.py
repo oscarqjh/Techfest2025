@@ -160,9 +160,9 @@ class RURLFlow(Flow[RURLState]):
         return resulting_dict
 
 
-def kickoff():
+def kickoff(url):
     t0 = time.time()
-    rurl_flow = RURLFlow(url="https://www.straitstimes.com/singapore/immigration-is-essential-and-existential-for-singapores-survival-sm-lee")
+    rurl_flow = RURLFlow(url=url)
     res = asyncio.run(rurl_flow.kickoff_async())
 
     print("Time taken = ", time.time()-t0)
