@@ -20,7 +20,7 @@ class ImageForensics():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	# Create tools
-	detect_forgery_tool = DetectForgeryTool('Placeholder detection model') # Change detection model here
+	detect_forgery_tool = DetectForgeryTool()
 
 	@agent
 	def image_forgery_expert(self) -> Agent:
