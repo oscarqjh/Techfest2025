@@ -33,11 +33,6 @@ pip install -r requirements.txt
 ```
 
 #### To run the FastAPI server:
-
 ```sh
-# Method 1
-uvicorn main:app --reload
-
-# Method 2
 fastapi dev main.py
 ```
