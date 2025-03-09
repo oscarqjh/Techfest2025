@@ -16,6 +16,7 @@ from .crews.validators.src.validators.validators import Validators
 from .tools.web_parsing_tool import WebParsingTool
 from .tools.web_analyser_tool import WebAnalyserTool
 from .tools.web_researcher_tool import web_search_node
+import json
 
 
 class RURLState(BaseModel):
@@ -24,11 +25,13 @@ class RURLState(BaseModel):
     content: str = ""
     image_urls: list[str] = []
     date: str = ""
+    parsed_web_results: dict = {}
     web_analyse_results: dict = {}
     analysed_image_text_results: dict = {}
     forgery_results: dict = {}
     internal_validation_results: dict = {}
     web_research_results: dict = {}
+    insights: dict = {}
 
 class RURLFlow(Flow[RURLState]):
 
@@ -42,12 +45,13 @@ class RURLFlow(Flow[RURLState]):
 
         web_parser = WebParsingTool()
         result = web_parser._run(self.url)
-        print("Result = ",  result)
+        # Update states
         self.state.title = result.get("title","")
         self.state.content = result.get("content","")
         self.state.image_urls = result.get("image_links",[])
         self.state.date = result.get("date","")
-        
+
+        self.state.parsed_web_results = {"parsed_web_results":result} # Save results into state
         print("PARSE WEB: ",result)
         return result
 
@@ -55,21 +59,22 @@ class RURLFlow(Flow[RURLState]):
     async def web_analyse(self, data: dict):
         print("Analysing the web article")
         web_analyser = WebAnalyserTool()
-        # analyser_input = {
-        #     "data": {
-        #         "title": self.state.title,
-        #         "weblink": self.state.weblink,
-        #         "image_urls": self.state.image_urls,
-        #         "content": self.state.content,
-        #         "date": self.state.date
-        #     }
-        # }
 
-        input_data = {}
-        input_data["data"] = data
+        # Input data from parse_web
+        analyser_input = {
+            "data": {
+                "title": self.state.title,
+                "weblink": self.url,
+                "image_urls": self.state.image_urls,
+                "content": self.state.content,
+                "date": self.state.date
+            }
+        }
+        # input_data = {}
+        # input_data["data"] = data
 
-        result = web_analyser._run(input_data)
-        self.state.web_analyse_results = result
+        result = web_analyser._run(analyser_input)
+        self.state.web_analyse_results = {"web_analyse_results":result} # Save results into state
         print("ANALYSE: ",result)
         return result
 
@@ -82,7 +87,7 @@ class RURLFlow(Flow[RURLState]):
             .crew()
             .kickoff(inputs={"url": self.url})
         )
-        self.state.analysed_image_text_results = result
+        self.state.analysed_image_text_results = {"analysed_image_text_results":result.model_dump()} # Save results into state
         print("ANALYSTS: ",result)
     
     # Image Forensics crew
@@ -94,7 +99,7 @@ class RURLFlow(Flow[RURLState]):
             .crew()
             .kickoff_async(inputs={"image_links": self.state.image_urls})
         )
-        self.state.forgery_results = result
+        self.state.forgery_results = {"forgery_results":result.model_dump()} # Save results into state
         print("FORGERY: ",result)
 
     # Validator crew
@@ -106,7 +111,7 @@ class RURLFlow(Flow[RURLState]):
             .crew()
             .kickoff_async(inputs={"domain": self.state.domain})
         )
-        self.state.internal_validation_results = result # is_blacklisted, is_credible
+        self.state.internal_validation_results = {"internal_validation_results":result.model_dump()} # Save results into state - ['blacklisted', 'likely_credible', 'unreliable']
         print("VALIDATE: ",result)
 
     # Researchers crew
@@ -118,13 +123,34 @@ class RURLFlow(Flow[RURLState]):
         result = await web_search_node(data)
 
         # append result
-        self.state.web_research_results = result
+        self.state.web_research_results = {"web_research_results":result} # Save results into state
         print("RESEARCH: ",result)
 
     @listen(and_(analyse_image_and_text, detect_forgery, internal_validation, web_research))
     def generate_insights(self):
         print("Generating insights on the credibility of the article")
-        
+        self.state.insights = {}
+    
+    @listen(generate_insights)
+    def return_results(self):
+        print("Returning results")
+        resulting_dict = {
+            "url": self.url,
+            "title": self.state.title,
+            "date": self.state.date,
+            "parsed_web_results": self.state.parsed_web_results,
+            "web_analyse_results": self.state.web_analyse_results,
+            "analysed_image_text_results": self.state.analysed_image_text_results,
+            "forgery_results": self.state.forgery_results,
+            "internal_validation_results": self.state.internal_validation_results,
+            "web_research_results": self.state.web_research_results,
+            "insights": self.state.insights
+        }
+
+        with open("results.json", "w") as f:
+            json.dump(resulting_dict, f, indent=4)
+        return resulting_dict
+
 
 def kickoff():
     t0 = time.time()

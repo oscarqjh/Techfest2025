@@ -36,7 +36,13 @@ class InternalAuditTool(BaseTool):
             is_credible = True
         else:
             is_credible = False
-        return is_blacklisted, is_credible
+        
+        if is_blacklisted:
+            return 'blacklisted'
+        elif is_credible:
+            return 'likely_credible'
+        else:
+            return 'unreliable'
 
 if __name__ == "__main__":
     tool = InternalAuditTool()
