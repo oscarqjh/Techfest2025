@@ -25,11 +25,11 @@ export default function Home() {
     setLoading(true);
     try {
       const response = await fetch("/api/validate", {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ url }),
+        // body: JSON.stringify({ url }),
       });
       const data = await response.json();
       console.log(data);
@@ -44,7 +44,7 @@ export default function Home() {
       // setLoading(false);
       setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, 3000);
     }
   };
 
