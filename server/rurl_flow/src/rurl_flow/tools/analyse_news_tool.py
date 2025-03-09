@@ -37,7 +37,7 @@ class AnalyseNewsTool(BaseTool):
     def _run(self, argument: str) -> str:
         # Implementation goes here
         llm: LLM = LLM(
-            model="openai/gpt-4o",
+            model="openai/gpt-4o-mini",
             temperature=0.2,
             response_format=AnalyseNewsToolOutput
         )

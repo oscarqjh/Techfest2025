@@ -12,6 +12,7 @@ from .crews.analysts.src.analysts.analysts import Analysts
 from .crews.forensics.src.forensics.forensics import ImageForensics
 from .crews.researchers.src.researchers.researchers import Researchers
 from .crews.validators.src.validators.validators import Validators
+from .crews.insights.src.insights.insights import Insights
 
 from .tools.web_parsing_tool import WebParsingTool
 from .tools.web_analyser_tool import WebAnalyserTool
@@ -93,19 +94,12 @@ class RURLFlow(Flow[RURLState]):
     @listen(parse_web)
     async def detect_forgery(self):
         print("Analysing image for forgery or deepfakes")
-        print(self.state.image_urls)
-        image_dicts = []
-        for image_url in self.state.image_urls:
-            image_dicts.append({"image_url": image_url})
-        async_results = await (
+        result = await (
             ImageForensics()
             .crew()
-            .kickoff_for_each_async(inputs=image_dicts)
+            .kickoff_async(inputs={"image_urls": self.state.image_urls})
         )
-        result = []
-        for async_result in async_results:
-            result.append(async_result.model_dump())
-        self.state.forgery_results = {"forgery_results":result} # Save results into state
+        self.state.forgery_results = {"forgery_results":result.model_dump()} # Save results into state
         print("FORGERY: ",result)
 
     # Validator crew
@@ -135,6 +129,14 @@ class RURLFlow(Flow[RURLState]):
     @listen(and_(detect_forgery, internal_validation, web_research))
     def generate_insights(self):
         print("Generating insights on the credibility of the article")
+        result = (
+            Insights()
+            .crew()
+            .kickoff(inputs={
+                "credibility": self.state.internal_validation_results,
+                "cross_references": self.state.web_research_results
+            })
+        )
         self.state.insights = {}
     
     @listen(generate_insights)

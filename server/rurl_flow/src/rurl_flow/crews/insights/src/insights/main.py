@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from forensics.crew import Forensics
+from insights.crew import Insights
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -13,16 +13,17 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def run(image_urls):
+def run():
     """
     Run the crew.
     """
     inputs = {
-        'image_urls': image_urls
+        'topic': 'AI LLMs',
+        'current_year': str(datetime.now().year)
     }
     
     try:
-        Forensics().crew().kickoff(inputs=inputs)
+        Insights().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -35,7 +36,7 @@ def train():
         "topic": "AI LLMs"
     }
     try:
-        Forensics().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        Insights().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -45,7 +46,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Forensics().crew().replay(task_id=sys.argv[1])
+        Insights().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -58,7 +59,7 @@ def test():
         "topic": "AI LLMs"
     }
     try:
-        Forensics().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        Insights().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")

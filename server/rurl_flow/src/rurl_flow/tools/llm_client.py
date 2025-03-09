@@ -450,7 +450,7 @@ def call_openai_api(data, function_name):
     if function_name == "WebAnalyser":
         title = data["data"]["title"]
         text = data["data"]["content"]
-        model = "gpt-4o"
+        model = "gpt-4o-mini"
         messages = prepare_message(
             title=title, content=text, function_name="WebAnalyser"
         )
@@ -476,7 +476,7 @@ def call_openai_api(data, function_name):
 
         if images:
             image_output = []
-            model = "gpt-4o"
+            model = "gpt-4o-mini"
 
             try:
                 for image in images:
@@ -509,7 +509,7 @@ def call_openai_api(data, function_name):
             text = data["data"]["content"]
             date = data["data"]["date"]
 
-            model = "gpt-4o"
+            model = "gpt-4o-mini"
 
             try:
                 messages = prepare_message(
@@ -540,7 +540,7 @@ def call_openai_api(data, function_name):
         summary = data["data"]["summary"]
         infobox = data["data"]["infobox"]
 
-        model = "gpt-4o"
+        model = "gpt-4o-mini"
 
         try:
             # for entity in entities:
