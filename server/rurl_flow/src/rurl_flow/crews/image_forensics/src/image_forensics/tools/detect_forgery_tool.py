@@ -4,11 +4,14 @@ from pydantic import BaseModel, Field
 from crewai import LLM
 from dotenv import load_dotenv
 
+<<<<<<< HEAD
 from PIL import Image # Module for image processing - Iain
 from transformers import pipeline # Module for running models - Iain
 import requests
 from io import BytesIO
 
+=======
+>>>>>>> staging
 _ = load_dotenv()
 
 class DetectForgeryToolInput(BaseModel):
@@ -27,6 +30,7 @@ class DetectForgeryTool(BaseTool):
         "This tool receives an image and runs it through an image forgery detection model to determine if the image has been tampered with."
     )
     args_schema: Type[BaseModel] = DetectForgeryToolInput
+<<<<<<< HEAD
     model: str = "umm-maybe/AI-image-detector" # Change to model class when implemented ie. 'ImageForgeryDetector'
     
     class Config:
@@ -61,5 +65,26 @@ class DetectForgeryTool(BaseTool):
 
 if __name__ == "__main__":
     tool = DetectForgeryTool("umm-maybe/AI-image-detector")
+=======
+    detection_model: str # Change to model class when implemented ie. 'ImageForgeryDetector'
+
+    class Config:
+        arbitrary_types_allowed = True
+
+    def __init__(self, detection_model: str):
+        """Initializes the tool with the forgery detection model."""
+        super().__init__(detection_model=detection_model)
+        self.detection_model = detection_model
+
+    def _run(self, image_links: list[str]) -> dict:
+        # Implementation goes here
+        # classification, confidence = self.detection_model.run(argument) # Replace with actual implementation of the forgery detection model
+        classification = "forged"   # PLACEHOLDER
+        confidence = 0.9            # PLACEHOLDER
+        return {"classification": classification, "confidence": confidence}
+
+if __name__ == "__main__":
+    tool = DetectForgeryTool("Placeholder detection model")
+>>>>>>> staging
     data = DetectForgeryToolInput(image_links=["Placeholder/placeholder.png"])
     print(tool.run(data))
