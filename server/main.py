@@ -1,8 +1,20 @@
 from fastapi import FastAPI
 import json
 
+from pydantic import BaseModel
 from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
-from .server.rurl_flow.src.rurl_flow.main import kickoff
+import sys
+from pathlib import Path
+
+
+# Dynamically determine the path
+project_root = Path(__file__).resolve().parent.parent
+rurl_flow_path = project_root / 'rurl_flow' / 'src' / 'rurl_flow'
+sys.path.append(str(rurl_flow_path))
+
+
+class CredibilityRequest(BaseModel):
+    url: str
 
 app = FastAPI()
 
@@ -31,7 +43,8 @@ def sample_output():
     return parsed_data
 
 @app.post("/analyse_credibility")
-def analyse_credibility(data):
+def analyse_credibility(data: CredibilityRequest):
+    from main import kickoff
     url = data.url
     res = kickoff(url=url)
 
