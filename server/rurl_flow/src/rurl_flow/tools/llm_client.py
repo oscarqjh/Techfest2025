@@ -5,6 +5,7 @@ import json
     1. WebAnalyser to see which para to factcheck
     2. ImageAnalyser to check if image is fake or real
     3. TextAnalyser to analyse if text is fake or real
+    4. WikiAnalyser analyses entities and returns summaries
 
 example output
 {'image_analysis': [{'evaluation': [{'image_url': 'https://example.com/image1.jpg', 
@@ -16,10 +17,7 @@ example output
 response_format_web = {
     "type": "object",
     "properties": {
-        "topic": {
-            "type": "array",
-            "items": {"type": "string"}
-        },
+        "topic": {"type": "array", "items": {"type": "string"}},
         "article_body": {
             "type": "array",
             "items": {
@@ -27,43 +25,43 @@ response_format_web = {
                 "properties": {
                     "id": {"type": "string"},
                     "content": {"type": "string"},
-                    "to_fact_check": {"type": "boolean"}
+                    "to_fact_check": {"type": "boolean"},
                 },
-                "required": ["id", "content", "to_fact_check"]
-            }
-        }
+                "required": ["id", "content", "to_fact_check"],
+            },
+        },
     },
-    "required": ["article_body", "topic"]
+    "required": ["article_body", "topic"],
 }
 
 response_format_image = {
     "type": "object",
     "properties": {
         "evaluation": {
-            "type": "object",  
+            "type": "object",
             "properties": {
                 "image_url": {"type": "string"},  # The image being evaluated
-                "is_fake": {"type": "boolean"},   # True if fake, False if real
+                "is_fake": {"type": "boolean"},  # True if fake, False if real
                 "confidence_score": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "multipleOf": 0.1  # 1dp
+                    "multipleOf": 0.1,  # 1dp
                 },
                 "reason": {
-                    "type": "string",  
-                    "description": "Explanation of why the image was classified as fake or real"
-                }
+                    "type": "string",
+                    "description": "Explanation of why the image was classified as fake or real",
+                },
             },
-            "required": ["image_url", "is_fake", "confidence_score", "reason"]
+            "required": ["image_url", "is_fake", "confidence_score", "reason"],
         }
-    }
+    },
 }
 
 response_format_text = {
     "type": "object",
     "properties": {
-        "evaluation": { 
+        "evaluation": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -73,49 +71,72 @@ response_format_text = {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 1,
-                        "multipleOf": 0.1  # 1dp
+                        "multipleOf": 0.1,  # 1dp
                     },
-                    "reason": {  
-                        "type": "string",  
-                        "description": "Explanation of why the text was classified as fake or real"
-                    }
+                    "reason": {
+                        "type": "string",
+                        "description": "Explanation of why the text was classified as fake or real",
+                    },
                 },
-                "required": ["is_fake", "confidence_score", "reason"]
-            }
+                "required": ["is_fake", "confidence_score", "reason"],
+            },
         }
-    }
+    },
+}
+
+response_format_wiki = {
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "wiki_url": {"type": "string"},
+                    "summary": {"type": "string"},
+                },
+                "required": ["wiki_url", "summary"],
+            },
+        }
+    },
 }
 
 functions = [
     {
         "name": "WebAnalyser",
         "description": "Determine if each paragraph needs to be fact-checked",
-        "parameters": response_format_web
+        "parameters": response_format_web,
     },
     {
         "name": "ImageAnalyser",
         "description": "Analyse the image(s) and return scores with explanation",
-        "parameters": response_format_image
+        "parameters": response_format_image,
     },
     {
         "name": "TextAnalyser",
         "description": "Analyse the text and return scores with explanation",
-        "parameters": response_format_text       
-    }
+        "parameters": response_format_text,
+    },
+    {
+        "name": "WikiAnalyser",
+        "description": "Analyse entities and return summaries",
+        "parameters": response_format_wiki,
+    },
 ]
 
+
 def prepare_message(function_name, **kwargs):
-    website_link = kwargs.get('weblink', '')
-    
+    website_link = kwargs.get("weblink", "")
+
     if function_name == "WebAnalyser":
-        title = kwargs.get('title', '')
-        content = kwargs.get('content', '')
-        
+        title = kwargs.get("title", "")
+        content = kwargs.get("content", "")
+
         return [
             {
                 "role": "system",
                 "content": """You are an expert in fact-checking web content and extracting key information.
-                              You are given a webpage link and need to provide an analysis of the article body and identify paragraphs that need to be fact-checked."""
+                              You are given a webpage link and need to provide an analysis of the article body and identify paragraphs that need to be fact-checked.""",
             },
             {
                 "role": "user",
@@ -172,27 +193,27 @@ def prepare_message(function_name, **kwargs):
                               }},
                               "required": ["article_body", "topic"]
                             }}
-                        """
+                        """,
                     }
-                ]
-            }
+                ],
+            },
         ]
 
     if function_name == "ImageAnalyser":
-        image = kwargs.get('image')
+        image = kwargs.get("image")
 
         return [
             {
                 "role": "system",
                 "content": """You are an expert in analyzing images and determining whether they are real or fake. 
-                              You are given a list of image(s) and you need to evaluate them using reasoning."""
+                              You are given a list of image(s) and you need to evaluate them using reasoning.""",
             },
             {
                 "role": "user",
                 "content": [
                     {
                         "type": "text",
-                        "text": f"""
+                        "text": """
                         You are an AI trained to assess the authenticity of images. Your task is to evaluate the image based on the following criteria and assign a **realness score** from **0 to 1** where:
                         - **0** indicates "Fake" or "Manipulated"
                         - **1** indicates "Authentic" or "Real"
@@ -257,32 +278,23 @@ def prepare_message(function_name, **kwargs):
                                 }}
                               ]
                             }}
-
-                        """
+                        """,
                     },
-                    {
-                        "type": "image_url",
-                        "image_url": {  
-                            "url": image
-                        }
-                    }                    
-                ]
-            
-            }
+                    {"type": "image_url", "image_url": {"url": image}},
+                ],
+            },
         ]
-    
+
     if function_name == "TextAnalyser":
-        text = kwargs.get('text', '')
-        title = kwargs.get('title', '')
-        date = kwargs.get('date', '')
-        weblink = kwargs.get('weblink', '')
-        
+        text = kwargs.get("text", "")
+        title = kwargs.get("title", "")
+
         return [
             {
                 "role": "system",
                 "content": """You are an expert in analyzing text and determining whether it is real or fake.
                               You are given a text content and you need to evaluate it using reasoning based on the following rubrics and assign a score from 0 to 1.
-                              The score should be provided with two decimal points (e.g., 0.92)."""
+                              The score should be provided with two decimal points (e.g., 0.92).""",
             },
             {
                 "role": "user",
@@ -360,94 +372,204 @@ def prepare_message(function_name, **kwargs):
                                 }},
                               ]
                             }}
-                        """
+                        """,
                     }
-                ]
-            }
+                ],
+            },
         ]
-        
-def call_openai_api(data, function_name): 
-    title = data['data']['title']
-    weblink = data['data']['weblink']
-    images = data['data']['image_urls']
-    text = data['data']['content']
-    date = data['data']['date']
-    
+
+    if function_name == "WikiAnalyser":
+        entity = kwargs.get("entity", "")
+        wiki_url = kwargs.get("wiki_url", "")
+        summary = kwargs.get("summary", "")
+        infobox = kwargs.get("infobox", "")
+
+        return [
+            {
+                "role": "system",
+                "content": """You are an expert in analyzing entities and summarizing their information.
+                            You are given an entity and the wiki content of the entity.""",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": f"""
+                        Instructions:
+
+                        Remember the following information.
+
+                        <Entity>
+                        {entity}
+                        </Entity>
+                        
+                        <Wiki Summary>
+                        {summary}
+                        </Wiki Summary>
+                        
+                        <Wiki Infobox>
+                        {infobox}
+                        </Wiki Infobox>
+                        
+                        <Wiki Summary>
+                        {wiki_url}
+                        </Wiki Summary>
+                        
+                        <Objective>
+                        1. Given the information above, generate a summary of the entity.
+                        2. In your summary, analyse closely <Wiki Summary> and <Wiki Infobox> to extract key information.
+                        3. <Wiki Infobox> contains personal details and other relevant information about the entity.
+                        4. The summary should be concise and informative, highlighting the most important aspects of the entity.
+                        5. The summary should include the entity's background, significance, and any affiliations with other entities.
+                        6. The summary should be objective and free from bias or subjective opinions.
+                        7. The summary should be written in a clear and coherent manner, providing a comprehensive overview of the entity.
+                        8. The summary should be based on the information provided in the <Wiki Summary> and <Wiki Infobox>.
+                        9. This information will be used in a downstream pipeline to gather if the entity is credible or not.
+                        10. Important information to extract includes the entity's background, significance, and any affiliations with other entities such as political parties or groups that are known to push an agenda.
+                        </Objective>
+                        
+                        ### **Example Output:**
+                        The output will be:
+                            {{
+                                "wiki_url": "https://en.wikipedia.org/wiki/DonaldTrump",
+                                "summary": "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021.
+                                            He is known to have made false statements and promoted conspiracy theories, and his presidency was marked by a tumultuous relationship with the media and numerous controversies.
+                                            He is most notable for his populist and nationalist policies, including his 'America First' agenda and his efforts
+                                            His is affiliated with the Republican Party and has been a controversial figure in American politics.",
+                            }}
+                        """,
+                    }
+                ],
+            },
+        ]
+
+
+def call_openai_api(data, function_name):
     output = {}  # Store both image and text results
     if function_name == "WebAnalyser":
-        model = 'gpt-4o-mini'
-        messages = prepare_message(title=title, content=text, function_name="WebAnalyser")
-        
+        title = data["data"]["title"]
+        text = data["data"]["content"]
+        model = "gpt-4o-mini"
+        messages = prepare_message(
+            title=title, content=text, function_name="WebAnalyser"
+        )
+
         try:
             response = client.chat.completions.create(
-                model=model,  
+                model=model,
                 messages=messages,
                 functions=functions,
                 function_call={"name": "WebAnalyser"},
-                temperature=0.1
+                temperature=0.1,
             )
             function_args = response.choices[0].message.function_call.arguments
             web_data = json.loads(function_args)
-            
+
             output["web_analysis"] = web_data  # Store web analysis results
-        
+
         except Exception as e:
             print(f"Error occurred while calling OpenAI API for web content: {e}")
-            
+
     if function_name == "ImageAnalyser":
+        images = data["data"]["image_urls"]
+
         if images:
             image_output = []
-            model = 'gpt-4o'
-            
+            model = "gpt-4o"
+
             try:
                 for image in images:
                     messages = prepare_message(
-                        title=title, 
-                        weblink=weblink, 
-                        image=image,  
-                        text=text, 
-                        function_name="ImageAnalyser"
+                        title=title,
+                        weblink=weblink,
+                        image=image,
+                        text=text,
+                        function_name="ImageAnalyser",
                     )
                     response = client.chat.completions.create(
-                        model=model,  
+                        model=model,
                         messages=messages,
                         functions=functions,
                         function_call={"name": "ImageAnalyser"},
-                        temperature=0.1
+                        temperature=0.1,
                     )
                     function_args = response.choices[0].message.function_call.arguments
                     image_data = json.loads(function_args)
                     image_output.append(image_data)
-                
+
                 output["image_analysis"] = image_output  # Store image analysis results
-            
+
             except Exception as e:
                 print(f"Error occurred while calling OpenAI API for images: {e}")
 
     if function_name == "TextAnalyser":
         if text:
-            model = 'gpt-4o-mini'
-            
+            title = data["data"]["title"]
+            weblink = data["data"]["weblink"]
+            text = data["data"]["content"]
+            date = data["data"]["date"]
+
+            model = "gpt-4o-mini"
+
             try:
-                messages = prepare_message(title=title, text=text, date=date, weblink=weblink, function_name="TextAnalyser")
+                messages = prepare_message(
+                    title=title,
+                    text=text,
+                    date=date,
+                    weblink=weblink,
+                    function_name="TextAnalyser",
+                )
                 response = client.chat.completions.create(
-                    model=model,  
+                    model=model,
                     messages=messages,
                     functions=functions,
                     function_call={"name": "TextAnalyser"},
-                    temperature=0.1
+                    temperature=0.1,
                 )
                 function_args = response.choices[0].message.function_call.arguments
                 text_data = json.loads(function_args)
 
                 output["text_analysis"] = text_data  # Store text analysis results
-            
+
             except Exception as e:
                 print(f"Error occurred while calling OpenAI API for text: {e}")
 
+    if function_name == "WikiAnalyser":
+        entity = data["data"]["entity"]
+        wiki_url = data["data"]["wiki_url"]
+        summary = data["data"]["summary"]
+        infobox = data["data"]["infobox"]
+
+        model = "gpt-4o-mini"
+        wiki_output = []
+
+        try:
+            # for entity in entities:
+            messages = prepare_message(
+                entity=entity,
+                wiki_url=wiki_url,
+                summary=summary,
+                infobox=infobox,
+                function_name="WikiAnalyser",
+            )
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                functions=functions,
+                function_call={"name": "WikiAnalyser"},
+                temperature=0.1,
+            )
+            function_args = response.choices[0].message.function_call.arguments
+            wiki_data = json.loads(function_args)
+            output["wiki_analysis"] = wiki_data  # Store wiki analysis results
+
+        except Exception as e:
+            print(f"Error occurred while calling OpenAI API for wiki entities: {e}")
+
     if output:
         return output
-    
+
     else:
         print("No valid input provided for either text or images.")
         return None

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from crewai.tools import BaseTool
-from typing import Type, TYPE_CHECKING
+from typing import Type, List, TYPE_CHECKING
 from pydantic import BaseModel, Field
 from .globals import firecrawl_app
 from firecrawl import FirecrawlApp
@@ -48,7 +48,7 @@ class WebParsingTool(BaseTool):
         data = self.app.extract(
             [url],
             {
-                "prompt": "Extract the domain date of publish, content from the URL (paragraphs may be separated, concat them together) and the images related to the content if available",
+                "prompt": "Extract the domain, date of publish, content from the URL (paragraphs may be separated, concat them together) and the images related to the content if available",
                 "schema": ExtractSchema.model_json_schema(),
             },
         )
