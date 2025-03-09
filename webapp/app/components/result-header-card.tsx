@@ -19,9 +19,11 @@ const WebResultCard: React.FC<ParsedWebResultProps> = ({
   date,
 }) => {
   return (
-    <div className="w-[72%] p-4 dark:bg-zinc-800 shadow-lg rounded-xl">
+    <div className="w-[90%] p-4 dark:bg-zinc-800 shadow-lg rounded-xl">
       <div className="mt-3">
-        <h1 className="text-3xl font-bold text-zinc-200">{title}</h1>
+        <h1 className="text-3xl font-bold text-zinc-200 text-justify">
+          {title}
+        </h1>
       </div>
       <div className="mt-3 flex justify-between items-center text-xs text-zinc-300 dark:text-zinc-400">
         <span>{domain}</span>
