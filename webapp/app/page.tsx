@@ -23,7 +23,6 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    console.log(url);
     try {
       const response = await fetch("/api/validate", {
         method: "POST",
@@ -33,6 +32,7 @@ export default function Home() {
         body: JSON.stringify({ url }),
       });
       const data = await response.json();
+      console.log(data);
       if (response.ok) {
         setResult(data.answer);
       } else {

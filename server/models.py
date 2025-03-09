@@ -7,3 +7,8 @@ class TestAPIResponse(BaseModel):
 class TestAPIRequest(BaseModel):
     """TestAPIRequest schema."""
     url: str
+
+
+class ValidationAPIRequest(BaseModel):
+    """ValidationAPIRequest schema."""
+    url: str

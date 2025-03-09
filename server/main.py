@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from models import TestAPIRequest, TestAPIResponse
+from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
 
 app = FastAPI()
 
@@ -16,3 +16,8 @@ def hello_world():
 def test_endpoint(data: TestAPIRequest) -> TestAPIResponse:
     print(data)
     return {"message": "Test successful!"}
+
+@app.post("/api/v1/validate")
+def validate_endpoint(data: ValidationAPIRequest):
+    print(data)
+    return {"message": "Validation successful!"}
