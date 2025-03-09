@@ -2,10 +2,8 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
-import { Input } from "@/components/ui/input";
-import { ShimmerInput } from "@/components/magicui/shimmer-input";
-import { HeroInput } from "@/components/ui/hero-input";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
+import ResultSkeleton from "./components/result-skeleton";
 
 const placeholders = [
   "Enter your URL here",
@@ -41,12 +39,15 @@ export default function Home() {
     } catch (error) {
       setError("An error occurred, please try again later.");
     } finally {
-      setLoading(false);
+      // setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 5000);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-x-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       {/* <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -104,6 +105,10 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/** Result skeleton*/}
+      {loading && <ResultSkeleton />}
+      {result !== "" && !loading && <ResultSkeleton />}
     </div>
   );
 }
