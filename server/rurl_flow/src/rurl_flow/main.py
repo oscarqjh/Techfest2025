@@ -137,7 +137,7 @@ class RURLFlow(Flow[RURLState]):
                 "cross_references": self.state.web_research_results
             })
         )
-        self.state.insights = {}
+        self.state.insights = result.model_dump() # Save results into state
     
     @listen(generate_insights)
     def return_results(self):
