@@ -4,7 +4,6 @@ web_parsing_task:
   expected_output: >
     A dictionary of weblink, title, content, image_url, date.
   agent: web_parser
-  tools: [web_parsing_tool]
 
 web_analyser_task:
   description: >
@@ -12,4 +11,3 @@ web_analyser_task:
   expected_output: >
     A dictionary of topic and article_body.
   agent: web_analyser
-  tools: [web_analyser_tool]

@@ -1,7 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from tools.detect_forgery_tool import DetectForgeryTool
+from .tools.detect_forgery_tool import DetectForgeryTool
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -20,12 +20,13 @@ class ImageForensics():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	# Create tools
-	detect_forgery_tool = DetectForgeryTool()
+	detect_forgery_tool = DetectForgeryTool('Placeholder detection model') # Change detection model here
 
 	@agent
 	def image_forgery_expert(self) -> Agent:
 		return Agent(
 			config=self.agents_config['image_forgery_expert'],
+			tools=[self.detect_forgery_tool],
 			verbose=True
 		)
 

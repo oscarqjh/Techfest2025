@@ -28,6 +28,7 @@ class Analysts():
 	def web_parser(self) -> Agent:
 		return Agent(
 			config=self.agents_config['web_parser'],
+			tools=[self.web_parsing_tool],
 			verbose=True
 		)
 
@@ -35,6 +36,7 @@ class Analysts():
 	def web_analyser(self) -> Agent:
 		return Agent(
 			config=self.agents_config['web_analyser'],
+			tools=[self.web_analyser_tool],
 			verbose=True
 		)
 
