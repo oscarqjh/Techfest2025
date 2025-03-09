@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import Particles from "./components/particles";
