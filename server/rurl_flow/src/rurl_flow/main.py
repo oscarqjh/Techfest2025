@@ -159,17 +159,26 @@ class RURLFlow(Flow[RURLState]):
             json.dump(resulting_dict, f, indent=4)
         return resulting_dict
 
+class RunFlow:
+    def kickoff(self, url):
+        t0 = time.time()
+        rurl_flow = RURLFlow(url=url)
+        res = asyncio.run(rurl_flow.kickoff_async())
 
-def kickoff(url):
+        print("Time taken = ", time.time()-t0)
+
+        return json.dumps(res, indent=4)
+
+    def plot(self):
+        rurl_flow = RURLFlow()
+        rurl_flow.plot()
+
+def kickoff():
     t0 = time.time()
-    rurl_flow = RURLFlow(url=url)
+    rurl_flow = RURLFlow(url="https://www.straitstimes.com/singapore/immigration-is-essential-and-existential-for-singapores-survival-sm-lee")
     res = asyncio.run(rurl_flow.kickoff_async())
-
     print("Time taken = ", time.time()-t0)
 
 def plot():
     rurl_flow = RURLFlow()
     rurl_flow.plot()
-
-if __name__ == "__main__":
-    kickoff()

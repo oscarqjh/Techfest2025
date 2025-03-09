@@ -5,14 +5,17 @@
 ---
 
 <div>
-<img src="http://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-<img src="https://img.shields.io/badge/OpenAi-412991?style=flat-square&logo=OpenAi&logoColor=white" alt="OpenAi">
-<img src="https://img.shields.io/badge/Firecrawl-5E4C52?style=flat-square&logo=firecrawl&logoColor=white" alt="Firecrawl">
-<img src="https://img.shields.io/badge/OpenAi-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI">
-<img src="https://img.shields.io/badge/NeonDB-6B5B95?style=flat-square&logo=neondb&logoColor=white" alt="NeonDB">
-<img src="https://img.shields.io/badge/Tavily-1A4A8D?style=flat-square&logo=tavily&logoColor=white" alt="Tavily">
-<img src="https://img.shields.io/badge/Render-5D2F94?style=flat-square&logo=render&logoColor=white" alt="Render">
+  <img src="http://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/NeonDB-6B5B95?style=flat-square&logo=neondb&logoColor=white" alt="NeonDB">
+  <img src="https://img.shields.io/badge/Firecrawl-5E4C52?style=flat-square&logo=firecrawl&logoColor=white" alt="Firecrawl">
+  <img src="https://img.shields.io/badge/CrewAI-FF6F61?style=flat-square&logo=crewai&logoColor=white" alt="CrewAI">
+  <img src="https://img.shields.io/badge/HuggingFace-FFB000?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face">
+  <img src="https://img.shields.io/badge/Tavily-1A4A8D?style=flat-square&logo=tavily&logoColor=white" alt="Tavily">
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI">
 </div>
+
 
 
 ![Cover](./assets/cover.png)

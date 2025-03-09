@@ -1,8 +1,14 @@
 from fastapi import FastAPI
 import json
 
+from pydantic import BaseModel
 from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
-from .server.rurl_flow.src.rurl_flow.main import kickoff
+import sys
+from pathlib import Path
+
+
+class CredibilityRequest(BaseModel):
+    url: str
 
 app = FastAPI()
 
@@ -31,8 +37,9 @@ def sample_output():
     return parsed_data
 
 @app.post("/analyse_credibility")
-def analyse_credibility(data):
+def analyse_credibility(data: CredibilityRequest):
+    from rurl_flow.src.rurl_flow.main import RunFlow
     url = data.url
-    res = kickoff(url=url)
+    res = RunFlow().kickoff(url=url)
 
     return res
