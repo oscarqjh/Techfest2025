@@ -13,7 +13,7 @@ const SearchResultsTabs = ({ search_results }: SearchResultsTabsProps) => {
     <div className="w-full mx-auto">
       {/* Tabs */}
       <div className="flex border-b border-gray-300 dark:border-gray-600">
-        {search_results.map((result, index) => (
+        {search_results.map((result: any, index: any) => (
           <button
             key={index}
             className={`p-2 flex-1 text-sm font-semibold focus:outline-none transition-colors duration-200

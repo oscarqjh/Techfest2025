@@ -2,6 +2,11 @@ from .globals import client
 import json
 
 """3 different api calls are defined here:
+<<<<<<< HEAD
+    1. WebAnalyser to see which para to factcheck and get topic and entities
+    2. ImageAnalyser to check if image is fake or real
+    3. TextAnalyser to analyse if text is fake or real
+=======
     1. WebAnalyser to see which para to factcheck
     2. ImageAnalyser to check if image is fake or real
     3. TextAnalyser to analyse if text is fake or real
@@ -12,12 +17,17 @@ example output
 'is_fake': True, 'confidence_score': 0.2
 'reason': 'The image shows a surreal scene with a giant hand controlling a cityscape, which is clearly manipulated and not realistic.'}]}], 
 'text_analysis': {'evaluation': [{'is_fake': False, 'confidence_score': 0.65, 'reason': "The text presents a critical analysis of Singapore's sovereignty and its relationship with the U.S., but it shows bias against U.S. influence and lacks multiple viewpoints. It raises valid points but does not provide sufficient factual references to support all claims."}]}}
+>>>>>>> staging
 """
 
 response_format_web = {
     "type": "object",
     "properties": {
         "topic": {"type": "array", "items": {"type": "string"}},
+<<<<<<< HEAD
+        "entities": {"type": "array", "items": {"type": "string"}},
+=======
+>>>>>>> staging
         "article_body": {
             "type": "array",
             "items": {
@@ -84,6 +94,12 @@ response_format_text = {
     },
 }
 
+<<<<<<< HEAD
+functions = [
+    {
+        "name": "WebAnalyser",
+        "description": "Determine if each paragraph needs to be fact-checked and retrieve topics and entities",
+=======
 response_format_wiki = {
     "type": "object",
     "properties": {
@@ -105,6 +121,7 @@ functions = [
     {
         "name": "WebAnalyser",
         "description": "Determine if each paragraph needs to be fact-checked",
+>>>>>>> staging
         "parameters": response_format_web,
     },
     {
@@ -117,11 +134,14 @@ functions = [
         "description": "Analyse the text and return scores with explanation",
         "parameters": response_format_text,
     },
+<<<<<<< HEAD
+=======
     {
         "name": "WikiAnalyser",
         "description": "Analyse entities and return summaries",
         "parameters": response_format_wiki,
     },
+>>>>>>> staging
 ]
 
 
@@ -177,6 +197,11 @@ def prepare_message(function_name, **kwargs):
                             {{
                               "type": "object",
                               "properties": {{
+<<<<<<< HEAD
+                                "topic": ["climate change", "food security", "global impact"],
+                                "entities": ["United Nations", "World Health Organization"],
+=======
+>>>>>>> staging
                                 "article_body": [
                                   {{
                                     "id": "1",
@@ -188,8 +213,12 @@ def prepare_message(function_name, **kwargs):
                                     "content": "This is the second paragraph.",
                                     "to_fact_check": true
                                   }}
+<<<<<<< HEAD
+                                ]
+=======
                                 ],
                                 "topic": ["climate change", "food security", "global impact"]
+>>>>>>> staging
                               }},
                               "required": ["article_body", "topic"]
                             }}
@@ -213,7 +242,11 @@ def prepare_message(function_name, **kwargs):
                 "content": [
                     {
                         "type": "text",
+<<<<<<< HEAD
+                        "text": f"""
+=======
                         "text": """
+>>>>>>> staging
                         You are an AI trained to assess the authenticity of images. Your task is to evaluate the image based on the following criteria and assign a **realness score** from **0 to 1** where:
                         - **0** indicates "Fake" or "Manipulated"
                         - **1** indicates "Authentic" or "Real"
@@ -278,6 +311,10 @@ def prepare_message(function_name, **kwargs):
                                 }}
                               ]
                             }}
+<<<<<<< HEAD
+
+=======
+>>>>>>> staging
                         """,
                     },
                     {"type": "image_url", "image_url": {"url": image}},
@@ -288,6 +325,11 @@ def prepare_message(function_name, **kwargs):
     if function_name == "TextAnalyser":
         text = kwargs.get("text", "")
         title = kwargs.get("title", "")
+<<<<<<< HEAD
+        date = kwargs.get("date", "")
+        weblink = kwargs.get("weblink", "")
+=======
+>>>>>>> staging
 
         return [
             {
@@ -377,6 +419,31 @@ def prepare_message(function_name, **kwargs):
                 ],
             },
         ]
+<<<<<<< HEAD
+<<<<<<<< HEAD:server/rurl_flow/src/rurl_flow/tools/llm_client.py
+        
+def call_openai_api(data, function_name): 
+    title = data['data']['title']
+    weblink = data['data']['weblink']
+    images = data['data']['image_urls']
+    text = data['data']['content']
+    date = data['data']['date']
+    
+========
+
+
+def call_openai_api(data, function_name):
+    title = data["data"]["title"]
+    weblink = data["data"]["weblink"]
+    images = data["data"]["image_url"]
+    text = data["data"]["content"]
+    date = data["data"]["date"]
+
+>>>>>>>> staging:server/rurl/src/rurl/tools/llm_client.py
+    output = {}  # Store both image and text results
+    if function_name == "WebAnalyser":
+        model = "gpt-4o"
+=======
 
     if function_name == "WikiAnalyser":
         entity = kwargs.get("entity", "")
@@ -451,6 +518,7 @@ def call_openai_api(data, function_name):
         title = data["data"]["title"]
         text = data["data"]["content"]
         model = "gpt-4o-mini"
+>>>>>>> staging
         messages = prepare_message(
             title=title, content=text, function_name="WebAnalyser"
         )
@@ -472,8 +540,11 @@ def call_openai_api(data, function_name):
             print(f"Error occurred while calling OpenAI API for web content: {e}")
 
     if function_name == "ImageAnalyser":
+<<<<<<< HEAD
+=======
         images = data["data"]["image_urls"]
 
+>>>>>>> staging
         if images:
             image_output = []
             model = "gpt-4o-mini"
@@ -482,6 +553,10 @@ def call_openai_api(data, function_name):
                 for image in images:
                     messages = prepare_message(
                         title=title,
+<<<<<<< HEAD
+                        weblink=weblink,
+=======
+>>>>>>> staging
                         image=image,
                         text=text,
                         function_name="ImageAnalyser",
@@ -504,11 +579,14 @@ def call_openai_api(data, function_name):
 
     if function_name == "TextAnalyser":
         if text:
+<<<<<<< HEAD
+=======
             title = data["data"]["title"]
             weblink = data["data"]["weblink"]
             text = data["data"]["content"]
             date = data["data"]["date"]
 
+>>>>>>> staging
             model = "gpt-4o-mini"
 
             try:
@@ -534,6 +612,8 @@ def call_openai_api(data, function_name):
             except Exception as e:
                 print(f"Error occurred while calling OpenAI API for text: {e}")
 
+<<<<<<< HEAD
+=======
     if function_name == "WikiAnalyser":
         entity = data["data"]["entity"]
         wiki_url = data["data"]["wiki_url"]
@@ -565,6 +645,7 @@ def call_openai_api(data, function_name):
         except Exception as e:
             print(f"Error occurred while calling OpenAI API for wiki entities: {e}")
 
+>>>>>>> staging
     if output:
         return output
 

@@ -1,4 +1,8 @@
-function insertImagesIntoArticleBody(originalContent: any, articleBody: any) {
+function insertImagesIntoArticleBody(
+  originalContent: any,
+  articleBody: any,
+  imgUrls: string[]
+) {
   const imgRegex =
     /<img\s+[^>]*src=["']([^"']+)["'][^>]*alt=["']([^"']+)["'][^>]*>/g;
   let matches;
@@ -24,12 +28,23 @@ function insertImagesIntoArticleBody(originalContent: any, articleBody: any) {
         originalContent.indexOf(entry.content, currentIndex)
     ) {
       let img: any = imgData.shift();
-      updatedArticleBody.push({
-        id: `img_${i}`,
-        type: "image",
-        src: img.src,
-        alt: img.alt,
-      });
+
+      // Check if the image URL is not in the provided list of image URLs
+      if (!imgUrls.includes(img.src)) {
+        updatedArticleBody.unshift({
+          id: `img_first_${i}`,
+          type: "image",
+          src: img.src,
+          alt: img.alt,
+        });
+      } else {
+        updatedArticleBody.push({
+          id: `img_${i}`,
+          type: "image",
+          src: img.src,
+          alt: img.alt,
+        });
+      }
     }
     updatedArticleBody.push(entry);
     currentIndex =
@@ -39,13 +54,41 @@ function insertImagesIntoArticleBody(originalContent: any, articleBody: any) {
 
   // Append any remaining images
   imgData.forEach((img, i) => {
-    updatedArticleBody.push({
-      id: `img_extra_${i}`,
-      type: "image",
-      src: img.src,
-      alt: img.alt,
-    });
+    // Check if the image URL is not in the provided list of image URLs
+    if (!imgUrls.includes(img.src)) {
+      updatedArticleBody.unshift({
+        id: `img_first_extra_${i}`,
+        type: "image",
+        src: img.src,
+        alt: img.alt,
+      });
+    } else {
+      updatedArticleBody.push({
+        id: `img_extra_${i}`,
+        type: "image",
+        src: img.src,
+        alt: img.alt,
+      });
+    }
+  });
+
+  // check imgUrls, append any images that are not in the list
+  imgUrls.forEach((imgUrl, i) => {
+    if (
+      !updatedArticleBody.some(
+        (entry: any) => entry.type === "image" && entry.src === imgUrl
+      )
+    ) {
+      updatedArticleBody.unshift({
+        id: `img_extra_${i}`,
+        type: "image",
+        src: imgUrl,
+        alt: "",
+      });
+    }
   });
 
   return updatedArticleBody;
 }
+
+export { insertImagesIntoArticleBody };

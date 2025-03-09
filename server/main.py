@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import json
 
 from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
 
@@ -21,3 +22,9 @@ def test_endpoint(data: TestAPIRequest) -> TestAPIResponse:
 def validate_endpoint(data: ValidationAPIRequest):
     print(data)
     return {"message": "Validation successful!"}
+
+@app.get("/sample_output")
+def sample_output():
+    with open("./results.json", "r") as file:
+        parsed_data = json.load(file)
+    return parsed_data
