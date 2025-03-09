@@ -5,7 +5,6 @@ query_db_task:
   expected_output: >
     An output of whether the article is misinformation or not.
   agent: database_checker
-  tools: [query_credible_tool, query_blacklist_tool]
 
 misinformation_task:
   description: >
@@ -14,14 +13,12 @@ misinformation_task:
     Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.
   expected_output: >
     An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']
-  agent: misinformation_auditor
-  tools: [misinformation_tool]
+  agent: auditor
 
-blacklist_task:
-  description: >
-    Blacklist a website that contains misinformation or fake news.
-    Given a fake article, get its website domain name, author's name, article title, and date in the blacklist database.
-  expected_output: >
-    A dictionary of website domain name, author's name, article title, and date.
-  agent: blacklister
-  tools: [blacklist_tool]
+# blacklist_task:
+#   description: >
+#     Blacklist a website that contains misinformation or fake news.
+#     Given a fake article, get its website domain name, author's name, article title, and date in the blacklist database.
+#   expected_output: >
+#     A dictionary of website domain name, author's name, article title, and date.
+#   agent: blacklister
