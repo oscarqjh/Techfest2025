@@ -33,6 +33,7 @@ export async function POST(req: Request) {
 
 export async function GET() {
   try {
+    console.log("GET request");
     const response = await fetch(
       "https://techfest2025.onrender.com/sample_output",
       {

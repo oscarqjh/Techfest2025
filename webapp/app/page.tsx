@@ -52,7 +52,7 @@ export default function Home() {
 
   useEffect(() => {
     if (loading) {
-      window.scrollBy({ top: 700, behavior: "smooth" }); // Scroll down 500px
+      window.scrollBy({ top: 600, behavior: "smooth" }); // Scroll down 500px
     }
   }, [loading]);
 
