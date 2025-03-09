@@ -35,6 +35,11 @@ export default function Home() {
       });
       const data = await response.json();
       console.log(data);
+      const new_data = insertImagesIntoArticleBody(
+        data.parsed_web_results.parsed_web_results.content,
+        data.web_research_results.web_research_results
+      );
+      console.log(new_data);
       if (response.ok) {
         setResult(data);
       } else {
