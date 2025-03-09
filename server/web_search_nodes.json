@@ -1,0 +1,409 @@
+[
+    {
+        "id": "0",
+        "content": "My friend Bilahari Kausikan is a brilliant man and one of Singapore\u2019s public intellectuals. I respect his views even when they are provocative and revisionist. I would, however, like to challenge some of the views in his Opinion piece \u201cFacing up to the realities of Trump 2.0\u201d (March 3).",
+        "to_fact_check": false
+    },
+    {
+        "id": "1",
+        "content": "According to Mr Kausikan, the concept of world order began in 1989 and ended in 2008, in less than 20 years. This is incorrect.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Singapore's foreign policy is based on realism - PressReader",
+                "url": "https://www.pressreader.com/singapore/the-straits-times/20250305/282050512819897",
+                "content": "According to Mr Kausikan, the concept of world order began in 1989 and ended in 2008, in less than 20 years. This is incorrect. ... Kausikan should deny this fact when he had served, with great ability, as Singapore's permanent representa\u00adtive to the UN from 1995 to 1998.",
+                "score": 0.8098936,
+                "raw_content": null
+            },
+            {
+                "title": "Perspectives: What (and whose) Rules-Based Order? | Asialink",
+                "url": "https://asialink.unimelb.edu.au/diplomacy/article/what-whose-rules-based-order-rbo/",
+                "content": "The Rules-Based Order (RBO) can mean many things to many people. But as former diplomat Bilahari Kausikan writes its value as a diplomatic tool lies in its ambiguity. ... The LIO was uncontested only for a historically short and exceptional period between 1989-1991 when the Berlin Wall came down and the USSR imploded and circa 2008 when the",
+                "score": 0.5568099,
+                "raw_content": null
+            },
+            {
+                "title": "The Middle East in a Multipolar World - CSIS",
+                "url": "https://www.csis.org/analysis/middle-east-multipolar-world",
+                "content": "What lessons should Middle Eastern states learn from Singapore's experience navigating between the United States and China as China is coming into the Middle East in unprecedented ways. Bilahari Kausikan:\u00a0We have to get away from the binary mindset that was instilled in all of us during the 40 years or so of the Cold War. Yes, strategic competition between the United States and China is real, and it is a permanent feature of international relations. And you will eventually do so in the Gulf and the Middle East again, but it will take some time for the Middle East to get used to this new way of U.S. engagement and it will take the United States some time to get over the trauma of mishandled engagement over the last 20 years.",
+                "score": 0.21460125,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.3,
+            "explanation": "The statement is partially true; Kausikan refers to a specific period of geopolitical balance, not the full concept of world order. The phrasing is misleading, suggesting a mistake in universal opinion. The score reflects slight misinformation."
+        }
+    },
+    {
+        "id": "2",
+        "content": "When World War II ended, the victorious allies, led by the United States, wanted to create a new world order. They established several institutions, including the United Nations, which is celebrating its 80th anniversary this year.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "UNGA Adopts Resolution On 80th Anniversary Of End Of World War II",
+                "url": "https://www.bernama.com/en/world/news.php?id=2399103",
+                "content": "BERNAMA - Malaysian National News Agency KUALA LUMPUR, March 8\u00a0(Bernama) --\u00a0Prime Minister Datuk Seri Anwar Ibrahim has described International Women's Day celebration today as a tribute to the courage, sacrifices\u00a0and extraordinary role\u00a0of women in shaping a more just and prosperous society. MICROSITE\u00a0\u00a0\u00a0ASEAN 2025\u00a0\u00a0|\u00a0\u00a0FOKUS BERNAMA\u00a0\u00a0|\u00a0\u00a0THOUGHT\u00a0\u00a0|\u00a0\u00a0MAPO\u00a0\u00a0|\u00a0\u00a0MYCHECK\u00a0\u00a0|\u00a0\u00a0MCMC\u00a0\u00a0|\u00a0\u00a0fotoBERNAMA\u00a0\u00a0|\u00a0 \u2022 General \u2022 BernamaBiz \u2022 Sports \u2022 Lifestyle \u2022 Politics \u2022 World \u2022 Infographics \u2022 Videos \u2022 Archived \u2022 Ramadan 1446H \u2022 ASEAN 2025 \u2022 Fokus BERNAMA \u2022 Thoughts \u2022 MAPO \u2022 MyCheck \u2022 MCMC \u2022 Central \u2022 Northern \u2022 Southern \u2022 East \u2022 Sabah \u2022 Sarawak About BERNAMA \u2022 BERNAMA Services \u2022 Kerjaya@BERNAMA \u2022 Maklum Balas Pelanggan 2025",
+                "score": 0.35514894,
+                "raw_content": null
+            },
+            {
+                "title": "War, peace and progress: why 2025 will be a standout year of ... - RFI",
+                "url": "https://www.rfi.fr/en/international/20250108-war-peace-and-progress-why-2025-will-be-a-standout-year-of-remembrance",
+                "content": "From Nazi Germany's surrender to the historic Paris climate accord, 2025 marks a year of pivotal anniversaries that have shaped the world. As France reflects on Simone Veil's groundbreaking fight for abortion rights 50 years ago and mourns a decade since terror struck the heart of Paris, we also commemorate 80 years since the dawn of the nuclear age, 35 years since Nelson Mandela's walk to freedom, and an intrepid Moroccan scholar's transformative journey seven centuries ago. 50 years since France's abortion law passed 80 years since the end of World War II 100 years since France's first radio news 80 years since establishment of the CFA franc France marks 50 years since journey to decriminalise abortion began -------------------------------------------------------------------",
+                "score": 0.32827148,
+                "raw_content": null
+            },
+            {
+                "title": "2025 | United Nations - \u0627\u0644\u0623\u0645\u0645 \u0627\u0644\u0645\u062a\u062d\u062f\u0629",
+                "url": "https://www.un.org/en/page/2025",
+                "content": "The Holocaust and the United Nations Outreach Programme together with the Center for Jewish History, will host the screening of the documentary\u00a0UnBroken, followed by a panel discussion with the film's director, producer, and writer Beth Lane and her mother, Holocaust survivor, Ginger Lane, whose story of survival is featured in the film. The screening of Bau, Artist at War\u00a0is organized by the Holocaust and the United Nations Outreach Programme, together with the Center for Jewish History, as part of the film series\u00a0Holocaust History on Film: Anne Frank and Beyond\u00a0in connection with\u00a0Anne Frank The Exhibition. The screening of Here Lived: The Stolpersteine Story\u00a0is organized by the Holocaust and the United Nations Outreach Programme, together with the Center for Jewish History, as part of the film series\u00a0Holocaust History on Film: Anne Frank and Beyond\u00a0in connection with\u00a0Anne Frank The Exhibition.",
+                "score": 0.12255495,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.8,
+            "explanation": "The text inaccurately states that 2023 marks the 80th anniversary of the United Nations, which was founded on October 24, 1945. The correct 80th anniversary year is 2025. This significant error inflates the misinformation score."
+        }
+    },
+    {
+        "id": "3",
+        "content": "The UN Charter is the founding document of the new world order that promotes democracy, human rights and international cooperation.",
+        "to_fact_check": false
+    },
+    {
+        "id": "4",
+        "content": "The quest for world order will always be challenged by powerful and lawless states. But all states cannot do away with the UN Charter and the ideas and values embedded in it. It is therefore wrong for Mr Kausikan to say that the quest for world order will never come back. The truth is that it has never gone away.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "'Naked struggle for power and resources' leaves civilians paying ...",
+                "url": "https://www.un.org/en/time-war-nations-must-stop-global-order-crumbling-un-rights-chief",
+                "content": "3 March 2025 \u2014 As 120 conflicts rage around the world from the DR Congo to Gaza and from Sudan to Ukraine, UN human rights chief Volker T\u00fcrk on Monday urged the international community to step",
+                "score": 0.115970954,
+                "raw_content": null
+            },
+            {
+                "title": "2025 agenda: 'We must not let opportunities pass,' says UN Assembly ...",
+                "url": "https://news.un.org/en/story/2025/01/1159001",
+                "content": "![Image 2: Philemon Yang (left), President of the 79th session of the General Assembly, briefs on his priorities for 2025.](https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/14-01-2025-UN-Photo-Philemon-Yang-01.jpg/image1170x530cropped.jpg) Philemon Yang (left), President of the 79th session of the General Assembly, briefs on his priorities for 2025. The President of the UN General Assembly Phil\u00e9mon Yang presented a detailed vision of his 2025 priorities for the world body on Tuesday, calling it an opportunity for \u201ca new start.\u201d The proclamation of a second International Decade for People of African Descent was highlighted, alongside plans to advance the rights of older persons and address global prison reform on the occasion of the 10th anniversary of the Nelson Mandela Rules, \u201cto ensure humane treatment of prisoners.\u201d",
+                "score": 0.07777658,
+                "raw_content": null
+            },
+            {
+                "title": "Leaders from Global South, East Call for Revamp of West-led World Order ...",
+                "url": "https://press.un.org/en/2024/ga12639.doc.htm",
+                "content": "MULAMBO HAMAKUNI HAIMBE, Minister for Foreign Affairs and International Cooperation of Zambia, said that multilateralism is the only viable approach to solving regional and international challenges, adding:\u00a0 \u201cThe creation of the United Nations 80\u00a0years ago provided new hope.\u201d\u00a0 Like many other developing countries, Zambia is predominantly import-dependent, he noted, observing that the impact of conflicts in some parts of the world \u2014 resulting in disruptions, soaring prices and increased cost of living \u2014 did not spare it.",
+                "score": 0.053645857,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.3,
+            "explanation": "The assertion that the quest for world order has \"never gone away\" aligns with UN principles and its ongoing role. However, claiming that lawless states always challenge world order is disputable and oversimplifies global dynamics. Recent conflicts and challenges, referenced in the sources, show complexity in how order is threatened but also highlight continuing adherence to the UN Charter. Thus, the statement contains some valid aspects but glosses over nuanced realities, resulting in a low misinformation score."
+        }
+    },
+    {
+        "id": "5",
+        "content": "Mr Kausikan wrote that cooperative mechanisms like the UN and Asean are not intrinsic realities. He said they are only tools that states choose to use or not use, as their interests dictate. This is an incorrect statement.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "PDF",
+                "url": "https://asean.org/wp-content/uploads/2025/02/Overview-ASEAN-UN-Cooperation-as-of-13-February-2025.pdf",
+                "content": "9. Cooperation to promote regional and international peace and security remains a key feature of the ASEAN-UN Comprehensive Partnership, and it continues to be undertaken through various flagship programmes and initiatives such as: (i) ASEAN-IPR - UN Workshop on Advancing Youth, Peace and Security (YPS) Agenda in ASEAN held in Vientiane, Lao PDR on 7 - 8 December 2022; (ii) The series of the ASEAN-UN Regional Dialogue (AURED) workshops, with the sixth iteration focusing on Climate, Peace and Security took place at the ASEAN Headquarters/ASEAN Secretariat in November 2023; and (iii) ASEAN-UN Training Workshop on the Law of the Sea held in December 2017 and December 2023 in Indonesia, respectively.",
+                "score": 0.23863931,
+                "raw_content": null
+            },
+            {
+                "title": "ASEAN 2025 at A Glance - ASEAN Main Portal",
+                "url": "https://asean.org/asean-2025-at-a-glance/",
+                "content": "Key Elements of the ASEAN 2025. 4. ASEAN 2025 consists of specific action lines and strategic measures to realise the targets identified. 5. The key aspirations across the three pillars are: Political-Security Community. A rules-based, people-oriented, people-centred ASEAN in a region of peace, stability and prosperity; A consolidated ASEAN",
+                "score": 0.16547202,
+                "raw_content": null
+            },
+            {
+                "title": "Malaysia to host ASEAN cooperative dialogue in April 2025",
+                "url": "https://thesun.my/malaysia-news/malaysia-to-host-asean-cooperative-dialogue-in-april-2025-ewon-GH13414367",
+                "content": "Malaysia to host ASEAN cooperative dialogue in April 2025 Malaysia to host ASEAN cooperative dialogue in April 2025 - Ewon ================================================================ KUALA LUMPUR: Malaysia will host the ASEAN Cooperative Dialogue in April next year as part of its ASEAN Chairmanship 2025, said Entrepreneur Development and Cooperatives Minister Datuk Ewon Benedick. \u201cIn conjunction with the celebration of the International Year of Cooperatives, various activities and programmes will be held next year, in line with Malaysia\u2019s chairmanship of ASEAN and under the leadership of Datuk Seri Dr Abdul Fattah Abdullah, president of Angkasa and ASEAN Cooperative Organisation.\u201d He said this at a press conference after officiating the launch of the National-Level International Year of Cooperatives 2025 (IYC2025) at Angkasa Auditorium today.",
+                "score": 0.12899646,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.3,
+            "explanation": "While ASEAN and UN are pivotal structures aiding cooperation, suggesting they are purely tools overlooks their established roles and commitments in fostering regional stability, as noted in the PDF and the ASEAN portal. Yet, states do leverage such platforms as per national interests, indicating partial accuracy."
+        }
+    },
+    {
+        "id": "6",
+        "content": "As soon as Singapore became independent, it joined the United Nations. Speaking to the UN General Assembly on Sept 21, 1965, then Foreign Minister S. Rajaratnam explained that Singapore supports the UN Charter because \u201cwe realise that the well-being, the security and integrity of my country can be assured only on the basis of these principles. It is practical self-interest and not vague idealism which makes it necessary to give loyal support to these essential elements in the UN Charter\u201d.",
+        "to_fact_check": false
+    },
+    {
+        "id": "7",
+        "content": "For the past 60 years, the prime ministers and foreign ministers of Singapore have echoed the view expressed by Mr Rajaratnam in 1965. To Singapore, the UN is an \u201cintrinsic reality\u201d.",
+        "to_fact_check": false
+    },
+    {
+        "id": "8",
+        "content": "I am surprised that Mr Kausikan should deny this fact when he had served, with great ability, as Singapore\u2019s permanent representative to the UN from 1995 to 1998.",
+        "to_fact_check": false
+    },
+    {
+        "id": "9",
+        "content": "I am equally surprised by Mr Kausikan\u2019s statement that Asean has no \u201cintrinsic reality\u201d. Asean is very real and important to Singapore\u2019s national interests.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "CO03001 | Singapore and ASEAN: Reconciling National and Regional ...",
+                "url": "https://www.rsis.edu.sg/rsis-publication/rsis/555-singapore-and-asean-reconcili/",
+                "content": "CO03001 | Singapore and ASEAN: Reconciling National and Regional Security Interests - RSIS CO03001 | Singapore and ASEAN: Reconciling National and Regional Security Interests - RSIS This shows that its national policies and regional strategies were effective in enhancing regional cooperation and in strengthening ASEAN security and development as well as helping to realize the goal of an ASEAN Economic Community (AEC) by 2020 \u2014 as envisaged by Singapore PM Goh Chok Tong. This shows that its national policies and regional strategies were effective in enhancing regional cooperation and in strengthening ASEAN security and development as well as helping to realize the goal of an ASEAN Economic Community (AEC) by 2020 \u2014 as envisaged by Singapore PM Goh Chok Tong.",
+                "score": 0.5370662,
+                "raw_content": null
+            },
+            {
+                "title": "ASEAN and Singapore: A Dynamic Partnership in Southeast Asia",
+                "url": "https://aseanmediadirectory.com/asean-and-singapore/",
+                "content": "Home  / Asean / ASEAN and Singapore: A Dynamic Partnership in Southeast Asia Singapore\u2019s role within ASEAN is crucial, forging a dynamic partnership that has significantly shaped the region\u2019s economic and political landscape. Singapore\u2019s Economic Contributions to ASEAN How does Singapore contribute to ASEAN security? Challenges and Opportunities for the ASEAN-Singapore Partnership Singapore\u2019s focus on innovation and technological advancement can benefit the entire ASEAN region. Singapore\u2019s contributions to ASEAN\u2019s economic and political development are undeniable, and its continued engagement is crucial for the region\u2019s future success. What is Singapore\u2019s role in ASEAN? Singapore plays a key role in ASEAN\u2019s economic and political development, promoting trade, investment, and regional security. How does Singapore benefit from being part of ASEAN?",
+                "score": 0.4330947,
+                "raw_content": null
+            },
+            {
+                "title": "'The US remains a critical partner for Singapore and for Asean': Vivian ...",
+                "url": "https://www.straitstimes.com/singapore/politics/the-us-remains-a-critical-partner-for-singapore-and-for-asean-vivian-balakrishnan",
+                "content": "Asean says on its website that according to preliminary statistics, trade between the US and the region amounted to US$294.6 billion (S$392.3 billion) in 2019.. Dr Balakrishnan held up Asean's",
+                "score": 0.28966847,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.1,
+            "explanation": "The text reflects Singapore's recognized importance within ASEAN in the provided sources, aligning with content from sources 1 and 2, which emphasize ASEAN's key role and Singapore's contributions. However, the claim regarding Asean's intrinsic reality is subjective, leading to a minor misinformation score."
+        }
+    },
+    {
+        "id": "10",
+        "content": "Asean has helped to keep the peace in our region for many decades. It has integrated the 10 economies into a single economy and nurtured a culture of consultation and consensus.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Achieving the ASEAN 2025 Vision: A Roadmap for Regional Integration",
+                "url": "https://aseanmediadirectory.com/asean-2025-vision/",
+                "content": "ASEAN Economic Community Growth in 2025. The Economic Community pillar focuses on creating a single market and production base, characterized by free flow of goods, services, investment, and skilled labor. It prioritizes enhancing competitiveness, promoting innovation, and developing infrastructure to facilitate greater economic integration.",
+                "score": 0.85538095,
+                "raw_content": null
+            },
+            {
+                "title": "PDF",
+                "url": "https://asean.org/wp-content/uploads/images/2015/November/aec-page/ASEAN-Community-Vision-2025.pdf",
+                "content": "5. We envision a peaceful, stable and resilient Community with enhanced capacity to respond effectively to challenges, and ASEAN as an outward-looking region within a global community of nations, while maintaining ASEAN centrality. Our ASEAN Economic Community by 2025 shall be highly integrated and cohesive; competitive, innovative and dynamic; with enhanced connectivity and sectoral cooperation; and a more resilient, inclusive, and people-oriented, people-centred community, integrated with the global economy. A resilient, inclusive, people-oriented and people-centred community that engenders equitable development and inclusive growth; a community with enhanced micro, small and medium enterprise development policies and cooperation to narrow the development gaps; and a community with effective business and stakeholder engagement, sub-regional development cooperation and projects, and greater economic opportunities that support poverty eradication; and ASEAN 2025: Forging Ahead Together 16 10.5.",
+                "score": 0.81875163,
+                "raw_content": null
+            },
+            {
+                "title": "ASEAN 2025 at A Glance - ASEAN Main Portal",
+                "url": "https://asean.org/asean-2025-at-a-glance/",
+                "content": "Key Elements of the ASEAN 2025. 4. ASEAN 2025 consists of specific action lines and strategic measures to realise the targets identified. 5. The key aspirations across the three pillars are: Political-Security Community. A rules-based, people-oriented, people-centred ASEAN in a region of peace, stability and prosperity; A consolidated ASEAN",
+                "score": 0.6745014,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.3,
+            "explanation": "The claim of ASEAN integrating 10 economies into a single economy oversimplifies regional integration efforts. Sources emphasize ASEAN's plans for economic community and collaboration rather than full economic unification."
+        }
+    },
+    {
+        "id": "11",
+        "content": "Because Asean is a successful regional organisation, it has impressive convening power. Every year, the leaders of the world come to our region to attend the Asean summit and related summits. Singapore looks forward to chairing Asean in 2027.",
+        "to_fact_check": false
+    },
+    {
+        "id": "12",
+        "content": "Foreign Minister Vivian Balakrishnan has written that Asean is a key pillar of Singapore\u2019s foreign policy, and that it enlarges our political and economic space, giving us access to expanding markets and opportunities.",
+        "to_fact_check": false
+    },
+    {
+        "id": "13",
+        "content": "He added that regular interaction among Asean leaders and officials over the years has created a conducive environment for regional countries to maintain peace and stability and resolve differences peacefully despite diversity.",
+        "to_fact_check": false
+    },
+    {
+        "id": "14",
+        "content": "On Ukraine, Mr Kausikan wrote: \u201cUkraine was invaded by Russia and was unwittingly drawn into becoming a proxy in the wider competition between the US and China.\u201d",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Rubio Calls Ukraine War 'Proxy' Conflict Between U.S. and Russia",
+                "url": "https://www.themoscowtimes.com/2025/03/06/rubio-calls-ukraine-war-proxy-conflict-between-us-and-russia-a88265",
+                "content": "U.S. Secretary of State Marco Rubio said Wednesday that the United States is engaged in a \"proxy\" war with Russia in Ukraine, marking a rare public acknowledgment by a Western official",
+                "score": 0.49875546,
+                "raw_content": null
+            },
+            {
+                "title": "Kremlin says Rubio's view of Ukraine conflict as a US-Russia proxy war ...",
+                "url": "https://www.reuters.com/world/kremlin-says-rubios-view-ukraine-conflict-us-russia-proxy-war-matches-that-putin-2025-03-06/",
+                "content": "The Kremlin said on Thursday that U.S. Secretary of State Marco Rubio's view that the Ukraine conflict is a proxy war between the United States and Russia is in line with Russian President",
+                "score": 0.38727367,
+                "raw_content": null
+            },
+            {
+                "title": "Ukraine official responds to reports China may join Russia's war",
+                "url": "https://www.newsweek.com/ukraine-war-china-support-russia-2039857",
+                "content": "Ellie Cook is a Newsweek security and defense reporter based in London, U.K. Her work focuses largely on the Russia-Ukraine war, the U.S. military, weapons systems and emerging technology. She",
+                "score": 0.19924602,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.75,
+            "explanation": "The provided sources focus on the Ukraine conflict as a proxy war between the US and Russia, with no mention of China's involvement. The given text introduces China, which lacks evidence from the sources, indicating potential misinformation."
+        }
+    },
+    {
+        "id": "15",
+        "content": "I am glad he acknowledged that Ukraine was invaded by Russia. But I don\u2019t understand his statement that Ukraine has become a proxy in the competition between the US and China. Perhaps he meant between the US and Russia.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Russia Pushes Back Ukraine's Offensive With Drones and North Korean ...",
+                "url": "https://www.nytimes.com/2025/03/08/world/europe/ukraine-russia-north-korea-kursk.html",
+                "content": "March 8, 2025, 12:01 a.m. ET. ... Three years into Russia's full-scale invasion of Ukraine, Mr. Putin, who keeps tight control over all information in Russia, has paid no apparent political",
+                "score": 0.74563974,
+                "raw_content": null
+            },
+            {
+                "title": "Russia launches major aerial assault on Ukraine days after US ... - CNN",
+                "url": "https://www.cnn.com/2025/03/07/world/russia-aerial-assault-ukraine-us-pause-military-aid-intl/index.html",
+                "content": "Russia launches major aerial assault on Ukraine days after US shut off military aid | CNN Africa Americas Asia Australia China Europe India Middle East United Kingdom CNN10 About CNN Russia fired cruise and ballistic missiles at Ukraine in a major overnight attack, Volodymyr Zelensky said Friday, as the Ukrainian president renewed his plea for a partial ceasefire at the end of a week in which the United States suspended military aid and intelligence sharing with Kyiv. Russia\u2019s assault targeted several regions across Ukraine, using nearly 70 missiles and almost 200 drones, Zelensky said on X, adding that the \u201cmassive\u201d attack was \u201cdirected against infrastructure that ensures normal life.\u201d CNN10 About CNN",
+                "score": 0.5265625,
+                "raw_content": null
+            },
+            {
+                "title": "Timeline of the Russian invasion of Ukraine (1 January 2025 - present)",
+                "url": "https://en.wikipedia.org/wiki/Timeline_of_the_Russian_invasion_of_Ukraine_(1_January_2025_\u2013_present)",
+                "content": "Jump to content Toggle the table of contents View source Tools From Wikipedia, the free encyclopedia 2023\u20132024 winter campaigns Building in Kyiv after the attack A drone attack in Kyiv killed two people and injured at least six others, and also damaged the main building of the National Bank of Ukraine.[1] The Russian Defense ministry said that at 09:00 Moscow Time, Ukrainian forces started attacking from their bases in Sudzha towards the villages of Berdin and Bolshoye Soldatskoye consisting of two tanks, one counter-obstacle vehicle, and 12 armoured fighting vehicles.[14][15] Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Privacy policy",
+                "score": 0.46235222,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.3,
+            "explanation": "The statement about Ukraine being a proxy in US-China competition diverges from predominant narratives that focus on US-Russia tensions, suggesting minor misinformation. However, the primary acknowledgment of Russia invading Ukraine aligns with verified reports."
+        }
+    },
+    {
+        "id": "16",
+        "content": "Ukraine is nobody\u2019s proxy. It is engaged in an unequal but courageous defence of its independence and territorial integrity against its bigger and more powerful neighbour Russia. I respect Ukrainian President Volodymyr Zelensky.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Ukraine will struggle to strike targets inside Russia without US ...",
+                "url": "https://www.yahoo.com/news/without-us-intelligence-ukraine-struggle-192050411.html",
+                "content": "Ukrainian servicemen fire a M777 howitzer towards Russian positions at the front line near Donetsk, Ukraine, Monday, March 3, 2025. (AP Photo/Roman Chop",
+                "score": 0.5443418,
+                "raw_content": null
+            },
+            {
+                "title": "Without US intelligence, Ukraine will struggle to strike inside Russia",
+                "url": "https://www.bostonherald.com/2025/03/06/ukraine-us-intelligence/",
+                "content": "Ukraine also relies on U.S. intelligence as an early warning system to help it defend against Russian long-range missiles and drone strikes. Such intelligence in the war's early days allowed",
+                "score": 0.17685667,
+                "raw_content": null
+            },
+            {
+                "title": "Europe scrambles to rearm as Trump threatens security guarantees and ...",
+                "url": "https://www.cnn.com/2025/03/07/europe/europe-security-urkraine-defense-explainer-intl-hnk/index.html",
+                "content": "Africa Americas Asia Australia China Europe India Middle East United Kingdom CNN10 About CNN At an extraordinary meeting of the European Council in Brussels, the EU leaders agreed to plans that could free up billions of euros to ensure Europe\u2019s security, boost defense spending, and shore up support for Kyiv. The leaders said that Russia\u2019s war of aggression against Ukraine constituted an \u201cexistential challenge for the European Union,\u201d and that Europe must become \u201cmore sovereign, more responsible for its own defense and better equipped to act and deal autonomously with immediate and future challenges and threats.\u201d \u201cWe see now the White House takes steps towards the Kremlin, trying to meet them half way, so the next target of Russia could be Europe,\u201d Kyiv\u2019s ambassador to the United Kingdom Valerii Zaluzhnyi said Thursday. CNN10 About CNN",
+                "score": 0.103178136,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.2,
+            "explanation": "The given text is largely factual, as Ukraine's struggle for independence and President Zelensky's role are accurate. However, the implication that Ukraine operates independently may downplay the significant role of US intelligence, as discussed in the sources."
+        }
+    },
+    {
+        "id": "17",
+        "content": "Singapore is right to support Ukraine and to condemn Russia. Mr Kausikan implied that Singapore\u2019s action is based on its national interest and not on principle. He is not correct. Let me remind him of Singapore\u2019s record.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "Why Singapore had to take a strong stand against Russia's attack on Ukraine",
+                "url": "https://www.straitstimes.com/singapore/why-singapore-had-to-take-a-strong-stand-against-russias-attack-on-ukraine",
+                "content": "Why Singapore had to take a strong stand against Russia's attack on Ukraine | The Straits Times Why Singapore had to take a strong stand against Russia's attack on Ukraine Over nine in 10 of those polled in Singapore supported or sympathised most closely with Ukraine in the conflict.PHOTO: AFP A recent survey by research group Blackbox found that over nine in 10 of those polled in Singapore supported or sympathised most closely with Ukraine in the conflict. Clearing the fog of war over what's at stake in Putin's attack on UkraineSingaporeans support Ukraine and back government sanctions on Russia: Poll Singapore strongly condemns Russia's invasion of Ukraine: PM LeeUkraine war: The global geopolitical consequences",
+                "score": 0.7316155,
+                "raw_content": null
+            },
+            {
+                "title": "4 lessons Ukraine crisis holds for Singapore and why it ... - TODAY",
+                "url": "https://www.todayonline.com/commentary/4-lessons-ukraine-crisis-holds-singapore-and-why-it-strongly-condemns-russias-unprovoked-attack-1830451",
+                "content": "4 lessons Ukraine crisis holds for Singapore and why it strongly condemns Russia\u2019s unprovoked attack - TODAY 4 lessons Ukraine crisis holds for Singapore and why it strongly condemns Russia\u2019s unprovoked attack 4 lessons Ukraine crisis holds for Singapore and why it strongly condemns Russia\u2019s unprovoked attack WHY SINGAPORE CONDEMNS RUSSIA\u2019S ATTACK ON UKRAINE This is why Singapore has strongly condemned Russia\u2019s unprovoked attack on Ukraine. However, given the unprecedented gravity of the Russian attack on Ukraine, and the unsurprising veto by Russia of a draft Security Council resolution, Singapore intends to act in concert with many other like-minded countries to impose appropriate sanctions and restrictions against Russia.",
+                "score": 0.6469293,
+                "raw_content": null
+            },
+            {
+                "title": "How Did Asian Countries Vote in the 2025 UN Resolution Condemning ...",
+                "url": "https://thediplomat.com/2025/02/how-did-asian-countries-vote-in-the-2025-un-resolution-condemning-russias-ukraine-invasion/",
+                "content": "Northeast Asia saw the exact same voting patterns replicated, with U.S. allies Japan and South Korea supporting Ukraine, North Korea supporting Russia, and China and Mongolia abstaining. Despite the United States\u2019 change in position, very few of its allies in the Asia-Pacific followed suit, and some close partners of China\u2019s \u2013 not only the Solomon Islands but also Cambodia \u2013 voted yes despite Beijing\u2019s preference for shielding Russia from criticism. Despite the United States\u2019 change in position, very few of its allies in the Asia-Pacific followed suit, and some close partners of China\u2019s \u2013 not only the Solomon Islands but also Cambodia \u2013 voted yes despite Beijing\u2019s preference for shielding Russia from criticism.",
+                "score": 0.4429021,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.2,
+            "explanation": "The given text is mostly consistent with the sources, emphasizing Singapore's support for Ukraine based on principle. However, the claim about Mr. Kausikan's opinion requires more verification, leading to a low misinformation score."
+        }
+    },
+    {
+        "id": "18",
+        "content": "In 1978, Singapore condemned Vietnam\u2019s invasion and occupation of Cambodia. In 1979, Singapore condemned the Soviet Union\u2019s invasion and occupation of Afghanistan. In 1983, Singapore condemned the United States for invading Grenada.",
+        "to_fact_check": true,
+        "search_results": [
+            {
+                "title": "What was Singapore's position exactly in respect of the Vietnamese ...",
+                "url": "https://blackdotresearch.sg/factcheck-what-was-singapores-position-exactly-in-respect-of-the-vietnamese-occupation-of-cambodia-from-1979-to-1989/",
+                "content": "In giving his condolences, PM Lee mentioned the former Thai PM\u2019s contribution towards ASEAN\u2019s condemnation of Vietnam\u2019s invasion of Cambodia and the Cambodian government which replaced the Pol Pot regime in end-1978. Singapore was the host of a tripartite meeting that led to the formation of the Coalition government of Democratic Kampuchea, which prolonged the Cambodia-Vietnam war and the suffering of Cambodian people for 10 years thereafter. And also, the fact that Singapore had a major hand in encouraging ASEAN and different quarters of Cambodia to form the coalition government in 1982 (which Vietnam vehemently rejected). First, while Singapore rejected the Vietnamese puppet government in Cambodia, it did not want the same Democratic Kampuchea government\u00a0 -Singapore had to prevent the Khmer Rouge from regaining ground once the Vietnamese withdrew.",
+                "score": 0.46322632,
+                "raw_content": null
+            },
+            {
+                "title": "Singapore, ASEAN and the Cambodian conflict 1978-1991",
+                "url": "https://www.researchgate.net/publication/314359351_Singapore_ASEAN_and_the_Cambodian_conflict_1978-1991",
+                "content": "Singapore, ASEAN, the PRC, and the United States even found common ground in opposing the Soviet-supported Vietnamese Communist government's invasion and occupation of Cambodia from 1979 to 1989",
+                "score": 0.39096457,
+                "raw_content": null
+            },
+            {
+                "title": "Singapore, ASEAN and the Cambodia Conflict, 1979-1991 - RSIS",
+                "url": "https://www.rsis.edu.sg/staff-publication/16-singapore-asean-and-the-cambo-4/",
+                "content": "The book describes Singapore's role and illustrate how Singapore's management of the Cambodian issue was shaped by the fundamentals of Singapore's foreign policy. The account also reveals the dynamics of intra-ASEAN relations, as well as ASEAN's foreign relations in the context of the Cambodia problem.",
+                "score": 0.18382828,
+                "raw_content": null
+            }
+        ],
+        "fact_check": {
+            "misinformation_score": 0.2,
+            "explanation": "The sources confirm Singapore's opposition to the Vietnamese invasion of Cambodia. However, there's no corroboration for Singapore's condemnation of the Soviet Union or the US invasions, introducing possible misinformation."
+        }
+    },
+    {
+        "id": "19",
+        "content": "Why condemn the United States when it is very important to our national interests? Singapore\u2019s foreign policy is based on realism \u2013 we had to do it to protect the UN Charter which protects Singapore.",
+        "to_fact_check": false
+    },
+    {
+        "id": "20",
+        "content": "Singapore would not survive if this were to become a lawless world in which might is right. As Mr Rajaratnam said in his 1965 statement, Singapore\u2019s defence of the UN Charter is not based on some vague idealism but based upon practical self-interest.",
+        "to_fact_check": false
+    },
+    {
+        "id": "21",
+        "content": "**Tommy Koh**",
+        "to_fact_check": false
+    }
+]

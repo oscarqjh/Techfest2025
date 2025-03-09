@@ -1,13 +1,16 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
+from .....tools.web_parsing_tool import WebParsingTool
+from .....tools.web_analyser_tool import WebAnalyserTool
+
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 @CrewBase
-class Rurl():
-	"""Rurl crew"""
+class Analysts():
+	"""Analysts crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -17,6 +20,10 @@ class Rurl():
 
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
+	# Create tools
+	web_parsing_tool = WebParsingTool()
+	web_analyser_tool = WebAnalyserTool()
+
 	@agent
 	def web_parser(self) -> Agent:
 		return Agent(
@@ -25,45 +32,19 @@ class Rurl():
 		)
 
 	@agent
-	def image_forgery_expert(self) -> Agent:
+	def web_analyser(self) -> Agent:
 		return Agent(
-			config=self.agents_config['image_forgery_expert'],
+			config=self.agents_config['web_analyser'],
 			verbose=True
 		)
 
 	@agent
-	def news_analyst(self) -> Agent:
+	def text_analyser(self) -> Agent:
 		return Agent(
-			config=self.agents_config['news_analyst'],
+			config=self.agents_config['text_analyser'],
 			verbose=True
 		)
 
-	@agent
-	def web_researcher(self) -> Agent:
-		return Agent(
-			config=self.agents_config['web_researcher'],
-			verbose=True
-		)
-
-	@agent
-	def misinformation_expert(self) -> Agent:
-		return Agent(
-			config=self.agents_config['misinformation_expert'],
-			verbose=True,
-			# llm = LLM(
-			# 	model="openai/gpt-4o-mini",
-			# 	temperature=0.2,
-			# 	# response_format=MisinformationToolOutput # Uncomment after importing all tool output classes
-        	# )
-		)
-	
-	@agent
-	def blacklister(self) -> Agent:
-		return Agent(
-			config=self.agents_config['blacklister'],
-			verbose=True
-		)
-	
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
@@ -74,38 +55,22 @@ class Rurl():
 		)
 
 	@task
-	def image_forgery_task(self) -> Task:
+	def web_analyser_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['image_forgery_task'],
+			config=self.tasks_config['web_analyser_task'],
 		)
 	
-	@task
-	def news_analysis_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['news_analysis_task'],
-		)
-	
-	@task
-	def web_research_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['web_research_task'],
-		)
-	
-	@task
-	def misinformation_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['misinformation_task'],
-		)
 
-	@task
-	def blacklist_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['blacklist_task'],
-		)
+	# Add in config if done
+	# @task
+	# def text_analyser_task(self) -> Task:
+	# 	return Task(
+	# 		config=self.tasks_config['text_analyser_task'],
+	# 	)
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the Rurl crew"""
+		"""Creates the Analysts crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
