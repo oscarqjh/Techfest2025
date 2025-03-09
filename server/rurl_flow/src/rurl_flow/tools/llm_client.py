@@ -87,17 +87,15 @@ response_format_text = {
 response_format_wiki = {
     "type": "object",
     "properties": {
-        "results": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "wiki_url": {"type": "string"},
-                    "summary": {"type": "string"},
-                },
-                "required": ["wiki_url", "summary"],
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "wiki_url": {"type": "string"},
+                "summary": {"type": "string"},
             },
-        }
+            "required": ["wiki_url", "summary"],
+        },
     },
 }
 
@@ -482,7 +480,6 @@ def call_openai_api(data, function_name):
                 for image in images:
                     messages = prepare_message(
                         title=title,
-                        weblink=weblink,
                         image=image,
                         text=text,
                         function_name="ImageAnalyser",
@@ -542,7 +539,6 @@ def call_openai_api(data, function_name):
         infobox = data["data"]["infobox"]
 
         model = "gpt-4o-mini"
-        wiki_output = []
 
         try:
             # for entity in entities:
