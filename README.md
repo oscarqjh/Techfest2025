@@ -1,6 +1,6 @@
 # Tech Fest 2025 - Team 45
 
-# Are U ReaL? <br/> _"Is this website telling you the truth?"_ <br/>
+# Are U ReaL? <br/> _"Scan URLs to Uncover the Authenticity Behind Websites!"_ <br/>
 
 ---
 
@@ -18,7 +18,8 @@
 
 
 
-![Cover](./assets/cover.png)
+![Cover](./Homepage.png)
+![Cover](./AnalysisPage.png)
 
 ### Team Members of BluTech:
 
