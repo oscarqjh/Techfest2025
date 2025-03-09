@@ -25,5 +25,6 @@ def validate_endpoint(data: ValidationAPIRequest):
 
 @app.get("/sample_output")
 def sample_output():
-    parsed_data = json.loads("./results.json")
+    with open("./results.json", "r") as file:
+        parsed_data = json.load(file)
     return parsed_data
