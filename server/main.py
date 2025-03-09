@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import json
 
 from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
+from .server.rurl_flow.src.rurl_flow.main import kickoff
 
 app = FastAPI()
 
@@ -28,3 +29,10 @@ def sample_output():
     with open("./results.json", "r") as file:
         parsed_data = json.load(file)
     return parsed_data
+
+@app.post("/analyse_credibility")
+def analyse_credibility(data):
+    url = data.url
+    res = kickoff(url=url)
+
+    return res

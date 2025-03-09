@@ -1,16 +1,13 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 
-from .tools.internal_audit_tool import InternalAuditTool
-from .tools.query_db_tool import QueryBlacklistTool, QueryCredibleTool
-
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 @CrewBase
-class Validators():
-	"""Validators crew"""
+class Insights():
+	"""Insights crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -20,56 +17,29 @@ class Validators():
 
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
-	# Create tool
-	query_blacklist_tool = QueryBlacklistTool()
-	query_credible_tool = QueryCredibleTool()
-	internal_audit_tool = InternalAuditTool()
-
 	@agent
-	def database_checker(self) -> Agent:
+	def insights(self) -> Agent:
 		return Agent(
-			config=self.agents_config['database_checker'],
-			tools=[self.query_blacklist_tool, self.query_credible_tool],
-			verbose=True
-		)
-
-	@agent
-	def auditor(self) -> Agent:
-		return Agent(
-			config=self.agents_config['auditor'],
-			tools=[self.internal_audit_tool],
+			config=self.agents_config['insights'],
 			llm = LLM(
-				model="gpt-4o-mini",
-				temperature=0.2,        # Higher for more creative outputs
+				model="gpt-4o",
+				temperature=0.5,        # Higher for more creative outputs
 			),
 			verbose=True
 		)
-
-	# @agent
-	# def blacklister(self) -> Agent:
-	# 	return Agent(
-	# 		config=self.agents_config['blacklister'],
-	# 		verbose=True
-	# 	)
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def query_db_task(self) -> Task:
+	def give_insights(self) -> Task:
 		return Task(
-			config=self.tasks_config['query_db_task']
-		)
-
-	@task
-	def misinformation_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['misinformation_task']
+			config=self.tasks_config['give_insights'],
 		)
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the Validators crew"""
+		"""Creates the Insights crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
