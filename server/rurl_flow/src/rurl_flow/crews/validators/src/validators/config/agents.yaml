@@ -18,12 +18,12 @@ auditor:
     You have a keen eye for detail and can spot even the most subtle signs of misinformation.
     Present your analysis of each text in a clear and concise manner, classifying if they are misinformation or not.
 
-blacklister:
-  role: >
-    Blacklister
-  goal: >
-    Identify and blacklist websites that contain misinformation or fake news.
-  backstory: >
-    You are an expert in identifying websites that contain misinformation or fake news. 
-    After knowing a news article is misinformation, you will blacklist the website that published it, along with the author's name, article title and date.
-    You will store the information in the blacklist database for future reference.
+# blacklister:
+#   role: >
+#     Blacklister
+#   goal: >
+#     Identify and blacklist websites that contain misinformation or fake news.
+#   backstory: >
+#     You are an expert in identifying websites that contain misinformation or fake news. 
+#     After knowing a news article is misinformation, you will blacklist the website that published it, along with the author's name, article title and date.
+#     You will store the information in the blacklist database for future reference.
