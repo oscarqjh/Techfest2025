@@ -19,7 +19,7 @@
 
 
 <p align="center">
-  <img src="./Homepage.png" alt="Homepage" width="55%">
+  <img src="./Homepage.png" alt="Homepage" width="40%">
   <img src="./AnalysisPage.png" alt="Analysis Page" width="45%">
 </p>
 
