@@ -25,7 +25,7 @@ export default function Home() {
     setLoading(true);
     console.log(url);
     try {
-      const response = await fetch("/api/ask", {
+      const response = await fetch("/api/validate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,12 +41,7 @@ export default function Home() {
     } catch (error) {
       setError("An error occurred, please try again later.");
     } finally {
-      // setLoading(false);
-      setTimeout(() => {
-        setError("");
-        setResult("");
-        setLoading(false);
-      }, 5000);
+      setLoading(false);
     }
   };
 
