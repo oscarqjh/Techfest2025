@@ -18,8 +18,11 @@
 
 
 
-![Cover](./Homepage.png)
-![Cover](./AnalysisPage.png)
+<p align="center">
+  <img src="./Homepage.png" alt="Homepage" width="45%">
+  <img src="./AnalysisPage.png" alt="Analysis Page" width="45%">
+</p>
+
 
 ### Team Members of BluTech:
 
