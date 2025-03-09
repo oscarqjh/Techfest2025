@@ -1,6 +1,6 @@
 # Tech Fest 2025 - Team 45
 
-# Are U ReaL? <br/> _"Scan URLs to Uncover the Authenticity Behind Websites!"_ <br/>
+# Are U ReaL? <br/> _"Smart Fact-Checking Made Simple.Verify Truth in One Click."_ <br/>
 
 ---
 
