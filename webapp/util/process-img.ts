@@ -1,3 +1,5 @@
+import { skip } from "node:test";
+
 function insertImagesIntoArticleBody(
   originalContent: any,
   articleBody: any,
@@ -87,6 +89,43 @@ function insertImagesIntoArticleBody(
       });
     }
   });
+
+  let firstSkipped = false;
+
+  // Merge consecutive objects where `to_fact_check` is false
+  for (let i = 0; i < updatedArticleBody.length - 1; i++) {
+    const currentEntry = updatedArticleBody[i];
+    const nextEntry = updatedArticleBody[i + 1];
+
+    //skip the first non image entry and to_fact_check is false
+    if (
+      currentEntry.type !== "image" &&
+      currentEntry.to_fact_check === false &&
+      !firstSkipped
+    ) {
+      firstSkipped = true;
+      continue;
+    }
+
+    // Check if both entries have `to_fact_check: false` and are consecutive
+    if (
+      currentEntry.to_fact_check === false &&
+      nextEntry.to_fact_check === false &&
+      currentEntry.type === nextEntry.type
+    ) {
+      // Merge their contents (you can decide how to merge them, for now we just combine alt text and add the second entry's id)
+      updatedArticleBody[i] = {
+        ...currentEntry,
+        content: `${currentEntry.content} ${nextEntry.content}`, // example of merging alt text
+      };
+
+      // Remove the next entry
+      updatedArticleBody.splice(i + 1, 1);
+
+      // Decrement the index to recheck the merged item
+      i--;
+    }
+  }
 
   return updatedArticleBody;
 }
