@@ -6,15 +6,6 @@ export async function POST(req: Request) {
 
     console.log(body);
 
-<<<<<<< HEAD
-    const response = await fetch("http://127.0.0.1:8000/api/v1/validate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-=======
     const response = await fetch(
       "https://techfest2025.onrender.com/sample_output",
       {
@@ -52,7 +43,6 @@ export async function GET() {
         },
       }
     );
->>>>>>> staging
 
     const data = await response.json();
 

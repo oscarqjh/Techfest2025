@@ -6,6 +6,7 @@ import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-van
 import ResultSkeleton from "./components/result-skeleton";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import ResultSection from "./components/result-section";
+import { insertImagesIntoArticleBody } from "@/util/process-img";
 
 const placeholders = [
   "Enter your URL here",
@@ -35,11 +36,17 @@ export default function Home() {
       });
       const data = await response.json();
       console.log(data);
-      const new_data = insertImagesIntoArticleBody(
+
+      // insert images into article body
+      const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
-        data.web_research_results.web_research_results
+        data.web_research_results.web_research_results,
+        data.parsed_web_results.parsed_web_results.image_urls
       );
-      console.log(new_data);
+
+      // update the web_research_results
+      data.web_research_results.web_research_results = new_web_research_results;
+
       if (response.ok) {
         setResult(data);
       } else {
@@ -53,6 +60,18 @@ export default function Home() {
         setLoading(false);
       }, 3000);
     }
+  };
+
+  const testclick = async () => {
+    console.log(result);
+
+    // const new_data = insertImagesIntoArticleBody(
+    //   result.parsed_web_results.parsed_web_results.content,
+    //   result.web_research_results.web_research_results,
+    //   result.parsed_web_results.parsed_web_results.image_urls
+    // );
+
+    // console.log(new_data);
   };
 
   useEffect(() => {
@@ -109,6 +128,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* <button className="h-10 w-10 text-white" onClick={testclick}>
+        test
+      </button> */}
 
       {/** Result skeleton*/}
       {loading && <ResultSkeleton />}

@@ -4,14 +4,11 @@ from pydantic import BaseModel, Field
 from crewai import LLM
 from dotenv import load_dotenv
 
-<<<<<<< HEAD
 from PIL import Image # Module for image processing - Iain
 from transformers import pipeline # Module for running models - Iain
 import requests
 from io import BytesIO
 
-=======
->>>>>>> staging
 _ = load_dotenv()
 
 class DetectForgeryToolInput(BaseModel):

@@ -23,23 +23,33 @@ const ResultSection = forwardRef<HTMLDivElement, ResultSectionProps>(
         />
 
         {data.web_research_results.web_research_results.map((item: any) => (
-          <div
-            key={item.id}
-            className="flex flex-col w-[72%] h-fit p-5  shadow-lg"
-          >
-            {item.to_fact_check ? (
-              <LinkPreview
-                url=""
-                search_result={item.search_results}
-                fact_check={item.fact_check}
-                className="text-yellow-300 text-justify hover:cursor-pointer hover:text-yellow-500 transition-all"
-              >
-                {item.content}
-              </LinkPreview>
+          <>
+            {item.type === "image" ? (
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-[30%] h-auto place-items-center"
+              />
             ) : (
-              <p className="text-zinc-300 text-justify">{item.content}</p>
+              <div
+                key={item.id}
+                className="flex flex-col w-[72%] h-fit p-5  shadow-lg"
+              >
+                {item.to_fact_check ? (
+                  <LinkPreview
+                    url=""
+                    search_result={item.search_results}
+                    fact_check={item.fact_check}
+                    className="text-yellow-300 text-justify hover:cursor-pointer hover:text-yellow-500 transition-all"
+                  >
+                    {item.content}
+                  </LinkPreview>
+                ) : (
+                  <p className="text-zinc-300 text-justify">{item.content}</p>
+                )}
+              </div>
             )}
-          </div>
+          </>
         ))}
       </div>
     );
