@@ -21,8 +21,6 @@ class InternalAuditToolOutput(BaseModel):
 class InternalAuditTool(BaseTool):
     name: str = "Internal Audit Tool"
     description: str = "This tool compares the website domain and author name of an article with the internal database of blacklisted unreliable sources and credible sources."
-    
-    # Update with fields returned from the web_parser tool
     args_schema: Type[BaseModel] = InternalAuditToolInput
 
     def _run(self, domain: str, blacklisted_sources: list[str], credible_sources: list[str]) -> str:
@@ -43,8 +41,3 @@ class InternalAuditTool(BaseTool):
             return 'likely_credible'
         else:
             return 'unreliable'
-
-if __name__ == "__main__":
-    tool = InternalAuditTool()
-    data = InternalAuditToolInput(domain="straitstimes.com", blacklisted_sources=["fake.com"], credible_sources=["straitstimes.com"])
-    print(tool.run(data))

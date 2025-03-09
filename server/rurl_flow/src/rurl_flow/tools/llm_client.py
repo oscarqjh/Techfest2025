@@ -87,15 +87,17 @@ response_format_text = {
 response_format_wiki = {
     "type": "object",
     "properties": {
-        "type": "array",
-        "items": {
-            "type": "object",
-            "properties": {
-                "wiki_url": {"type": "string"},
-                "summary": {"type": "string"},
+        "evaluation": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "wiki_url": {"type": "string"},
+                    "summary": {"type": "string"},
+                },
+                "required": ["wiki_url", "summary"],
             },
-            "required": ["wiki_url", "summary"],
-        },
+        }
     },
 }
 
@@ -448,7 +450,7 @@ def call_openai_api(data, function_name):
     if function_name == "WebAnalyser":
         title = data["data"]["title"]
         text = data["data"]["content"]
-        model = "gpt-4o-mini"
+        model = "gpt-4o"
         messages = prepare_message(
             title=title, content=text, function_name="WebAnalyser"
         )
@@ -507,7 +509,7 @@ def call_openai_api(data, function_name):
             text = data["data"]["content"]
             date = data["data"]["date"]
 
-            model = "gpt-4o-mini"
+            model = "gpt-4o"
 
             try:
                 messages = prepare_message(
@@ -538,7 +540,7 @@ def call_openai_api(data, function_name):
         summary = data["data"]["summary"]
         infobox = data["data"]["infobox"]
 
-        model = "gpt-4o-mini"
+        model = "gpt-4o"
 
         try:
             # for entity in entities:

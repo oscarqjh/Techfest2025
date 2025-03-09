@@ -4,4 +4,4 @@ image_forgery_task:
   expected_output: >
     A classification of the image and a confidence score of the prediction.
   agent: image_forgery_expert
-  async_execution: true
+  # async_execution: true

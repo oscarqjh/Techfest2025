@@ -48,7 +48,7 @@ class WebParsingTool(BaseTool):
         data = self.app.extract(
             [url],
             {
-                "prompt": "Extract the domain, date of publish, content from the URL (paragraphs may be separated, concat them together) and the images related to the content if available",
+                "prompt": "Extract the domain, date of publish from the URL (paragraphs may be separated, concat them together) and the images related to the content if available.Additionally, extract content from the URL, leaving the image links in the content, wrapping them in HTML image tags with valid links.",
                 "schema": ExtractSchema.model_json_schema(),
             },
         )

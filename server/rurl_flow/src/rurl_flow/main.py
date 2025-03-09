@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from crewai.flow import Flow, listen, start, and_
 
 from .crews.analysts.src.analysts.analysts import Analysts
-from .crews.image_forensics.src.image_forensics.image_forensics import ImageForensics
+from .crews.forensics.src.forensics.forensics import ImageForensics
 from .crews.researchers.src.researchers.researchers import Researchers
 from .crews.validators.src.validators.validators import Validators
 
@@ -48,9 +48,8 @@ class RURLFlow(Flow[RURLState]):
         # Update states
         self.state.title = result.get("title","")
         self.state.content = result.get("content","")
-        self.state.image_urls = result.get("image_links",[])
+        self.state.image_urls = result.get("image_urls",[])
         self.state.date = result.get("date","")
-
         self.state.parsed_web_results = {"parsed_web_results":result} # Save results into state
         print("PARSE WEB: ",result)
         return result
@@ -78,28 +77,35 @@ class RURLFlow(Flow[RURLState]):
         print("ANALYSE: ",result)
         return result
 
-    # Analysts crew
-    @listen(parse_web)
-    def analyse_image_and_text(self):
-        print("Analysing the image and text")
-        result = (
-            Analysts()
-            .crew()
-            .kickoff(inputs={"url": self.url})
-        )
-        self.state.analysed_image_text_results = {"analysed_image_text_results":result.model_dump()} # Save results into state
-        print("ANALYSTS: ",result)
+    # # Analysts crew
+    # @listen(parse_web)
+    # def analyse_image_and_text(self):
+    #     print("Analysing the image and text")
+    #     result = (
+    #         Analysts()
+    #         .crew()
+    #         .kickoff(inputs={"url": self.url})
+    #     )
+    #     self.state.analysed_image_text_results = {"analysed_image_text_results":result.model_dump()} # Save results into state
+    #     print("ANALYSTS: ",result)
     
     # Image Forensics crew
     @listen(parse_web)
     async def detect_forgery(self):
         print("Analysing image for forgery or deepfakes")
-        result = await (
+        print(self.state.image_urls)
+        image_dicts = []
+        for image_url in self.state.image_urls:
+            image_dicts.append({"image_url": image_url})
+        async_results = await (
             ImageForensics()
             .crew()
-            .kickoff_async(inputs={"image_links": self.state.image_urls})
+            .kickoff_for_each_async(inputs=image_dicts)
         )
-        self.state.forgery_results = {"forgery_results":result.model_dump()} # Save results into state
+        result = []
+        for async_result in async_results:
+            result.append(async_result.model_dump())
+        self.state.forgery_results = {"forgery_results":result} # Save results into state
         print("FORGERY: ",result)
 
     # Validator crew
@@ -126,7 +132,7 @@ class RURLFlow(Flow[RURLState]):
         self.state.web_research_results = {"web_research_results":result} # Save results into state
         print("RESEARCH: ",result)
 
-    @listen(and_(analyse_image_and_text, detect_forgery, internal_validation, web_research))
+    @listen(and_(detect_forgery, internal_validation, web_research))
     def generate_insights(self):
         print("Generating insights on the credibility of the article")
         self.state.insights = {}
@@ -154,7 +160,7 @@ class RURLFlow(Flow[RURLState]):
 
 def kickoff():
     t0 = time.time()
-    rurl_flow = RURLFlow(url="https://www.straitstimes.com/opinion/forum/forum-singapores-foreign-policy-based-on-realism")
+    rurl_flow = RURLFlow(url="https://www.straitstimes.com/singapore/immigration-is-essential-and-existential-for-singapores-survival-sm-lee")
     res = asyncio.run(rurl_flow.kickoff_async())
 
     print("Time taken = ", time.time()-t0)

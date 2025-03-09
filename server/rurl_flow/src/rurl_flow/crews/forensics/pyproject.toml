@@ -1,7 +1,7 @@
 [project]
-name = "image_forensics"
+name = "forensics"
 version = "0.1.0"
-description = "image_forensics using crewAI"
+description = "forensics using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
@@ -9,11 +9,11 @@ dependencies = [
 ]
 
 [project.scripts]
-image_forensics = "image_forensics.main:run"
-run_crew = "image_forensics.main:run"
-train = "image_forensics.main:train"
-replay = "image_forensics.main:replay"
-test = "image_forensics.main:test"
+forensics = "forensics.main:run"
+run_crew = "forensics.main:run"
+train = "forensics.main:train"
+replay = "forensics.main:replay"
+test = "forensics.main:test"
 
 [build-system]
 requires = ["hatchling"]

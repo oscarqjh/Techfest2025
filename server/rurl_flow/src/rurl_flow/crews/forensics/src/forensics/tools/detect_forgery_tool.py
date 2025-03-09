@@ -13,7 +13,7 @@ _ = load_dotenv()
 
 class DetectForgeryToolInput(BaseModel):
     """Input schema for AnalyseNewsTool."""
-    image_links: list[str] = Field(..., description="List of image paths to be analysed.")
+    image_url: str = Field(..., description="Path of Image to be analysed.")
     # Update with fields returned from the web_parser tool
 
 class DetectForgeryToolOutput(BaseModel):
@@ -35,31 +35,24 @@ class DetectForgeryTool(BaseTool):
     def __init__(self, detection_model: str = "umm-maybe/AI-image-detector"):
         """Initializes the tool with the forgery detection model."""
         super().__init__()
-        self.model =pipeline("image-classification", detection_model) # Model - Iain
+        self.model=pipeline("image-classification", detection_model) # Model - Iain
 
-    def _run(self, image_links: list[str]) -> dict: 
-        results = []
-        for img_url in image_links:
-            try:
-                response = requests.get(img_url, timeout=10)  # Fetch image from URL
-                response.raise_for_status()  # Raise error for bad response
-                image = Image.open(BytesIO(response.content)).convert("RGB")  # Open image from memory
-                
-                # Run the model
-                outputs = self.model(image)
-                best_result = max(outputs, key=lambda x: x['score'])
-                classification = best_result['label']
-                confidence = best_result['score']
-                
-                results.append({"classification": classification, "confidence": confidence})
-            except requests.exceptions.RequestException as e:
-                results.append({"error": f"Failed to fetch image '{img_url}': {str(e)}"})
-            except Exception as e:
-                results.append({"error": str(e)})
+    def _run(self, image_url: str) -> dict: 
+        try:
+            response = requests.get(image_url, timeout=10)  # Fetch image from URL
+            response.raise_for_status()  # Raise error for bad response
+            image = Image.open(BytesIO(response.content)).convert("RGB")  # Open image from memory
+            
+            # Run the model
+            outputs = self.model(image)
+            best_result = max(outputs, key=lambda x: x['score'])
+            classification = best_result['label']
+            confidence = best_result['score']
+            
+            results = {"classification": classification, "confidence": confidence}
+        except requests.exceptions.RequestException as e:
+            results = {"error": f"Failed to fetch image '{image_url}': {str(e)}"}
+        except Exception as e:
+            results = {"error": str(e)}
 
         return results
-
-if __name__ == "__main__":
-    tool = DetectForgeryTool("umm-maybe/AI-image-detector")
-    data = DetectForgeryToolInput(image_links=[])
-    print(tool.run(image_links=data.image_links))

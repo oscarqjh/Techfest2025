@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from rurl.crew import Rurl
+from forensics.crew import Forensics
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -23,7 +23,7 @@ def run():
     }
     
     try:
-        Rurl().crew().kickoff(inputs=inputs)
+        Forensics().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -36,7 +36,7 @@ def train():
         "topic": "AI LLMs"
     }
     try:
-        Rurl().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        Forensics().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -46,7 +46,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Rurl().crew().replay(task_id=sys.argv[1])
+        Forensics().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -59,7 +59,7 @@ def test():
         "topic": "AI LLMs"
     }
     try:
-        Rurl().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        Forensics().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
