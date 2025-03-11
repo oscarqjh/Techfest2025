@@ -19,6 +19,7 @@ import { WrenchIcon } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const placeholders = [
   "Enter your URL here",
@@ -27,13 +28,65 @@ const placeholders = [
   "https://www.todayonline.com/",
 ];
 
-export default function Home() {
+const Home = () => {
   const [url, setUrl] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
   const [result, setResult] = React.useState("");
   const resultSectionRef = useRef<HTMLDivElement | null>(null);
   const [demoMode, setDemoMode] = React.useState(false);
+  const searchParams = useSearchParams();
+  const initialised = useRef(false);
+
+  useEffect(() => {
+    if (initialised.current) {
+      if (searchParams?.get("redirected") === "true") {
+        handleRedirect();
+      }
+      return;
+    }
+
+    initialised.current = true;
+  }, [searchParams]);
+
+  const handleRedirect = async () => {
+    setLoading(true);
+    try {
+      let response = await fetch("api/redirected", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await response.json();
+      console.log(data);
+      data = JSON.parse(data.data);
+
+      // insert images into article body
+      const new_web_research_results = insertImagesIntoArticleBody(
+        data.parsed_web_results.parsed_web_results.content,
+        data.web_research_results.web_research_results,
+        data.parsed_web_results.parsed_web_results.image_urls
+      );
+
+      // update the web_research_results
+      data.web_research_results.web_research_results = new_web_research_results;
+
+      if (response.ok) {
+        setResult(data);
+      } else {
+        setError(data.error);
+      }
+    } catch (error) {
+      setError("An error occurred, please try again later.");
+      console.error(error);
+    } finally {
+      // setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,11 +141,12 @@ export default function Home() {
   };
 
   const testclick = async () => {
-    console.log(result);
+    console.log(searchParams);
   };
 
   const handleLocalClick = async () => {
-    console.log(localStorage);
+    console.log(localStorage.getItem("rurl"));
+    console.log(searchParams?.get("redirected"));
   };
 
   useEffect(() => {
@@ -207,4 +261,6 @@ export default function Home() {
       )}
     </div>
   );
-}
+};
+
+export default Home;

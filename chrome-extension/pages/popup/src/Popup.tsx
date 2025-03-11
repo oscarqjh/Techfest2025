@@ -2,7 +2,6 @@ import '@src/Popup.css';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { dataStorage, exampleThemeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
-import { AnimatedCircularProgressBar } from '@extension/ui';
 import { useState } from 'react';
 
 const notificationOptions = {
@@ -51,7 +50,17 @@ const Popup = () => {
       let data = await response.json();
       data = JSON.parse(data);
       setData(data);
-      dataStorage.setData(data);
+      setIsLoading(false);
+
+      // store data to db via api
+      await fetch('http://localhost:8000/store_data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.CEB_RENDER_API_KEY}`,
+        },
+        body: JSON.stringify({ data: data }),
+      });
 
       setIsLoading(false);
     });
@@ -61,8 +70,19 @@ const Popup = () => {
     setData(null);
   };
 
+  const handleTest = async () => {
+    await fetch('http://localhost:8000/store_data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.CEB_RENDER_API_KEY}`,
+      },
+      body: JSON.stringify({ data: { hi: 'asodk' } }),
+    });
+  };
+
   const handleRedirect = () => {
-    chrome.tabs.create({ url: 'http://localhost:3000' });
+    chrome.tabs.create({ url: 'http://localhost:3000?redirected=true' });
   };
 
   return (
@@ -82,9 +102,23 @@ const Popup = () => {
 
           {data && (
             <div>
-              <p>80</p>
+              <p>Score: {JSON.parse(data.insights.raw).reliability_score}</p>
+              {/* <AnimatedCircularProgressBar
+                progress={JSON.parse(data.insights.raw).reliability_score}
+                size={100}
+                strokeWidth={10}
+              /> */}
             </div>
           )}
+
+          {/* <button
+            className={
+              'font-bold mb-4 rounded shadow hover:scale-105 p-4' +
+              (isLight ? 'bg-blue-200 text-black' : 'bg-gray-800 text-zinc-200')
+            }
+            onClick={handleTest}>
+            Test
+          </button> */}
 
           {!isLoading && !data && (
             <button

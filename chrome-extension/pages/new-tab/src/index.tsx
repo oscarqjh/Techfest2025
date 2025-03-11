@@ -13,4 +13,4 @@ function init() {
   root.render(<NewTab />);
 }
 
-init();
+// init();

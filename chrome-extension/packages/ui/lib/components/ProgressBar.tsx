@@ -1,5 +1,5 @@
 import React from 'react';
-import './AnimatedCircularProgressBar.css'; // Make sure to import the CSS
+// import './AnimatedCircularProgressBar.css'; // Make sure to import the CSS
 
 interface ProgressBarProps {
   progress: number;

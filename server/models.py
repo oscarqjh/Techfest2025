@@ -21,3 +21,5 @@ class GetNewsRequest(BaseModel):
 
 
 
+class StoreDataRequest(BaseModel):
+    data: dict

@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import json
 
 from pydantic import BaseModel
-from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest, CredibilityRequest, GetNewsRequest
+from models import TestAPIRequest, StoreDataRequest, TestAPIResponse, ValidationAPIRequest, CredibilityRequest, GetNewsRequest
 import sys
 from pathlib import Path
 
@@ -50,3 +50,16 @@ def get_news(data: GetNewsRequest):
     url = data.url
     res = parser.run(url=url)
     return res
+
+@app.post("/store_data")
+def store_data(req: StoreDataRequest):
+    from neondb.apis.rurldata_api import insert_one_rurldata
+    print(req)
+    insert_one_rurldata(json.dumps(req.data))
+    return {"message": "Data stored successfully!"}
+
+@app.get("/get_data")
+def get_data():
+    from neondb.apis.rurldata_api import get_one_rurldata
+    data = get_one_rurldata()
+    return data
