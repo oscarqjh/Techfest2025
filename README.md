@@ -104,6 +104,8 @@ cd server
 Then, run the build file to install dependencies and host the server
 ```sh
 chmod +x build.sh && ./build.sh
+
+uvicorn main:app --host 0.0.0.0 --port 10000
 ```
 
 ---
