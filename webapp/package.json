@@ -9,6 +9,7 @@
     "fmt": "pnpm rome check . --apply-unsafe && pnpm rome format . --write"
   },
   "dependencies": {
+    "@heroui/spinner": "^2.2.13",
     "@next/font": "^13.5.4",
     "@next/mdx": "^13.5.4",
     "@radix-ui/react-dialog": "^1.1.6",
