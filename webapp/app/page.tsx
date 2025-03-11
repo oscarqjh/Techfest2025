@@ -28,14 +28,14 @@ export default function Home() {
 
     try {
       const response = await fetch("/api/validate", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        // body: JSON.stringify({ url }),
+        body: JSON.stringify({ url }),
       });
-      const data = await response.json();
-      console.log(data);
+      let data = await response.json();
+      data = JSON.parse(data);
 
       // insert images into article body
       const new_web_research_results = insertImagesIntoArticleBody(
@@ -54,6 +54,7 @@ export default function Home() {
       }
     } catch (error) {
       setError("An error occurred, please try again later.");
+      console.error(error);
     } finally {
       // setLoading(false);
       setTimeout(() => {
@@ -64,14 +65,6 @@ export default function Home() {
 
   const testclick = async () => {
     console.log(result);
-
-    // const new_data = insertImagesIntoArticleBody(
-    //   result.parsed_web_results.parsed_web_results.content,
-    //   result.web_research_results.web_research_results,
-    //   result.parsed_web_results.parsed_web_results.image_urls
-    // );
-
-    // console.log(new_data);
   };
 
   useEffect(() => {
@@ -128,9 +121,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <button className="h-10 w-10 text-white" onClick={testclick}>
+      <button className="h-10 w-10 text-white" onClick={testclick}>
         test
-      </button> */}
+      </button>
 
       {/** Result skeleton*/}
       {loading && <ResultSkeleton />}

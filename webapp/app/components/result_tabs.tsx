@@ -32,13 +32,13 @@ const SearchResultsTabs = ({ search_results }: SearchResultsTabsProps) => {
       {/* Tab Content */}
       <div className="p-4 w-full border h-[300px] overflow-auto border-gray-300 dark:border-gray-600 rounded-lg mt-2 bg-white dark:bg-gray-900">
         <div className="flex justify-start items-center w-full h-fit rounded-xl overflow-hidden">
-          <PreviewImage url={search_results[activeIndex].url} />
+          <PreviewImage url={search_results[activeIndex]?.url} />
           <div className="flex flex-col items-center justify-center ml-10">
             <p className="text-lg text-center mb-2">Relavence score</p>
             <AnimatedCircularProgressBar
               max={100}
               min={0}
-              value={search_results[activeIndex].score * 100}
+              value={search_results[activeIndex]?.score * 100}
               gaugePrimaryColor="rgb(79 70 229)"
               gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
             />
@@ -46,10 +46,10 @@ const SearchResultsTabs = ({ search_results }: SearchResultsTabsProps) => {
         </div>
         <div className="p-2 w-full">
           <div className="text-sm font-bold">
-            {search_results[activeIndex].title}
+            {search_results[activeIndex]?.title}
           </div>
           <div className="text-sm text-justify mt-2 text-neutral-600 dark:text-neutral-400">
-            {search_results[activeIndex].content}
+            {search_results[activeIndex]?.content}
           </div>
         </div>
       </div>
