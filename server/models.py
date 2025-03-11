@@ -12,3 +12,12 @@ class TestAPIRequest(BaseModel):
 class ValidationAPIRequest(BaseModel):
     """ValidationAPIRequest schema."""
     url: str
+
+class CredibilityRequest(BaseModel):
+    url: str
+
+class GetNewsRequest(BaseModel):
+    url: str
+
+
+
