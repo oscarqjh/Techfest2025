@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   //   card: "summary_large_image",
   // },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon-32x32.png",
   },
 };
 const inter = Inter({
@@ -61,9 +61,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <head>
-        <Analytics />
-      </head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
