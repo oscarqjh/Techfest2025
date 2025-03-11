@@ -91,6 +91,10 @@ export default function Home() {
     console.log(result);
   };
 
+  const handleLocalClick = async () => {
+    console.log(localStorage);
+  };
+
   useEffect(() => {
     if (loading) {
       window.scrollBy({ top: 600, behavior: "smooth" }); // Scroll down 500px
@@ -119,6 +123,9 @@ export default function Home() {
             <div className="flex flex-col p-4 items-center">
               <Button onClick={testclick} className="w-auto">
                 print response
+              </Button>
+              <Button onClick={handleLocalClick} className="w-auto">
+                print local storage
               </Button>
               <div className="ml-1 flex items-center space-x-2 mt-4">
                 <Label

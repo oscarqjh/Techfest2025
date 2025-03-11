@@ -1,6 +1,6 @@
 import '@src/Popup.css';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
-import { exampleThemeStorage } from '@extension/storage';
+import { dataStorage, exampleThemeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
 import { AnimatedCircularProgressBar } from '@extension/ui';
 import { useState } from 'react';
@@ -51,6 +51,7 @@ const Popup = () => {
       let data = await response.json();
       data = JSON.parse(data);
       setData(data);
+      dataStorage.setData(data);
 
       setIsLoading(false);
     });
