@@ -13,7 +13,7 @@ _ = load_dotenv()
 
 class DetectForgeryToolInput(BaseModel):
     """Input schema for AnalyseNewsTool."""
-    image_urls: str = Field(..., description="List of image paths to be analysed.")
+    image_urls: list[str] = Field(..., description="List of image paths to be analysed.")
     # Update with fields returned from the web_parser tool
 
 class DetectForgeryToolOutput(BaseModel):
@@ -37,7 +37,7 @@ class DetectForgeryTool(BaseTool):
         super().__init__()
         self.model =pipeline("image-classification", detection_model) # Model - Iain
 
-    def _run(self, image_urls: str) -> dict: 
+    def _run(self, image_urls: list[str]) -> dict: 
         results = []
         for img_url in image_urls:
             try:
