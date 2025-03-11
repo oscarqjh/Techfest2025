@@ -104,7 +104,7 @@ export default function Home() {
         <Drawer direction="left">
           <DrawerTrigger asChild>
             <Button
-              className="absolute top-4 left-4 text-zinc-300 hover:bg-zinc-300 transition-colors"
+              className="fixed top-4 left-4 text-zinc-300 hover:bg-zinc-300 transition-colors"
               variant="ghost"
               size="icon"
             >

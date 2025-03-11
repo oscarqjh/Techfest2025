@@ -142,7 +142,10 @@ export const LinkPreview = ({
                   className="block p-1 w-[700px] bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                 >
-                  <SearchResultsTabs search_results={search_result} />
+                  {search_result?.length !== 0 && (
+                    <SearchResultsTabs search_results={search_result} />
+                  )}
+
                   <ResultAiOpinionCard
                     misinformationScore={fact_check.misinformation_score}
                     explanation={fact_check.explanation}
