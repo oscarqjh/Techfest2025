@@ -33,7 +33,7 @@
 
 ### Website Link: [Are U ReaL?](https://techfest2025-red.vercel.app/)
 
-### Video Demo Link: [Watch Demo]()
+### Video Demo Link: [Watch Demo](https://www.youtube.com/watch?v=BLNftmX8gnA)
 
 ---
 
@@ -80,6 +80,6 @@ We used **CrewAI** to manage multiple agents in an automated pipeline, streamlin
 
 ## NTU Techfest 2025
 
-This project was submitted to the annual NTU SCSE Club hackathon, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
-[Find the Submission here!]()
+This project was submitted to the annual NTU Techfest hackathon, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
+[Find the Submission here!](https://devpost.com/software/are-u-real)
 
