@@ -76,6 +76,36 @@ We used **CrewAI** to manage multiple agents in an automated pipeline, streamlin
 - **Enhancements:** Continuous updates to improve the accuracy of the AI and extend the database of credible sources.
 - **Expansion:** Add new features like user reports to help improve fake news detection and crowdsourced verification.
 
+## Steps to launch Are U ReaL locally
+
+### Frontend
+Our frontend runs on Next.js
+
+Firstly, enter the directoy of `webapp`
+```sh
+cd webapp
+```
+
+Then, run the following commands to deploy it locally
+```sh
+pnpm i
+
+pnpm dev
+```
+
+### Backend
+Our backend runs on FastAPI
+
+Firstly, enter the directory of `server`
+```sh
+cd server
+```
+
+Then, run the build file to install dependencies and host the server
+```sh
+chmod +x build.sh && ./build.sh
+```
+
 ---
 
 ## NTU Techfest 2025
