@@ -2,13 +2,12 @@ from fastapi import FastAPI
 import json
 
 from pydantic import BaseModel
-from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
+from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest, CredibilityRequest, GetNewsRequest
 import sys
 from pathlib import Path
 
 
-class CredibilityRequest(BaseModel):
-    url: str
+
 
 app = FastAPI()
 
@@ -42,4 +41,12 @@ def analyse_credibility(data: CredibilityRequest):
     url = data.url
     res = RunFlow().kickoff(url=url)
 
+    return res
+
+@app.post("/get_news")
+def get_news(data: GetNewsRequest):
+    from rurl_flow.src.rurl_flow.tools.web_parsing_tool import WebParsingTool
+    parser = WebParsingTool()
+    url = data.url
+    res = parser.run(url=url)
     return res

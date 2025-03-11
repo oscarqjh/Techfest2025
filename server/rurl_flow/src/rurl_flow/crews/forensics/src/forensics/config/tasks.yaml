@@ -1,7 +1,8 @@
 image_forgery_task:
   description: >
-    Analyze the image and detect signs of forgery, manipulation, or tampering.
+    Analyze these images {image_urls} and detect signs of forgery, manipulation, or tampering.
   expected_output: >
     A classification of the image and a confidence score of the prediction.
+    A list of json of (image_url, classification, confidence_score).
   agent: image_forgery_expert
   # async_execution: true
