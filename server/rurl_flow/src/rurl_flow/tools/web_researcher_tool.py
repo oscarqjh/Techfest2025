@@ -54,7 +54,7 @@ content: {search_result['content']}
               misinformation_score: float
               explanation: str
 
-          llm = LLM(model="gpt-4o", response_format=AnalysisOutput)
+          llm = LLM(model="gpt-4o-mini", response_format=AnalysisOutput)
 
           prompt = f"""
 You are an expert in analyzing text data and extracting relevant information. 

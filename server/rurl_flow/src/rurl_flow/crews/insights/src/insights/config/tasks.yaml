@@ -1,0 +1,9 @@
+give_insights:
+  description: >
+    Given a credibility rating of a news site, the content cross checking of its facts, analyse if the site is reliable.
+    Give short and concise reasons why the site is reliable or not.
+    Credibility rating is {credibility} and content cross checking is {cross_references}.
+    Do not mention explicit details of the credibility rating or content cross checking.
+  expected_output: >
+    A short summary of the credibility of the news site based on the credibility rating and content cross checking.
+  agent: insights

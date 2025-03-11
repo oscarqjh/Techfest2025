@@ -1,8 +1,8 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 
-from tools.internal_audit_tool import InternalAuditTool
-from tools.query_db_tool import QueryBlacklistTool, QueryCredibleTool
+from .tools.internal_audit_tool import InternalAuditTool
+from .tools.query_db_tool import QueryBlacklistTool, QueryCredibleTool
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -23,11 +23,13 @@ class Validators():
 	# Create tool
 	query_blacklist_tool = QueryBlacklistTool()
 	query_credible_tool = QueryCredibleTool()
+	internal_audit_tool = InternalAuditTool()
 
 	@agent
 	def database_checker(self) -> Agent:
 		return Agent(
 			config=self.agents_config['database_checker'],
+			tools=[self.query_blacklist_tool, self.query_credible_tool],
 			verbose=True
 		)
 
@@ -35,6 +37,11 @@ class Validators():
 	def auditor(self) -> Agent:
 		return Agent(
 			config=self.agents_config['auditor'],
+			tools=[self.internal_audit_tool],
+			llm = LLM(
+				model="gpt-4o-mini",
+				temperature=0.2,        # Higher for more creative outputs
+			),
 			verbose=True
 		)
 

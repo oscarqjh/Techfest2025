@@ -6,6 +6,19 @@ import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-van
 import ResultSkeleton from "./components/result-skeleton";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import ResultSection from "./components/result-section";
+import { insertImagesIntoArticleBody } from "@/util/process-img";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import { WrenchIcon } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 const placeholders = [
   "Enter your URL here",
@@ -20,26 +33,44 @@ export default function Home() {
   const [error, setError] = React.useState("");
   const [result, setResult] = React.useState("");
   const resultSectionRef = useRef<HTMLDivElement | null>(null);
+  const [demoMode, setDemoMode] = React.useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch("/api/validate", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // body: JSON.stringify({ url }),
-      });
-      const data = await response.json();
-      console.log(data);
-      const new_data = insertImagesIntoArticleBody(
+      let response: Response;
+      if (demoMode) {
+        response = await fetch("/api/validate", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      } else {
+        response = await fetch("/api/validate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url }),
+        });
+      }
+
+      let data = await response.json();
+      data = JSON.parse(data);
+
+      // insert images into article body
+      const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
-        data.web_research_results.web_research_results
+        data.web_research_results.web_research_results,
+        data.parsed_web_results.parsed_web_results.image_urls
       );
-      console.log(new_data);
+
+      // update the web_research_results
+      data.web_research_results.web_research_results = new_web_research_results;
+
       if (response.ok) {
         setResult(data);
       } else {
@@ -47,12 +78,17 @@ export default function Home() {
       }
     } catch (error) {
       setError("An error occurred, please try again later.");
+      console.error(error);
     } finally {
       // setLoading(false);
       setTimeout(() => {
         setLoading(false);
       }, 3000);
     }
+  };
+
+  const testclick = async () => {
+    console.log(result);
   };
 
   useEffect(() => {
@@ -63,6 +99,52 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen h-fit overflow-x-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      {/* DEV TOOL */}
+      <div className="animate-fade-in">
+        <Drawer direction="left">
+          <DrawerTrigger asChild>
+            <Button
+              className="absolute top-4 left-4 text-zinc-300 hover:bg-zinc-300 transition-colors"
+              variant="ghost"
+              size="icon"
+            >
+              <WrenchIcon size={24} className="" />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader className="font-bold text-2xl text-zinc-300">
+              Dev Tool
+            </DrawerHeader>
+            <DialogTitle className="text-zinc-300 hidden">Dev Tool</DialogTitle>
+            <div className="flex flex-col p-4 items-center">
+              <Button onClick={testclick} className="w-auto">
+                print response
+              </Button>
+              <div className="ml-1 flex items-center space-x-2 mt-4">
+                <Label
+                  className="text-zinc-200 text-center"
+                  htmlFor="demo-mode"
+                >
+                  Legit Mode
+                </Label>
+                <Switch
+                  id="demo-mode"
+                  checked={demoMode}
+                  onCheckedChange={setDemoMode}
+                />
+                <Label
+                  className="text-zinc-200 text-center"
+                  htmlFor="demo-mode"
+                >
+                  Demo Mode
+                </Label>
+              </div>
+            </div>
+          </DrawerContent>
+        </Drawer>
+      </div>
+
+      {/* MAIN TITLE */}
       <div className="flex flex-col items-center justify-center w-screen h-screen">
         <div className="overflow-x-hidden hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
         <Particles
@@ -96,8 +178,9 @@ export default function Home() {
             </div>
           </h1>
         </div>
-
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+
+        {/* SEARCH BAR */}
         <div className="w-[40%] my-16 text-center animate-fade-in">
           <div className="h-[7rem] flex flex-col justify-center  items-center px-4">
             <PlaceholdersAndVanishInput

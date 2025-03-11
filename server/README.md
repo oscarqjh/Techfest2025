@@ -2,7 +2,7 @@
 
 #### To create a virtual environemnt for the backend, change to backend directory:
 ```sh 
-cd backend
+cd server
 ```
 
 #### Create the venv folder:

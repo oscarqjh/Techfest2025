@@ -1,6 +1,14 @@
 from fastapi import FastAPI
+import json
 
+from pydantic import BaseModel
 from models import TestAPIRequest, TestAPIResponse, ValidationAPIRequest
+import sys
+from pathlib import Path
+
+
+class CredibilityRequest(BaseModel):
+    url: str
 
 app = FastAPI()
 
@@ -21,3 +29,17 @@ def test_endpoint(data: TestAPIRequest) -> TestAPIResponse:
 def validate_endpoint(data: ValidationAPIRequest):
     print(data)
     return {"message": "Validation successful!"}
+
+@app.get("/sample_output")
+def sample_output():
+    with open("./results.json", "r") as file:
+        parsed_data = json.load(file)
+    return json.dumps(parsed_data)
+
+@app.post("/analyse_credibility")
+def analyse_credibility(data: CredibilityRequest):
+    from rurl_flow.src.rurl_flow.main import RunFlow
+    url = data.url
+    res = RunFlow().kickoff(url=url)
+
+    return res

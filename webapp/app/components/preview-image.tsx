@@ -2,13 +2,20 @@ import { encode } from "qss";
 import Image from "next/image";
 import Link from "next/link";
 
+interface PreviewImageProps {
+  url: string;
+  width?: number;
+  height?: number;
+  quality?: number;
+  layout?: "fixed" | "intrinsic" | "responsive";
+}
+
 export default function PreviewImage({
   url,
   width = 400,
   height = 200,
   quality = 50,
-  layout = "fixed",
-}) {
+}: PreviewImageProps) {
   const params = encode({
     url,
     screenshot: true,
@@ -32,7 +39,6 @@ export default function PreviewImage({
         width={width}
         height={height}
         quality={quality}
-        layout={layout}
         priority={true}
         alt="image"
         className="rounded-lg"

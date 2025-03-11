@@ -96,15 +96,17 @@ response_format_text = {
 response_format_wiki = {
     "type": "object",
     "properties": {
-        "type": "array",
-        "items": {
-            "type": "object",
-            "properties": {
-                "wiki_url": {"type": "string"},
-                "summary": {"type": "string"},
+        "evaluation": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "wiki_url": {"type": "string"},
+                    "summary": {"type": "string"},
+                },
+                "required": ["wiki_url", "summary"],
             },
-            "required": ["wiki_url", "summary"],
-        },
+        }
     },
 }
 
@@ -226,7 +228,7 @@ def prepare_message(function_name, **kwargs):
                 "content": [
                     {
                         "type": "text",
-                        "text": """
+                        "text": f"""
                         You are an AI trained to assess the authenticity of images. Your task is to evaluate the image based on the following criteria and assign a **realness score** from **0 to 1** where:
                         - **0** indicates "Fake" or "Manipulated"
                         - **1** indicates "Authentic" or "Real"
@@ -301,6 +303,8 @@ def prepare_message(function_name, **kwargs):
     if function_name == "TextAnalyser":
         text = kwargs.get("text", "")
         title = kwargs.get("title", "")
+        date = kwargs.get("date", "")
+        weblink = kwargs.get("weblink", "")
 
         return [
             {
@@ -390,6 +394,24 @@ def prepare_message(function_name, **kwargs):
                 ],
             },
         ]
+        
+def call_openai_api(data, function_name): 
+    title = data['data']['title']
+    weblink = data['data']['weblink']
+    images = data['data']['image_urls']
+    text = data['data']['content']
+    date = data['data']['date']
+
+def call_openai_api(data, function_name):
+    title = data["data"]["title"]
+    weblink = data["data"]["weblink"]
+    images = data["data"]["image_url"]
+    text = data["data"]["content"]
+    date = data["data"]["date"]
+
+    output = {}  # Store both image and text results
+    if function_name == "WebAnalyser":
+        model = "gpt-4o"
 
     if function_name == "WikiAnalyser":
         entity = kwargs.get("entity", "")
@@ -489,7 +511,7 @@ def call_openai_api(data, function_name):
 
         if images:
             image_output = []
-            model = "gpt-4o"
+            model = "gpt-4o-mini"
 
             try:
                 for image in images:

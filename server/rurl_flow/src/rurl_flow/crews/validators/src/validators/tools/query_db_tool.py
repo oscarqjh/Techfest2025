@@ -1,5 +1,9 @@
+import sys
+sys.path.append('/Users/chengyao/Documents/GitHub/Techfest2025/server')
+
 from neondb.apis.credible_api import get_credible_list
 from neondb.apis.blacklist_api import get_blacklist
+from crewai.tools import BaseTool
 
 
 class QueryBlacklistTool(BaseTool):
