@@ -3,6 +3,7 @@ import WebResultCard from "./result-header-card";
 import { forwardRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import AiInsights from "./ai-insights";
 
 interface ResultSectionProps {
   data: any;
@@ -11,18 +12,13 @@ interface ResultSectionProps {
 const ResultSection = forwardRef<HTMLDivElement, ResultSectionProps>(
   ({ data }, ref) => {
     return (
-      <Card className="flex flex-col w-[72%] h-fit p-5 bg-transparent border-4 border-zinc-400 rounded-sm">
+      <Card className="flex flex-col w-[72%] h-fit p-5 bg-transparent border-transparent">
         <div
           ref={ref}
           className="flex flex-col items-center justify-center w-full h-fit mb-[10%]"
         >
-          <div className="text-zinc-300 w-[88%] text-justify">
-            <h1 className="text-3xl font-bold text-zinc-200 text-justify my-2">
-              AI Insights
-            </h1>
-            <p>{data.insights.raw}</p>
-          </div>
-          <Separator className="w-[88%] h-px my-5" />
+          <AiInsights data={data} />
+          {/* <Separator className="w-[88%] h-px my-5" /> */}
           <WebResultCard
             weblink={data.parsed_web_results.parsed_web_results.weblink}
             domain={data.parsed_web_results.parsed_web_results.domain}

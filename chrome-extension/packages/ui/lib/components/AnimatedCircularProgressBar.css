@@ -1,0 +1,33 @@
+.circular-progress-bar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.circular-progress-bar-svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-bar-background {
+  fill: none;
+  stroke: #e6e6e6;
+}
+
+.circular-progress-bar-foreground {
+  fill: none;
+  stroke: #4caf50; /* Green color for progress */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.circular-progress-bar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
