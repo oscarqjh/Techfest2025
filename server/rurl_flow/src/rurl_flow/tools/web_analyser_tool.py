@@ -1,5 +1,5 @@
 from crewai.tools import BaseTool
-from typing import Type, List
+from typing import Type, List, Union
 from pydantic import BaseModel
 from .globals import client  # OpenAI client
 from . import llm_client
@@ -33,7 +33,7 @@ class WebAnalyserOutput(BaseModel):
 
     article_body: List[ArticleBodyItem]
     topic: List[str]
-    entities: List[str]
+    entities: List[Union[str, dict]]
 
 
 class WebAnalyserTool(BaseTool):

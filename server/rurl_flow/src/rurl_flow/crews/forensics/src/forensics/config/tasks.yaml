@@ -5,4 +5,4 @@ image_forgery_task:
     A classification of the image and a confidence score of the prediction.
     A list of json of (image_url, classification, confidence_score).
   agent: image_forgery_expert
-  # async_execution: true
+  async_execution: true
