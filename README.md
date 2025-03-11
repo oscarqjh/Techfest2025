@@ -1,6 +1,6 @@
 # Tech Fest 2025 - Team 45
 
-# Are U ReaL? <br/> _"Is this website telling you the truth?"_ <br/>
+# Are U ReaL? <br/> _"Smart Fact-Checking Made Simple.Verify Truth in One Click."_ <br/>
 
 ---
 
@@ -18,7 +18,11 @@
 
 
 
-![Cover](./assets/cover.png)
+<p align="center">
+  <img src="./Homepage.png" alt="Homepage" width="auto" height="300px">
+  <img src="./AnalysisPage.png" alt="Analysis Page" width="auto" height="300px">
+</p>
+
 
 ### Team Members of BluTech:
 
@@ -29,7 +33,7 @@
 
 ### Website Link: [Are U ReaL?](https://techfest2025-red.vercel.app/)
 
-### Video Demo Link: [Watch Demo]()
+### Video Demo Link: [Watch Demo](https://www.youtube.com/watch?v=BLNftmX8gnA)
 
 ---
 
@@ -72,10 +76,42 @@ We used **CrewAI** to manage multiple agents in an automated pipeline, streamlin
 - **Enhancements:** Continuous updates to improve the accuracy of the AI and extend the database of credible sources.
 - **Expansion:** Add new features like user reports to help improve fake news detection and crowdsourced verification.
 
+## Steps to launch Are U ReaL locally
+
+### Frontend
+Our frontend runs on Next.js
+
+Firstly, enter the directoy of `webapp`
+```sh
+cd webapp
+```
+
+Then, run the following commands to deploy it locally
+```sh
+pnpm i
+
+pnpm dev
+```
+
+### Backend
+Our backend runs on FastAPI
+
+Firstly, enter the directory of `server`
+```sh
+cd server
+```
+
+Then, run the build file to install dependencies and host the server
+```sh
+chmod +x build.sh && ./build.sh
+
+uvicorn main:app --host 0.0.0.0 --port 10000
+```
+
 ---
 
 ## NTU Techfest 2025
 
-This project was submitted to the annual NTU SCSE Club hackathon, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
-[Find the Submission here!]()
+This project was submitted to the annual NTU Techfest hackathon, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
+[Find the Submission here!](https://devpost.com/software/are-u-real)
 
