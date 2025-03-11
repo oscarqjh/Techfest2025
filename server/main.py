@@ -34,7 +34,7 @@ def validate_endpoint(data: ValidationAPIRequest):
 def sample_output():
     with open("./results.json", "r") as file:
         parsed_data = json.load(file)
-    return parsed_data
+    return json.dumps(parsed_data)
 
 @app.post("/analyse_credibility")
 def analyse_credibility(data: CredibilityRequest):

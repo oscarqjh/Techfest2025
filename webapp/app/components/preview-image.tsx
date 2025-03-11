@@ -15,7 +15,6 @@ export default function PreviewImage({
   width = 400,
   height = 200,
   quality = 50,
-  layout = "fixed",
 }: PreviewImageProps) {
   const params = encode({
     url,
@@ -40,7 +39,6 @@ export default function PreviewImage({
         width={width}
         height={height}
         quality={quality}
-        layout={layout}
         priority={true}
         alt="image"
         className="rounded-lg"
