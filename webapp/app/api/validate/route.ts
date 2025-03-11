@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     const data = await response.json();
     console.log("hi");
 
-    console.log(data);
+    console.log(data.parsed_web_results);
 
     return NextResponse.json(data, { status: response.status });
   } catch (error) {
@@ -52,8 +52,6 @@ export async function GET() {
     });
 
     const data = await response.json();
-
-    console.log(data);
 
     return NextResponse.json(data, { status: response.status });
   } catch (error) {
