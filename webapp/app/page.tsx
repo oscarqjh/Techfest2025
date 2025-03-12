@@ -50,15 +50,17 @@ const Home = () => {
   }, [searchParams]);
 
   const handleRedirect = async () => {
+    console.log("redirected");
     setLoading(true);
     try {
-      let response = await fetch("api/redirected", {
+      let response = await fetch("/api/redirected", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
       let data = await response.json();
+      console.log("hello");
       console.log(data);
       data = JSON.parse(data.data);
 
@@ -141,7 +143,7 @@ const Home = () => {
   };
 
   const testclick = async () => {
-    console.log(searchParams);
+    console.log(result);
   };
 
   const handleLocalClick = async () => {
