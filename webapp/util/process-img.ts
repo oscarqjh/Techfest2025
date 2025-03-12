@@ -1,6 +1,3 @@
-import { J } from "@upstash/redis/zmscore-C3G81zLz";
-import { skip } from "node:test";
-
 function insertImagesIntoArticleBody(
   originalContent: any,
   articleBody: any,
@@ -20,6 +17,8 @@ function insertImagesIntoArticleBody(
       position: matches.index,
     });
   }
+
+  console.log(imgData);
 
   let updatedArticleBody: any = [];
   let currentIndex = 0;

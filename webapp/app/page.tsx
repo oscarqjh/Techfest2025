@@ -37,7 +37,7 @@ const Home = () => {
   const [demoMode, setDemoMode] = React.useState(false);
   const searchParams = useSearchParams();
   const initialised = useRef(false);
-  const [llmMode, setLlmMode] = React.useState(true);
+  const [llmMode, setLlmMode] = React.useState(false);
 
   useEffect(() => {
     if (initialised.current) {
@@ -111,7 +111,7 @@ const Home = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ url: url, llmMode: llmMode }),
+          body: JSON.stringify({ url }),
         });
       }
 
