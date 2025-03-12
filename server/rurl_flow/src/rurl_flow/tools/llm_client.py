@@ -146,7 +146,8 @@ def prepare_message(function_name, **kwargs):
                 "role": "system",
                 "content": """You are an expert in fact-checking web content and extracting key information.
                             You are given a webpage link and need to provide an analysis of the article body 
-                            and identify paragraphs that need to be fact-checked.""",
+                            and identify paragraphs that need to be fact-checked.
+                            Output format (in JSON) {'article_body': [], 'topic': [], 'entities': []}""",
             },
             {
                 "role": "user",
@@ -411,7 +412,7 @@ def call_openai_api(data, function_name):
 
     output = {}  # Store both image and text results
     if function_name == "WebAnalyser":
-        model = "gpt-4o"
+        model = "gpt-4o-mini"
 
     if function_name == "WikiAnalyser":
         entity = kwargs.get("entity", "")

@@ -47,6 +47,12 @@ class WebAnalyserTool(BaseTool):
 
     def _run(self, data: dict) -> dict:
         """Runs the web analysis tool and returns structured output"""
-        data = llm_client.call_openai_api(data, "WebAnalyser")
-        structured_data = WebAnalyserOutput(**data["web_analysis"])
+        try:
+            data = llm_client.call_openai_api(data, "WebAnalyser")
+            structured_data = WebAnalyserOutput(**data["web_analysis"])
+        except Exception as e:
+            print("Error in WebAnalyserTool: ", e)
+            structured_data = WebAnalyserOutput(
+                article_body=[], topic=[], entities=[]
+            )
         return structured_data.model_dump()
