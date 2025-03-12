@@ -37,6 +37,7 @@ const Home = () => {
   const [demoMode, setDemoMode] = React.useState(false);
   const searchParams = useSearchParams();
   const initialised = useRef(false);
+  const [llmMode, setLlmMode] = React.useState(true);
 
   useEffect(() => {
     if (initialised.current) {
@@ -110,7 +111,7 @@ const Home = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ url }),
+          body: JSON.stringify({ url: url, llmMode: llmMode }),
         });
       }
 
@@ -202,6 +203,19 @@ const Home = () => {
                   htmlFor="demo-mode"
                 >
                   Demo Mode
+                </Label>
+              </div>
+              <div className="ml-1 flex items-center space-x-2 mt-4">
+                <Label className="text-zinc-200 text-center" htmlFor="llm-mode">
+                  Gpt
+                </Label>
+                <Switch
+                  id="llm-mode"
+                  checked={llmMode}
+                  onCheckedChange={setLlmMode}
+                />
+                <Label className="text-zinc-200 text-center" htmlFor="llm-mode">
+                  Groq
                 </Label>
               </div>
             </div>
