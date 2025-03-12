@@ -39,7 +39,8 @@ def sample_output():
 def analyse_credibility(data: CredibilityRequest):
     from rurl_flow.src.rurl_flow.main import RunFlow
     url = data.url
-    res = RunFlow().kickoff(url=url)
+    llm = data.llm # "gpt" or "groq"
+    res = RunFlow().kickoff(url=url, llm=llm)
 
     return res
 

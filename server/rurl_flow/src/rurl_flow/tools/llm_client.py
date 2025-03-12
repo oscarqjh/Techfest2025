@@ -1,4 +1,4 @@
-from .globals import client
+from .globals import client, gpt_client, groq_client
 import json
 
 """3 different api calls are defined here:
@@ -116,21 +116,21 @@ functions = [
         "description": "Determine if each paragraph needs to be fact-checked and returns entities",
         "parameters": response_format_web,
     },
-    {
-        "name": "ImageAnalyser",
-        "description": "Analyse the image(s) and return scores with explanation",
-        "parameters": response_format_image,
-    },
-    {
-        "name": "TextAnalyser",
-        "description": "Analyse the text and return scores with explanation",
-        "parameters": response_format_text,
-    },
-    {
-        "name": "WikiAnalyser",
-        "description": "Analyse entities and return summaries",
-        "parameters": response_format_wiki,
-    },
+    # {
+    #     "name": "ImageAnalyser",
+    #     "description": "Analyse the image(s) and return scores with explanation",
+    #     "parameters": response_format_image,
+    # },
+    # {
+    #     "name": "TextAnalyser",
+    #     "description": "Analyse the text and return scores with explanation",
+    #     "parameters": response_format_text,
+    # },
+    # {
+    #     "name": "WikiAnalyser",
+    #     "description": "Analyse entities and return summaries",
+    #     "parameters": response_format_wiki,
+    # },
 ]
 
 
@@ -147,7 +147,8 @@ def prepare_message(function_name, **kwargs):
                 "content": """You are an expert in fact-checking web content and extracting key information.
                             You are given a webpage link and need to provide an analysis of the article body 
                             and identify paragraphs that need to be fact-checked.
-                            Output format (in JSON) {'article_body': [], 'topic': [], 'entities': []}""",
+                            Output format in dictionary ('article_body': [dict], 'topic': [str], 'entities': [Union[str, dict]])
+                            DO NOT return markdowns in the output, only the data.""",
             },
             {
                 "role": "user",
@@ -185,7 +186,7 @@ def prepare_message(function_name, **kwargs):
                         9. For topic extraction, identify the main topics discussed in the article.
                         
                         ### **Example Output:**
-                        The output will be:
+                        The output will be a dictionary. Do not return markdowns in the output, only the data.:
                         {{
                             "article_body": [
                                 {{
@@ -481,24 +482,35 @@ def call_openai_api(data, function_name):
         ]
 
 
-def call_openai_api(data, function_name):
+def call_openai_api(data, function_name, llm_model="groq"):
     output = {}  # Store both image and text results
     if function_name == "WebAnalyser":
         title = data["data"]["title"]
         text = data["data"]["content"]
-        model = "gpt-4o-mini"
         messages = prepare_message(
             title=title, content=text, function_name="WebAnalyser"
         )
-
         try:
-            response = client.chat.completions.create(
-                model=model,
-                messages=messages,
-                functions=functions,
-                function_call={"name": "WebAnalyser"},
-                temperature=0.1,
-            )
+            if llm_model =="gpt":
+                model = "gpt-4o-mini"
+        
+                response = gpt_client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    functions=functions,
+                    function_call={"name": "WebAnalyser"},
+                    temperature=0.2,
+                )
+            else:
+                model = "deepseek-r1-distill-llama-70b"
+                response = groq_client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    functions=functions,
+                    function_call={"name": "WebAnalyser"},
+                    temperature=0.2,
+                )
+            
             function_args = response.choices[0].message.function_call.arguments
             web_data = json.loads(function_args)
 
