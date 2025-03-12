@@ -68,7 +68,8 @@ const Home = () => {
       const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
         data.web_research_results.web_research_results,
-        data.parsed_web_results.parsed_web_results.image_urls
+        data.parsed_web_results.parsed_web_results.image_urls,
+        data.forgery_results.forgery_results
       );
 
       // update the web_research_results
@@ -120,7 +121,8 @@ const Home = () => {
       const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
         data.web_research_results.web_research_results,
-        data.parsed_web_results.parsed_web_results.image_urls
+        data.parsed_web_results.parsed_web_results.image_urls,
+        data.forgery_results.forgery_results
       );
 
       // update the web_research_results
