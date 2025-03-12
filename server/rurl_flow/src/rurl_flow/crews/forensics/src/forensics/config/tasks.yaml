@@ -6,3 +6,11 @@ image_forgery_task:
     A list of json of (image_url, classification, confidence_score).
   agent: image_forgery_expert
   async_execution: true
+
+image_websearch_task:
+  description: >
+    Search for visually similar images to {image_urls} and retrieve related news articles.
+  expected_output: >
+    A list of the top 10 related articles, each containing the article title, URL, and image thumbnail.
+    A JSON list of dictionaries: (title, url, image_thumbnail).
+  agent: image_websearch_expert
