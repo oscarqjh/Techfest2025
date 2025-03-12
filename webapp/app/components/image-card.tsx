@@ -44,10 +44,14 @@ const ImageCard = ({ item }: ImageCardProps) => {
   const [expandHovered, setExpandHovered] = useState(false);
   const [expand, setExpand] = useState(false);
   const text = "Related Images";
+
+  const handleClick = () => {
+    console.log(item);
+  };
   return (
-    <Card className="relative w-[88%]">
-      <div className="flex flex-col w-fit h-fit">
-        <div className="flex items-center justify-center w-fit h-fit">
+    <Card className="relative w-[88%] mb-4">
+      <div className="flex flex-col w-full h-fit">
+        <div className="flex items-center justify-center w-full h-fit">
           <div className="flex flex-col w-[50%]">
             <img
               src={item.src}
@@ -59,7 +63,7 @@ const ImageCard = ({ item }: ImageCardProps) => {
             </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center w-[50%] ml-14 cursor-default text-zinc-300">
+          {/* <div className="flex flex-col items-center justify-center w-[50%] ml-14 cursor-default text-zinc-300">
             <p className="mb-4 font-bold cursor-default">
               Alteration Confidence Score
             </p>
@@ -70,7 +74,7 @@ const ImageCard = ({ item }: ImageCardProps) => {
               gaugePrimaryColor="rgb(79 70 229)"
               gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
             />
-          </div>
+          </div> */}
         </div>
         {/* <div className="flex flex-col w-full h-fit justify-start items-start mt-4">
           <Button

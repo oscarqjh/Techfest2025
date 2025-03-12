@@ -130,7 +130,7 @@ function insertImagesIntoArticleBody(
   }
 
   // add image forgery result to images
-  // const forgery_results_parsed = JSON.parse(forgery_results);
+  // const forgery_results_parsed = JSON.parse(forgery_results.raw);
   // updatedArticleBody.forEach((entry: any, i: any) => {
   //   if (entry.type === "image") {
   //     const matchingResult = forgery_results_parsed.find(
