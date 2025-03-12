@@ -37,6 +37,7 @@ const Home = () => {
   const [demoMode, setDemoMode] = React.useState(false);
   const searchParams = useSearchParams();
   const initialised = useRef(false);
+  const [llmMode, setLlmMode] = React.useState(false);
 
   useEffect(() => {
     if (initialised.current) {
@@ -50,15 +51,17 @@ const Home = () => {
   }, [searchParams]);
 
   const handleRedirect = async () => {
+    console.log("redirected");
     setLoading(true);
     try {
-      let response = await fetch("api/redirected", {
+      let response = await fetch("/api/redirected", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
       let data = await response.json();
+      console.log("hello");
       console.log(data);
       data = JSON.parse(data.data);
 
@@ -66,7 +69,8 @@ const Home = () => {
       const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
         data.web_research_results.web_research_results,
-        data.parsed_web_results.parsed_web_results.image_urls
+        data.parsed_web_results.parsed_web_results.image_urls,
+        data.forgery_results.forgery_results
       );
 
       // update the web_research_results
@@ -118,7 +122,8 @@ const Home = () => {
       const new_web_research_results = insertImagesIntoArticleBody(
         data.parsed_web_results.parsed_web_results.content,
         data.web_research_results.web_research_results,
-        data.parsed_web_results.parsed_web_results.image_urls
+        data.parsed_web_results.parsed_web_results.image_urls,
+        data.forgery_results.forgery_results
       );
 
       // update the web_research_results
@@ -141,7 +146,7 @@ const Home = () => {
   };
 
   const testclick = async () => {
-    console.log(searchParams);
+    console.log(result);
   };
 
   const handleLocalClick = async () => {
@@ -198,6 +203,19 @@ const Home = () => {
                   htmlFor="demo-mode"
                 >
                   Demo Mode
+                </Label>
+              </div>
+              <div className="ml-1 flex items-center space-x-2 mt-4">
+                <Label className="text-zinc-200 text-center" htmlFor="llm-mode">
+                  Gpt
+                </Label>
+                <Switch
+                  id="llm-mode"
+                  checked={llmMode}
+                  onCheckedChange={setLlmMode}
+                />
+                <Label className="text-zinc-200 text-center" htmlFor="llm-mode">
+                  Groq
                 </Label>
               </div>
             </div>

@@ -1,9 +1,8 @@
-import { skip } from "node:test";
-
 function insertImagesIntoArticleBody(
   originalContent: any,
   articleBody: any,
-  imgUrls: string[]
+  imgUrls: string[],
+  forgery_results: any
 ) {
   const imgRegex =
     /<img\s+[^>]*src=["']([^"']+)["'][^>]*alt=["']([^"']+)["'][^>]*>/g;
@@ -18,6 +17,8 @@ function insertImagesIntoArticleBody(
       position: matches.index,
     });
   }
+
+  console.log(imgData);
 
   let updatedArticleBody: any = [];
   let currentIndex = 0;
@@ -126,6 +127,26 @@ function insertImagesIntoArticleBody(
       i--;
     }
   }
+
+  // add image forgery result to images
+  // const forgery_results_parsed = JSON.parse(forgery_results.raw);
+  // updatedArticleBody.forEach((entry: any, i: any) => {
+  //   if (entry.type === "image") {
+  //     const matchingResult = forgery_results_parsed.find(
+  //       (result: any) => result.image_url === entry.image_url
+  //     );
+
+  //     entry.forgery_result = matchingResult
+  //       ? {
+  //           is_forged: matchingResult.is_forged,
+  //           is_forged_confidence: matchingResult.is_forged_confidence,
+  //         }
+  //       : {
+  //           is_forged: false,
+  //           is_forged_confidence: 0,
+  //         };
+  //   }
+  // });
 
   return updatedArticleBody;
 }
