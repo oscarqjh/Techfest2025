@@ -13,3 +13,4 @@ transformers==4.45.0
 torch
 sqlmodel
 tavily-python
+serpapi
