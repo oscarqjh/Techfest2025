@@ -36,9 +36,10 @@ class RURLState(BaseModel):
 
 class RURLFlow(Flow[RURLState]):
 
-    def __init__(self, url, **kwargs):
+    def __init__(self, url,llm, **kwargs):
       super().__init__(**kwargs)
       self.url = url
+      self.llm = llm # "gpt" or "groq"
 
     @start()
     async def parse_web(self):
@@ -73,7 +74,7 @@ class RURLFlow(Flow[RURLState]):
         # input_data = {}
         # input_data["data"] = data
 
-        result = web_analyser._run(analyser_input)
+        result = web_analyser._run(data=analyser_input, llm=self.llm)
         self.state.web_analyse_results = {"web_analyse_results":result} # Save results into state
         print("ANALYSE: ",result)
         return result
@@ -160,9 +161,9 @@ class RURLFlow(Flow[RURLState]):
         return resulting_dict
 
 class RunFlow:
-    def kickoff(self, url):
+    def kickoff(self, url, llm):
         t0 = time.time()
-        rurl_flow = RURLFlow(url=url)
+        rurl_flow = RURLFlow(url=url, llm=llm)
         res = asyncio.run(rurl_flow.kickoff_async())
 
         print("Time taken = ", time.time()-t0)

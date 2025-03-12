@@ -23,7 +23,7 @@ class Insights():
 			config=self.agents_config['insights'],
 			llm = LLM(
 				model="gpt-4o",
-				temperature=0.5,        # Higher for more creative outputs
+				temperature=0.2,        # Higher for more creative outputs
 			),
 			verbose=True
 		)
