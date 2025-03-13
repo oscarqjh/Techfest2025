@@ -17,7 +17,7 @@ export default function AiInsights({ data }: AiInsightsProps) {
           <div className="flex flex-col">
             <CardTitle className="cursor-default">AI Insights</CardTitle>
             <CardDescription className="mt-4">
-              {JSON.parse(data.insights.raw).insights}
+              {JSON.parse(data.insights.raw.replace(/'/g, '"'))?.insights}
             </CardDescription>
           </div>
           <div className="flex flex-col items-center justify-center w-[20%] ml-14 cursor-default">
@@ -25,7 +25,10 @@ export default function AiInsights({ data }: AiInsightsProps) {
             <AnimatedCircularProgressBar
               max={100}
               min={0}
-              value={JSON.parse(data.insights.raw).reliability_score}
+              value={
+                JSON.parse(data.insights.raw.replace(/'/g, '"'))
+                  ?.reliability_score
+              }
               gaugePrimaryColor="rgb(79 70 229)"
               gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
             />

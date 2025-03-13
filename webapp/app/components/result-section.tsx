@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import AiInsights from "./ai-insights";
+import ImageCard from "./image-card";
 
 interface ResultSectionProps {
   data: any;
@@ -31,11 +32,7 @@ const ResultSection = forwardRef<HTMLDivElement, ResultSectionProps>(
           {data.web_research_results.web_research_results.map((item: any) => (
             <>
               {item.type === "image" ? (
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-[30%] h-auto place-items-center"
-                />
+                <ImageCard key={item.id} item={item} />
               ) : (
                 <div
                   key={item.id}

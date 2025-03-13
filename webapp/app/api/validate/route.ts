@@ -12,6 +12,11 @@ export async function POST(req: Request) {
         ? "http://localhost:8000/analyse_credibility" // Dev endpoint
         : "https://techfest2025.onrender.com/analyse_credibility"; // Prod endpoint
 
+    // const body_input = {
+    //   url: body.url,
+    //   llm: body.llm ? "groq" : "gpt",
+    // };
+
     const response = await fetch(API_BASE_URL, {
       method: "POST",
       headers: {

@@ -11,7 +11,9 @@ export async function GET() {
 
     const response = await fetch(API_BASE_URL, {
       method: "GET",
+      next: { revalidate: 0 },
       headers: {
+        "Cache-Control": "no-store",
         Authorization: `Bearer ${process.env.RENDER_API_KEY}`,
       },
     });
