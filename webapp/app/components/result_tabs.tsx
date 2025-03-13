@@ -36,7 +36,7 @@ const SearchResultsTabs = ({ search_results }: SearchResultsTabsProps) => {
             <>
               <PreviewImage url={search_results[activeIndex]?.url} />
               <div className="flex flex-col items-center justify-center ml-10">
-                <p className="text-lg text-center mb-2">Relavence score</p>
+                <p className="text-lg text-center mb-2">Relevance score</p>
                 <AnimatedCircularProgressBar
                   max={100}
                   min={0}
