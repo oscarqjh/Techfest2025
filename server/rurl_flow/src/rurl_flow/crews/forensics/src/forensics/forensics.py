@@ -39,6 +39,13 @@ class ImageForensics():
 			tools=[self.image_websearch_tool],  # Assign web search tool
 			verbose=True
 		)
+	
+	@agent
+	def forensics_compiler(self) -> Agent:
+		return Agent(
+			config=self.agents_config['forensics_compiler'],
+			verbose=True
+		)
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
@@ -53,6 +60,12 @@ class ImageForensics():
 			config=self.tasks_config['image_websearch_task']
 		)
 
+	@task
+	def compile_forensics_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['compile_forensics_task']
+		)
+		
 	@crew
 	def crew(self) -> Crew:
 		"""Creates the ImageForensics crew"""

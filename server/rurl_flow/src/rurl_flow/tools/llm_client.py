@@ -1,5 +1,6 @@
-from .globals import client, gpt_client, groq_client
+from .globals import client
 import json
+import re
 
 """3 different api calls are defined here:
     1. WebAnalyser to see which para to factcheck
@@ -397,92 +398,92 @@ def prepare_message(function_name, **kwargs):
             },
         ]
         
-def call_openai_api(data, function_name): 
-    title = data['data']['title']
-    weblink = data['data']['weblink']
-    images = data['data']['image_urls']
-    text = data['data']['content']
-    date = data['data']['date']
+# def call_openai_api(data, function_name): 
+#     title = data['data']['title']
+#     weblink = data['data']['weblink']
+#     images = data['data']['image_urls']
+#     text = data['data']['content']
+#     date = data['data']['date']
+
+# def call_openai_api(data, function_name):
+#     title = data["data"]["title"]
+#     weblink = data["data"]["weblink"]
+#     images = data["data"]["image_url"]
+#     text = data["data"]["content"]
+#     date = data["data"]["date"]
+
+#     output = {}  # Store both image and text results
+#     if function_name == "WebAnalyser":
+#         model = "gpt-4o"
+
+#     if function_name == "WikiAnalyser":
+#         entity = kwargs.get("entity", "")
+#         wiki_url = kwargs.get("wiki_url", "")
+#         summary = kwargs.get("summary", "")
+#         infobox = kwargs.get("infobox", "")
+
+#         return [
+#             {
+#                 "role": "system",
+#                 "content": """You are an expert in analyzing entities and summarizing their information.
+#                             You are given an entity and the wiki content of the entity.""",
+#             },
+#             {
+#                 "role": "user",
+#                 "content": [
+#                     {
+#                         "type": "text",
+#                         "text": f"""
+#                         Instructions:
+
+#                         Remember the following information.
+
+#                         <Entity>
+#                         {entity}
+#                         </Entity>
+                        
+#                         <Wiki Summary>
+#                         {summary}
+#                         </Wiki Summary>
+                        
+#                         <Wiki Infobox>
+#                         {infobox}
+#                         </Wiki Infobox>
+                        
+#                         <Wiki Summary>
+#                         {wiki_url}
+#                         </Wiki Summary>
+                        
+#                         <Objective>
+#                         1. Given the information above, generate a summary of the entity.
+#                         2. In your summary, analyse closely <Wiki Summary> and <Wiki Infobox> to extract key information.
+#                         3. <Wiki Infobox> contains personal details and other relevant information about the entity.
+#                         4. The summary should be concise and informative, highlighting the most important aspects of the entity.
+#                         5. The summary should include the entity's background, significance, and any affiliations with other entities.
+#                         6. The summary should be objective and free from bias or subjective opinions.
+#                         7. The summary should be written in a clear and coherent manner, providing a comprehensive overview of the entity.
+#                         8. The summary should be based on the information provided in the <Wiki Summary> and <Wiki Infobox>.
+#                         9. This information will be used in a downstream pipeline to gather if the entity is credible or not.
+#                         10. Important information to extract includes the entity's background, significance, and any affiliations with other entities such as political parties or groups that are known to push an agenda.
+#                         </Objective>
+                        
+#                         ### **Example Output:**
+#                         The output will be:
+#                             {{
+#                                 "wiki_url": "https://en.wikipedia.org/wiki/DonaldTrump",
+#                                 "summary": "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021.
+#                                             He is known to have made false statements and promoted conspiracy theories, and his presidency was marked by a tumultuous relationship with the media and numerous controversies.
+#                                             He is most notable for his populist and nationalist policies, including his 'America First' agenda and his efforts
+#                                             His is affiliated with the Republican Party and has been a controversial figure in American politics.",
+#                             }}
+#                         """,
+#                     }
+#                 ],
+#             },
+#         ]
+
 
 def call_openai_api(data, function_name):
-    title = data["data"]["title"]
-    weblink = data["data"]["weblink"]
-    images = data["data"]["image_url"]
-    text = data["data"]["content"]
-    date = data["data"]["date"]
-
-    output = {}  # Store both image and text results
-    if function_name == "WebAnalyser":
-        model = "gpt-4o-mini"
-
-    if function_name == "WikiAnalyser":
-        entity = kwargs.get("entity", "")
-        wiki_url = kwargs.get("wiki_url", "")
-        summary = kwargs.get("summary", "")
-        infobox = kwargs.get("infobox", "")
-
-        return [
-            {
-                "role": "system",
-                "content": """You are an expert in analyzing entities and summarizing their information.
-                            You are given an entity and the wiki content of the entity.""",
-            },
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": f"""
-                        Instructions:
-
-                        Remember the following information.
-
-                        <Entity>
-                        {entity}
-                        </Entity>
-                        
-                        <Wiki Summary>
-                        {summary}
-                        </Wiki Summary>
-                        
-                        <Wiki Infobox>
-                        {infobox}
-                        </Wiki Infobox>
-                        
-                        <Wiki Summary>
-                        {wiki_url}
-                        </Wiki Summary>
-                        
-                        <Objective>
-                        1. Given the information above, generate a summary of the entity.
-                        2. In your summary, analyse closely <Wiki Summary> and <Wiki Infobox> to extract key information.
-                        3. <Wiki Infobox> contains personal details and other relevant information about the entity.
-                        4. The summary should be concise and informative, highlighting the most important aspects of the entity.
-                        5. The summary should include the entity's background, significance, and any affiliations with other entities.
-                        6. The summary should be objective and free from bias or subjective opinions.
-                        7. The summary should be written in a clear and coherent manner, providing a comprehensive overview of the entity.
-                        8. The summary should be based on the information provided in the <Wiki Summary> and <Wiki Infobox>.
-                        9. This information will be used in a downstream pipeline to gather if the entity is credible or not.
-                        10. Important information to extract includes the entity's background, significance, and any affiliations with other entities such as political parties or groups that are known to push an agenda.
-                        </Objective>
-                        
-                        ### **Example Output:**
-                        The output will be:
-                            {{
-                                "wiki_url": "https://en.wikipedia.org/wiki/DonaldTrump",
-                                "summary": "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021.
-                                            He is known to have made false statements and promoted conspiracy theories, and his presidency was marked by a tumultuous relationship with the media and numerous controversies.
-                                            He is most notable for his populist and nationalist policies, including his 'America First' agenda and his efforts
-                                            His is affiliated with the Republican Party and has been a controversial figure in American politics.",
-                            }}
-                        """,
-                    }
-                ],
-            },
-        ]
-
-
-def call_openai_api(data, function_name, llm_model="groq"):
     output = {}  # Store both image and text results
     if function_name == "WebAnalyser":
         title = data["data"]["title"]
@@ -490,31 +491,29 @@ def call_openai_api(data, function_name, llm_model="groq"):
         messages = prepare_message(
             title=title, content=text, function_name="WebAnalyser"
         )
-        try:
-            if llm_model =="gpt":
-                model = "gpt-4o-mini"
-        
-                response = gpt_client.chat.completions.create(
-                    model=model,
-                    messages=messages,
-                    functions=functions,
-                    function_call={"name": "WebAnalyser"},
-                    temperature=0.2,
-                )
-            else:
-                model = "deepseek-r1-distill-llama-70b"
-                response = groq_client.chat.completions.create(
-                    model=model,
-                    messages=messages,
-                    functions=functions,
-                    function_call={"name": "WebAnalyser"},
-                    temperature=0.2,
-                )
-            
-            function_args = response.choices[0].message.function_call.arguments
-            web_data = json.loads(function_args)
 
-            output["web_analysis"] = web_data  # Store web analysis results
+        model = "gpt-4o-mini"
+
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                functions=functions,
+                function_call={"name": "WebAnalyser"},
+                temperature=0.2,
+            )
+        
+            function_args = response.choices[0].message.function_call.arguments
+            try:
+                # Remove Markdown code block markers 
+                print("LOL")
+                print(function_args)
+                clean_text = re.sub(r"```json|```", "", function_args).strip()
+                web_data = json.loads(clean_text)
+                output["web_analysis"] = web_data
+            except:
+                web_data = json.loads(function_args)
+                output["web_analysis"] = web_data  # Store web analysis results
 
         except Exception as e:
             print(f"Error occurred while calling OpenAI API for web content: {e}")

@@ -15,7 +15,6 @@ class ValidationAPIRequest(BaseModel):
 
 class CredibilityRequest(BaseModel):
     url: str
-    llm: str
 
 class GetNewsRequest(BaseModel):
     url: str

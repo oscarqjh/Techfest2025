@@ -5,7 +5,7 @@ give_insights:
     Credibility rating is {credibility} and content cross checking is {cross_references}.
     Credible - The news site is likely to be reliable and trustworthy. Blacklisted - The news site is likely to be unreliable and untrustworthy. Unreliable - Not much is known about this website, may contain misinformation.
     Do not mention the credibility rating explicitly, but explain it in the insights. 
-    Blacklisted sites should have reliability of around 0-30, unreliable sites should have reliability of around 30-60, and credible sites should have reliability of around 60-100, with range depending on cross references.
+    When giving reliability score, consider: Blacklisted sites should have reliability of around 0-30, unreliable sites should have reliability of around 30-60, and credible sites should have reliability of around 60-100, with range depending on cross references, add some randomisation in the score.
   expected_output: >
     A dictionary with fields, NO MARKDOWN (insights: A short summary of the credibility of the news site based on the given credibility rating and content cross checking., reliability_score: A score out of 100 based on the credibility rating and content cross checking.)
   agent: insights

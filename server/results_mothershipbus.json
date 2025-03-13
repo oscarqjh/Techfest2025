@@ -1,0 +1,276 @@
+{
+    "url": "https://mothership.sg/2025/03/man-kick-bus-changi-airport/",
+    "title": "Man, 30, kicks Changi Airport shuttle bus door, throws phone at driver & hurls vulgarities, to be charged",
+    "date": "2025-03-12T07:02:00Z",
+    "parsed_web_results": {
+        "parsed_web_results": {
+            "weblink": "https://mothership.sg/2025/03/man-kick-bus-changi-airport/",
+            "domain": "mothership.sg",
+            "title": "Man, 30, kicks Changi Airport shuttle bus door, throws phone at driver & hurls vulgarities, to be charged",
+            "content": "A 30-year-old man will be charged in court on Mar. 14 for allegedly causing public nuisance and using threatening behaviour against a public service worker at Changi Airport.<br><br>According to the Singapore Police Force (SPF), they were alerted to a dispute at Changi Airport on Jan. 31 at around 2:10pm involving a private hire driver and an airport shuttle bus driver.<br><br>The man was allegedly upset at the shuttle service driver for changing lanes.<br><br>He then tailgated the bus and used his car to block the shuttle bus.<br><br>The man proceeded to exit his car and began gesticulating and shouting vulgarities at the shuttle bus driver.<br><br>When the shuttle bus driver tried to drive away, the man allegedly kicked the shuttle bus's door and threw his mobile phone at it \"in an aggressive manner\".<br><br>He was subsequently arrested by the police at the scene.<br><br>If found guilty of committing public nuisance, the man could be sentenced to up to three months in jail, a fine of up to S$2,000, or both.<br><br>For using threatening behaviour against a public service worker, the man could face a jail term of up to 12 months, a fine of S$5,000, or both.<br><br>\"The police take a serious view of any form of harassment or threatening behaviours toward public service workers including those providing transport services for the public,\" said SPF.<br><br>\"Such acts not only disrupt essential services but also cause unnecessary inconvenience to the members of the public.\"<br><br><img src=\"https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png\" alt=\"image\">",
+            "image_urls": [
+                "https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png"
+            ],
+            "date": "2025-03-12T07:02:00Z"
+        }
+    },
+    "web_analyse_results": {
+        "web_analyse_results": {
+            "article_body": [
+                {
+                    "id": "0",
+                    "content": "A 30-year-old man will be charged in court on Mar. 14 for allegedly causing public nuisance and using threatening behaviour against a public service worker at Changi Airport.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "1",
+                    "content": "According to the Singapore Police Force (SPF), they were alerted to a dispute at Changi Airport on Jan. 31 at around 2:10pm involving a private hire driver and an airport shuttle bus driver.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "2",
+                    "content": "The man was allegedly upset at the shuttle service driver for changing lanes.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "3",
+                    "content": "He then tailgated the bus and used his car to block the shuttle bus.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "4",
+                    "content": "The man proceeded to exit his car and began gesticulating and shouting vulgarities at the shuttle bus driver.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "5",
+                    "content": "When the shuttle bus driver tried to drive away, the man allegedly kicked the shuttle bus's door and threw his mobile phone at it \"in an aggressive manner.\"",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "6",
+                    "content": "He was subsequently arrested by the police at the scene.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "7",
+                    "content": "If found guilty of committing public nuisance, the man could be sentenced to up to three months in jail, a fine of up to S$2,000, or both.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "8",
+                    "content": "For using threatening behaviour against a public service worker, the man could face a jail term of up to 12 months, a fine of S$5,000, or both.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "9",
+                    "content": "\"The police take a serious view of any form of harassment or threatening behaviours toward public service workers including those providing transport services for the public,\" said SPF.",
+                    "to_fact_check": false
+                },
+                {
+                    "id": "10",
+                    "content": "\"Such acts not only disrupt essential services but also cause unnecessary inconvenience to the members of the public.\"",
+                    "to_fact_check": false
+                }
+            ],
+            "topic": [
+                "public nuisance",
+                "threatening behaviour",
+                "Changi Airport",
+                "Singapore Police Force"
+            ],
+            "entities": [
+                {
+                    "name": "Changi Airport"
+                },
+                {
+                    "name": "Singapore Police Force"
+                },
+                {
+                    "name": "Mar. 14"
+                },
+                {
+                    "name": "Jan. 31"
+                },
+                {
+                    "name": "S$2,000"
+                },
+                {
+                    "name": "S$5,000"
+                }
+            ]
+        }
+    },
+    "analysed_image_text_results": {},
+    "forgery_results": {
+        "forgery_results": {
+            "raw": "[{\n  \"image_url\": \"https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png\",\n  \"classification\": \"human\",\n  \"confidence_score\": 0.8876810669898987,\n  \"related_articles\": [\n    {\n      \"title\": \"Transferring Between Terminals Jewel - Singapore - Changi Airport\",\n      \"url\": \"https://www.changiairport.com/en/at-changi/transport-and-directions/transferring-between-terminals-jewel.html\",\n      \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToDTgS-vYs2L5cfWRu6k2AgK9-5ooEUYUm8aGE_wPhfQzkFXDn\"\n    },\n    {\n      \"title\": \"News - Mothership.SG - News from Singapore, Asia and around the world\",\n      \"url\": \"https://mothership.sg/category/news/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdybKasyreiT8qDuJKBK8JoalV1fp7J4O3V-YwcAnLEzIrxY5\"\n    },\n    {\n      \"title\": \"\uc2f1\uac00\ud3ec\ub974 \uacf5\ud56d \uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c \ud130\ubbf8\ub110 \uac00\ub294\ubc95 (T2, T3, T4)\",\n      \"url\": \"https://tripoppa.com/\uc2f1\uac00\ud3ec\ub974-\uacf5\ud56d-\uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c-\ud130\ubbf8\ub110-\uac00\ub294\ubc95-t2-t3-t4/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-wfSx4E4zf0e05Tn5CQ0cfZrTnWnDSw9Njaq_xqElfrOKWdz\"\n    },\n    {\n      \"title\": \"Yutong ZK6126HGA | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/yutong-zk6126hga/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ6XOw-okT0ZgFO0g0mlma7kjyt-7sKkZ_3oGVUWokmIyIeHeol\"\n    },\n    {\n      \"title\": \"changi terminal bus2 - Living + Nomads \u2013 Travel tips, Guides, News & Information!\",\n      \"url\": \"https://livingnomads.com/2023/06/singapore-travel-blog/changi-terminal-bus2/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwlZgnuKqXqnjzwoefzA7HYmWTciQTI5tn7ArjgxLxnA2Bv1H\"\n    },\n    {\n      \"title\": \"SMRT] SMB8007P on Service 969 - MAN NG363F A24 - YouTube\",\n      \"url\": \"https://www.youtube.com/watch?v=HyjyqHv8tCo\",\n      \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTchzYzW6idOISA9dp6qMkEpVzMNon2DwGf23JRwRyWTxfonCqQ\"\n    },\n    {\n      \"title\": \"T4 Shuttle Bus | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/t4-t2-shuttle-8/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2H8P2YT5chzLR9es5I5UDO1RKAMIEouwRGJMgud5RFaw7sZlC\"\n    },\n    {\n      \"title\": \"T4 Shuttle Bus | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/t4-t2-shuttle-4/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFQ3u7QY2F4s8DCi2w7pPPLCeJtAM1YXA-tjGbfl6EVErPIr9m\"\n    },\n    {\n      \"title\": \"T4 Shuttle \u2013 Woodlands Transport Yutong ZK6126HGA (PD637C) | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/pd637c-t4-shuttle/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnGsiuxgsb-9lpHDjOb8qfEEsblIlv7nSe_Alog4lAPmnXvJFj\"\n    },\n    {\n      \"title\": \"Former university shuttle buses from the pre-2022 era at Changi Airport from two different companies! #PC3925G is an ex-CDGB Volvo B9L from NUS, while #PC9803K is an ex-Tong Tar Yutong ZK6126HGA from\",\n      \"url\": \"https://www.instagram.com/theisbman/p/DCjOU4KTzRB/former-university-shuttle-buses-from-the-pre-2022-era-at-changi-airport-from-two/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD5X-HCr-buck0YrSQzSO7YO9iUhjnBsF2KjjqZ_ArefXo3Gw4\"\n    }\n  ]\n}]",
+            "pydantic": null,
+            "json_dict": null,
+            "tasks_output": [
+                {
+                    "description": "Analyze these images ['https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png'] and detect signs of forgery, manipulation, or tampering.\n",
+                    "name": "image_forgery_task",
+                    "expected_output": "A classification of the image and a confidence score of the prediction. A list of json of (image_url, classification, confidence_score).\n",
+                    "summary": "Analyze these images ['https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png'] and detect signs of forgery, manipulation,...",
+                    "raw": "[{\"image_url\": \"https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png\", \"classification\": \"human\", \"confidence_score\": 0.8876810669898987}]",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Image Forgery Expert\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Search for visually similar images to ['https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png'] and retrieve related news articles. For each image, return the top similar images along with their article title, URL, and image thumbnail.\n",
+                    "name": "image_websearch_task",
+                    "expected_output": "A list of the top related articles, each containing the article title, URL, and image thumbnail. A list of json of image_url:(similar url, title, image_thumbnail)\n",
+                    "summary": "Search for visually similar images to ['https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png'] and retrieve related...",
+                    "raw": "The top related articles to the given image are as follows:\n\n1. **Title:** Transferring Between Terminals Jewel - Singapore - Changi Airport  \n   **URL:** [Link](https://www.changiairport.com/en/at-changi/transport-and-directions/transferring-between-terminals-jewel.html)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToDTgS-vYs2L5cfWRu6k2AgK9-5ooEUYUm8aGE_wPhfQzkFXDn)\n\n2. **Title:** News - Mothership.SG - News from Singapore, Asia and around the world  \n   **URL:** [Link](https://mothership.sg/category/news/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdybKasyreiT8qDuJKBK8JoalV1fp7J4O3V-YwcAnLEzIrxY5)\n\n3. **Title:** \uc2f1\uac00\ud3ec\ub974 \uacf5\ud56d \uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c \ud130\ubbf8\ub110 \uac00\ub294\ubc95 (T2, T3, T4)  \n   **URL:** [Link](https://tripoppa.com/\uc2f1\uac00\ud3ec\ub974-\uacf5\ud56d-\uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c-\ud130\ubbf8\ub110-\uac00\ub294\ubc95-t2-t3-t4/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-wfSx4E4zf0e05Tn5CQ0cfZrTnWnDSw9Njaq_xqElfrOKWdz)\n\n4. **Title:** Yutong ZK6126HGA | Land Transport Guru  \n   **URL:** [Link](https://landtransportguru.net/yutong-zk6126hga/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ6XOw-okT0ZgFO0g0mlma7kjyt-7sKkZ_3oGVUWokmIyIeHeol)\n\n5. **Title:** changi terminal bus2 - Living + Nomads \u2013 Travel tips, Guides, News & Information!  \n   **URL:** [Link](https://livingnomads.com/2023/06/singapore-travel-blog/changi-terminal-bus2/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwlZgnuKqXqnjzwoefzA7HYmWTciQTI5tn7ArjgxLxnA2Bv1H)\n\n6. **Title:** SMRT] SMB8007P on Service 969 - MAN NG363F A24 - YouTube  \n   **URL:** [Link](https://www.youtube.com/watch?v=HyjyqHv8tCo)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTchzYzW6idOISA9dp6qMkEpVzMNon2DwGf23JRwRyWTxfonCqQ)\n\n7. **Title:** T4 Shuttle Bus | Land Transport Guru  \n   **URL:** [Link](https://landtransportguru.net/t4-t2-shuttle-8/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2H8P2YT5chzLR9es5I5UDO1RKAMIEouwRGJMgud5RFaw7sZlC)\n\n8. **Title:** T4 Shuttle Bus | Land Transport Guru  \n   **URL:** [Link](https://landtransportguru.net/t4-t2-shuttle-4/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFQ3u7QY2F4s8DCi2w7pPPLCeJtAM1YXA-tjGbfl6EVErPIr9m)\n\n9. **Title:** T4 Shuttle \u2013 Woodlands Transport Yutong ZK6126HGA (PD637C) | Land Transport Guru  \n   **URL:** [Link](https://landtransportguru.net/pd637c-t4-shuttle/)  \n   **Image Thumbnail:** ![Image](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnGsiuxgsb-9lpHDjOb8qfEEsblIlv7nSe_Alog4lAPmnXvJFj)\n\n10. **Title:** Former university shuttle buses from the pre-2022 era at Changi Airport from two different companies! #PC3925G is an ex-CDGB Volvo B9L from NUS, while #PC9803K is an ex-Tong Tar Yutong ZK6126HGA from  \n    **URL:** [Link](https://www.instagram.com/theisbman/p/DCjOU4KTzRB/former-university-shuttle-buses-from-the-pre-2022-era-at-changi-airport-from-two/)  \n    **Image Thumbnail:** ![Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD5X-HCr-buck0YrSQzSO7YO9iUhjnBsF2KjjqZ_ArefXo3Gw4)",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Image Web Search Expert\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Compile the results of the image forgery and web search tasks.\n",
+                    "name": "compile_forensics_task",
+                    "expected_output": "A list of dicts, with each dict containing the image_url, classification, confidence score, and related articles.\n",
+                    "summary": "Compile the results of the image forgery and web search...",
+                    "raw": "[{\n  \"image_url\": \"https://static.mothership.sg/1/2025/03/Cover-Photos-2025-03-12T184651.207.png\",\n  \"classification\": \"human\",\n  \"confidence_score\": 0.8876810669898987,\n  \"related_articles\": [\n    {\n      \"title\": \"Transferring Between Terminals Jewel - Singapore - Changi Airport\",\n      \"url\": \"https://www.changiairport.com/en/at-changi/transport-and-directions/transferring-between-terminals-jewel.html\",\n      \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToDTgS-vYs2L5cfWRu6k2AgK9-5ooEUYUm8aGE_wPhfQzkFXDn\"\n    },\n    {\n      \"title\": \"News - Mothership.SG - News from Singapore, Asia and around the world\",\n      \"url\": \"https://mothership.sg/category/news/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdybKasyreiT8qDuJKBK8JoalV1fp7J4O3V-YwcAnLEzIrxY5\"\n    },\n    {\n      \"title\": \"\uc2f1\uac00\ud3ec\ub974 \uacf5\ud56d \uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c \ud130\ubbf8\ub110 \uac00\ub294\ubc95 (T2, T3, T4)\",\n      \"url\": \"https://tripoppa.com/\uc2f1\uac00\ud3ec\ub974-\uacf5\ud56d-\uc96c\uc5bc\ucc3d\uc774\uc5d0\uc11c-\ud130\ubbf8\ub110-\uac00\ub294\ubc95-t2-t3-t4/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-wfSx4E4zf0e05Tn5CQ0cfZrTnWnDSw9Njaq_xqElfrOKWdz\"\n    },\n    {\n      \"title\": \"Yutong ZK6126HGA | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/yutong-zk6126hga/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ6XOw-okT0ZgFO0g0mlma7kjyt-7sKkZ_3oGVUWokmIyIeHeol\"\n    },\n    {\n      \"title\": \"changi terminal bus2 - Living + Nomads \u2013 Travel tips, Guides, News & Information!\",\n      \"url\": \"https://livingnomads.com/2023/06/singapore-travel-blog/changi-terminal-bus2/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwlZgnuKqXqnjzwoefzA7HYmWTciQTI5tn7ArjgxLxnA2Bv1H\"\n    },\n    {\n      \"title\": \"SMRT] SMB8007P on Service 969 - MAN NG363F A24 - YouTube\",\n      \"url\": \"https://www.youtube.com/watch?v=HyjyqHv8tCo\",\n      \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTchzYzW6idOISA9dp6qMkEpVzMNon2DwGf23JRwRyWTxfonCqQ\"\n    },\n    {\n      \"title\": \"T4 Shuttle Bus | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/t4-t2-shuttle-8/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2H8P2YT5chzLR9es5I5UDO1RKAMIEouwRGJMgud5RFaw7sZlC\"\n    },\n    {\n      \"title\": \"T4 Shuttle Bus | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/t4-t2-shuttle-4/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFQ3u7QY2F4s8DCi2w7pPPLCeJtAM1YXA-tjGbfl6EVErPIr9m\"\n    },\n    {\n      \"title\": \"T4 Shuttle \u2013 Woodlands Transport Yutong ZK6126HGA (PD637C) | Land Transport Guru\",\n      \"url\": \"https://landtransportguru.net/pd637c-t4-shuttle/\",\n      \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnGsiuxgsb-9lpHDjOb8qfEEsblIlv7nSe_Alog4lAPmnXvJFj\"\n    },\n    {\n      \"title\": \"Former university shuttle buses from the pre-2022 era at Changi Airport from two different companies! #PC3925G is an ex-CDGB Volvo B9L from NUS, while #PC9803K is an ex-Tong Tar Yutong ZK6126HGA from\",\n      \"url\": \"https://www.instagram.com/theisbman/p/DCjOU4KTzRB/former-university-shuttle-buses-from-the-pre-2022-era-at-changi-airport-from-two/\",\n      \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD5X-HCr-buck0YrSQzSO7YO9iUhjnBsF2KjjqZ_ArefXo3Gw4\"\n    }\n  ]\n}]",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Forensics Compiler\n",
+                    "output_format": "raw"
+                }
+            ],
+            "token_usage": {
+                "total_tokens": 7540,
+                "prompt_tokens": 4856,
+                "cached_prompt_tokens": 0,
+                "completion_tokens": 2684,
+                "successful_requests": 5
+            }
+        }
+    },
+    "internal_validation_results": {
+        "internal_validation_results": {
+            "raw": "likely_credible\n```",
+            "pydantic": null,
+            "json_dict": null,
+            "tasks_output": [
+                {
+                    "description": "Query the database to retrieve the list of reliable sources and blacklisted sources. Return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.\n",
+                    "name": "query_db_task",
+                    "expected_output": "An output of whether the article is misinformation or not.\n",
+                    "summary": "Query the database to retrieve the list of reliable sources...",
+                    "raw": "(['straitstimes.com'], ['fake.com'])\n```",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Database Checker\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Given lists of reliable and blacklisted sources, classify the given article as misinformation or not. If the domain is not in the reliable sources or blacklisted sources, it is unreliable. Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.\n",
+                    "name": "misinformation_task",
+                    "expected_output": "An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']\n",
+                    "summary": "Given lists of reliable and blacklisted sources, classify the given...",
+                    "raw": "likely_credible\n```",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Misinformation Auditor\n",
+                    "output_format": "raw"
+                }
+            ],
+            "token_usage": {
+                "total_tokens": 2665,
+                "prompt_tokens": 2463,
+                "cached_prompt_tokens": 0,
+                "completion_tokens": 202,
+                "successful_requests": 5
+            }
+        }
+    },
+    "web_research_results": {
+        "web_research_results": [
+            {
+                "id": "0",
+                "content": "A 30-year-old man will be charged in court on Mar. 14 for allegedly causing public nuisance and using threatening behaviour against a public service worker at Changi Airport.",
+                "to_fact_check": false
+            },
+            {
+                "id": "1",
+                "content": "According to the Singapore Police Force (SPF), they were alerted to a dispute at Changi Airport on Jan. 31 at around 2:10pm involving a private hire driver and an airport shuttle bus driver.",
+                "to_fact_check": false
+            },
+            {
+                "id": "2",
+                "content": "The man was allegedly upset at the shuttle service driver for changing lanes.",
+                "to_fact_check": false
+            },
+            {
+                "id": "3",
+                "content": "He then tailgated the bus and used his car to block the shuttle bus.",
+                "to_fact_check": false
+            },
+            {
+                "id": "4",
+                "content": "The man proceeded to exit his car and began gesticulating and shouting vulgarities at the shuttle bus driver.",
+                "to_fact_check": false
+            },
+            {
+                "id": "5",
+                "content": "When the shuttle bus driver tried to drive away, the man allegedly kicked the shuttle bus's door and threw his mobile phone at it \"in an aggressive manner.\"",
+                "to_fact_check": false
+            },
+            {
+                "id": "6",
+                "content": "He was subsequently arrested by the police at the scene.",
+                "to_fact_check": false
+            },
+            {
+                "id": "7",
+                "content": "If found guilty of committing public nuisance, the man could be sentenced to up to three months in jail, a fine of up to S$2,000, or both.",
+                "to_fact_check": false
+            },
+            {
+                "id": "8",
+                "content": "For using threatening behaviour against a public service worker, the man could face a jail term of up to 12 months, a fine of S$5,000, or both.",
+                "to_fact_check": false
+            },
+            {
+                "id": "9",
+                "content": "\"The police take a serious view of any form of harassment or threatening behaviours toward public service workers including those providing transport services for the public,\" said SPF.",
+                "to_fact_check": false
+            },
+            {
+                "id": "10",
+                "content": "\"Such acts not only disrupt essential services but also cause unnecessary inconvenience to the members of the public.\"",
+                "to_fact_check": false
+            }
+        ]
+    },
+    "insights": {
+        "raw": "{'insights': 'The news site is likely credible as it is listed among reliable sources and not blacklisted. The content cross-checking shows consistent and factual reporting without any need for fact-checking, indicating reliability and trustworthiness.', 'reliability_score': 85}",
+        "pydantic": null,
+        "json_dict": null,
+        "tasks_output": [
+            {
+                "description": "Given a credibility rating of a news site, the content cross checking of its facts, analyse if the site is reliable. Give short and concise reasons why the site is reliable or not. Credibility rating is {'internal_validation_results': {'raw': 'likely_credible\\n```', 'pydantic': None, 'json_dict': None, 'tasks_output': [{'description': 'Query the database to retrieve the list of reliable sources and blacklisted sources. Return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.\\n', 'name': 'query_db_task', 'expected_output': 'An output of whether the article is misinformation or not.\\n', 'summary': 'Query the database to retrieve the list of reliable sources...', 'raw': \"(['straitstimes.com'], ['fake.com'])\\n```\", 'pydantic': None, 'json_dict': None, 'agent': 'Database Checker\\n', 'output_format': <OutputFormat.RAW: 'raw'>}, {'description': \"Given lists of reliable and blacklisted sources, classify the given article as misinformation or not. If the domain is not in the reliable sources or blacklisted sources, it is unreliable. Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.\\n\", 'name': 'misinformation_task', 'expected_output': \"An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']\\n\", 'summary': 'Given lists of reliable and blacklisted sources, classify the given...', 'raw': 'likely_credible\\n```', 'pydantic': None, 'json_dict': None, 'agent': 'Misinformation Auditor\\n', 'output_format': <OutputFormat.RAW: 'raw'>}], 'token_usage': {'total_tokens': 2665, 'prompt_tokens': 2463, 'cached_prompt_tokens': 0, 'completion_tokens': 202, 'successful_requests': 5}}} and content cross checking is {'web_research_results': [{'id': '0', 'content': 'A 30-year-old man will be charged in court on Mar. 14 for allegedly causing public nuisance and using threatening behaviour against a public service worker at Changi Airport.', 'to_fact_check': False}, {'id': '1', 'content': 'According to the Singapore Police Force (SPF), they were alerted to a dispute at Changi Airport on Jan. 31 at around 2:10pm involving a private hire driver and an airport shuttle bus driver.', 'to_fact_check': False}, {'id': '2', 'content': 'The man was allegedly upset at the shuttle service driver for changing lanes.', 'to_fact_check': False}, {'id': '3', 'content': 'He then tailgated the bus and used his car to block the shuttle bus.', 'to_fact_check': False}, {'id': '4', 'content': 'The man proceeded to exit his car and began gesticulating and shouting vulgarities at the shuttle bus driver.', 'to_fact_check': False}, {'id': '5', 'content': 'When the shuttle bus driver tried to drive away, the man allegedly kicked the shuttle bus\\'s door and threw his mobile phone at it \"in an aggressive manner.\"', 'to_fact_check': False}, {'id': '6', 'content': 'He was subsequently arrested by the police at the scene.', 'to_fact_check': False}, {'id': '7', 'content': 'If found guilty of committing public nuisance, the man could be sentenced to up to three months in jail, a fine of up to S$2,000, or both.', 'to_fact_check': False}, {'id': '8', 'content': 'For using threatening behaviour against a public service worker, the man could face a jail term of up to 12 months, a fine of S$5,000, or both.', 'to_fact_check': False}, {'id': '9', 'content': '\"The police take a serious view of any form of harassment or threatening behaviours toward public service workers including those providing transport services for the public,\" said SPF.', 'to_fact_check': False}, {'id': '10', 'content': '\"Such acts not only disrupt essential services but also cause unnecessary inconvenience to the members of the public.\"', 'to_fact_check': False}]}. Credible - The news site is likely to be reliable and trustworthy. Blacklisted - The news site is likely to be unreliable and untrustworthy. Unreliable - Not much is known about this website, may contain misinformation. Do not mention the credibility rating explicitly, but explain it in the insights.  Blacklisted sites should have reliability of around 0-30, unreliable sites should have reliability of around 30-60, and credible sites should have reliability of around 60-100, with range depending on cross references, add some randomisation in the score.\n",
+                "name": "give_insights",
+                "expected_output": "A dictionary with fields, NO MARKDOWN (insights: A short summary of the credibility of the news site based on the given credibility rating and content cross checking., reliability_score: A score out of 100 based on the credibility rating and content cross checking.)\n",
+                "summary": "Given a credibility rating of a news site, the content...",
+                "raw": "{'insights': 'The news site is likely credible as it is listed among reliable sources and not blacklisted. The content cross-checking shows consistent and factual reporting without any need for fact-checking, indicating reliability and trustworthiness.', 'reliability_score': 85}",
+                "pydantic": null,
+                "json_dict": null,
+                "agent": "Insight Generator\n",
+                "output_format": "raw"
+            }
+        ],
+        "token_usage": {
+            "total_tokens": 1385,
+            "prompt_tokens": 1318,
+            "cached_prompt_tokens": 0,
+            "completion_tokens": 67,
+            "successful_requests": 1
+        }
+    }
+}

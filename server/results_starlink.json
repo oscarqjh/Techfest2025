@@ -1,0 +1,290 @@
+{
+    "url": "https://www.straitstimes.com/opinion/europe-is-best-placed-to-break-starlinks-global-grip",
+    "title": "Europe is best placed to break Starlink\u2019s global grip",
+    "date": "2025-03-13T05:00:00+08:00",
+    "parsed_web_results": {
+        "parsed_web_results": {
+            "weblink": "https://www.straitstimes.com/opinion/europe-is-best-placed-to-break-starlinks-global-grip",
+            "domain": "straitstimes.com",
+            "title": "Europe is best placed to break Starlink\u2019s global grip",
+            "content": "<h1>Europe is best placed to break Starlink\u2019s global grip</h1>\n<p>Asia is embracing Elon Musk\u2019s satellite internet to boost broadband \u2013 but must back alternatives to avoid reliance on one capricious provider.</p>\n<img src=\"https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e?w=860\" alt=\"People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022.\">\n<p>People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES</p>",
+            "image_urls": [
+                "https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e"
+            ],
+            "date": "2025-03-13T05:00:00+08:00"
+        }
+    },
+    "web_analyse_results": {
+        "web_analyse_results": {
+            "article_body": [
+                {
+                    "id": "0",
+                    "content": "Asia is embracing Elon Musk\u2019s satellite internet to boost broadband \u2013 but must back alternatives to avoid reliance on one capricious provider.",
+                    "to_fact_check": true,
+                    "search_results": [
+                        {
+                            "title": "Elon Musk makes India inroads with two major deals",
+                            "url": "https://www.cnn.com/2025/03/12/tech/india-reliance-jio-bharti-airtel-starlink-deals-intl-hnk/index.html",
+                            "content": "Elon Musk makes India inroads with two major deals | CNN Business Follow CNN Business CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Elon Musk has secured a major win in India by signing two back-to-back deals to bring SpaceX\u2019s Starlink satellite internet services to the country. More from CNN CNN Business Videos Santiago/Getty ImagesVideo CNN reporter breaks down market meltdown 1:29 Mar 11, 2025 CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Follow CNN Business Dow Jones: The Dow Jones branded indices are proprietary to and are calculated, distributed and marketed by DJI Opco, a subsidiary of S&P Dow Jones Indices LLC and have been licensed for use to S&P Opco, LLC and CNN.",
+                            "score": 0.50065976,
+                            "raw_content": null
+                        },
+                        {
+                            "title": "Musk, Ambani join hands in surprise Starlink India internet deal",
+                            "url": "https://www.reuters.com/markets/deals/indias-reliance-jio-signs-deal-bring-spacexs-starlink-internet-india-2025-03-12/",
+                            "content": "Mukesh Ambani's Reliance Jio signed a deal with Elon Musk's SpaceX to bring Starlink satellite internet services to India, a surprise move from the billionaires after being at odds for months over",
+                            "score": 0.41948205,
+                            "raw_content": null
+                        },
+                        {
+                            "title": "Reliance Jio and SpaceX partner for Starlink internet in India after ...",
+                            "url": "https://apnews.com/article/india-starlink-elon-musk-ab8eb4c9b8e629763f411520e46b8dca",
+                            "content": "![Image 4: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](https://dims.apnews.com/dims4/default/1cc8369/2147483647/strip/true/crop/2200x1466+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ff6%2Fc4%2F4ff8593c635c219bcba0812e93e3%2Fcd64895d01b44c58a0c9156fcaaeb7d0) ![Image 8: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](blob:https://apnews.com/7fbd8254586292e1bc6d646fe8d717fc)",
+                            "score": 0.4186262,
+                            "raw_content": null
+                        }
+                    ],
+                    "fact_check": {
+                        "misinformation_score": 0.3,
+                        "explanation": "The statement acknowledges the positive impact of Elon Musk's satellite internet on broadband in Asia, which aligns with reported deals. However, it implies that reliance on a single provider like Musk's SpaceX could be risky, though it lacks specific evidence or context to fully substantiate this caution. Hence, while not outright misinformation, it may exaggerate concerns, meriting a moderate score."
+                    }
+                },
+                {
+                    "id": "1",
+                    "content": "People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES",
+                    "to_fact_check": true,
+                    "search_results": [
+                        {
+                            "title": "Starlink to roll out direct-to-cell services in Ukraine",
+                            "url": "https://citinewsroom.com/2024/12/starlink-to-roll-out-direct-to-cell-services-in-ukraine/",
+                            "content": "KHERSON, UKRAINE - NOVEMBER 13: Local residents use internet from the Starlink network, set up by Ukrainian army on November 13, 2022 in Kherson, Ukraine. A curfew was introduced in the city from 17:00. until 8:00 a.m. filtration and demining will be carried out. The Ukrainian authorities promise to restore the connection within a few days",
+                            "score": 0.87218446,
+                            "raw_content": null
+                        },
+                        {
+                            "title": "Europe is best placed to break Starlink's global grip",
+                            "url": "https://www.straitstimes.com/opinion/europe-is-best-placed-to-break-starlinks-global-grip",
+                            "content": "People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES",
+                            "score": 0.86713725,
+                            "raw_content": null
+                        },
+                        {
+                            "title": "What happens if Ukraine loses access to Starlink? Can ... - Firstpost",
+                            "url": "https://www.firstpost.com/explainers/what-happens-if-ukraine-loses-access-to-starlink-can-europes-eutelsat-replace-it-13869161.html",
+                            "content": "Suggestions that Ukraine could lose access to Elon Musk's Starlink satellite internet system, which has been vital in maintaining its military communications as it fights Russia's invasion, have focused investor interest on Starlink's smaller European rival E utelsat. Sources familiar with the matter told Reuters last month that the United States might use Starlink access as a lever in",
+                            "score": 0.29431686,
+                            "raw_content": null
+                        }
+                    ],
+                    "fact_check": {
+                        "misinformation_score": 0.1,
+                        "explanation": "The given text closely aligns with the content of the second source, which states that people gather to use Starlink internet after a Russian attack on a communications tower in Kherson. There is no indication of misinformation; however, it lacks additional context about current developments with Starlink in Ukraine. Thus, a low misinformation score is assigned due to its factual basis but with some contextual gaps."
+                    }
+                }
+            ],
+            "topic": [
+                "satellite internet",
+                "Starlink",
+                "broadband alternatives"
+            ],
+            "entities": [
+                {
+                    "name": "Elon Musk"
+                },
+                {
+                    "name": "Starlink"
+                },
+                {
+                    "name": "Asia"
+                },
+                {
+                    "name": "Ukraine"
+                },
+                {
+                    "name": "Kherson"
+                }
+            ]
+        }
+    },
+    "analysed_image_text_results": {},
+    "forgery_results": {
+        "forgery_results": {
+            "raw": "[\n  {\n    \"image_url\": \"https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e\",\n    \"classification\": \"human\",\n    \"confidence_score\": 0.8575382232666016,\n    \"related_articles\": [\n      {\n        \"title\": \"Trump's Attacks Give Zelensky a Popularity Boost in Ukraine - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2025/03/10/world/europe/trump-zelensky-ukraine-popularity.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4znBztl8lMIzBVbVa4HfWTZPHNOeo-ampz7Je4GCD-oF4KNKp\"\n      },\n      {\n        \"title\": \"How Musk Foiled a Ukrainian Drone Attack on Russia's Black Sea Fleet Last Year - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2023/09/08/world/europe/elon-musk-ukraine-starlink-drones.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRDlt-mKqPT6-BvEe0MN0wXPLvaZrBjsWFwr5hf400o4k_ZvPVZ\"\n      },\n      {\n        \"title\": \"The Big Five - 2 February edition - by Mick Ryan\",\n        \"url\": \"https://mickryan.substack.com/p/the-big-five-2-february-edition\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPOriklGNZ8Hi9SerpJYzE_KW0TzdTgZcFD58cjxUBnnkZkM2t\"\n      },\n      {\n        \"title\": \"Elon Musk's SpaceX wins Pentagon contract for satellite in Ukraine\",\n        \"url\": \"https://www.ft.com/content/8503ed5a-5ca2-4d34-8c69-66ae92fa80dd\",\n        \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdApJEvomMgX-2mpt6SP-QVysltxyiaXFZHsFGSFll2W6EPbID\"\n      },\n      {\n        \"title\": \"Two men are seen arguing near an exhibit with cut-out figures of presidential candidates including a figure of Russian president Vladimir Putin in Kyiv, Ukraine on March 29, 2019.\",\n        \"url\": \"https://www.alamy.com/two-men-are-seen-arguing-near-an-exhibit-with-cut-out-figures-of-presidential-candidates-including-a-figure-of-russian-president-vladimir-putin-in-kyiv-ukraine-on-march-29-2019-the-exhibit-along-one-of-the-citys-busiest-roads-leads-passersby-into-fierce-arguments-with-the-instigators-who-believe-all-candidates-except-incumbent-president-petro-poroshenko-are-russian-marionettes-photo-by-jaap-arriens-sipa-usa-image408632269.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToiFenn3CK4KUMhorxB0GGW97e6B1vjkmQINLXwrb73fGjV23_\"\n      },\n      {\n        \"title\": \"Ukrainian Government Rushes to Dampen Secessionist Sentiment - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2014/03/03/world/europe/ukraine.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQpEPT21t2lazQaGP8oNOe_JjV2n4fSM1Oeh8lG5q-6ZoKj1d-u\"\n      },\n      {\n        \"title\": \"Russia-Ukraine War: Explosion in Poland Kills Two Near Border With Ukraine - The New York Times\",\n        \"url\": \"https://www.nytimes.com/live/2022/11/14/world/russia-ukraine-war-news-g20\",\n        \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSH2HqryGXdX0FnVz5FVBJZeIBQ-EtcRDcvMlDEmGiLy1qOR6bk\"\n      },\n      {\n        \"title\": \"The Humanitarian Crisis in Ukraine Is Getting Worse | Vanity Fair\",\n        \"url\": \"https://www.vanityfair.com/news/2022/03/war-crimes-are-part-of-russias-deliberate-strategy-the-humanitarian-crisis-in-ukraine-is-getting-worse\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIp49oc_uo_zCc4XPirfOKFbatZ7LokJtPuBfJS_aQzPTWG9pB\"\n      },\n      {\n        \"title\": \"\u0627\u06cc\u0633\u0646\u0627 - \u0627\u06cc\u0644\u0627\u0646 \u0645\u0627\u0633\u06a9 \u0646\u0645\u06cc\\u200c\u062e\u0648\u0627\u0647\u062f \u0627\u0648\u06a9\u0631\u0627\u06cc\u0646 \u0627\u0632 \u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9 \u0628\u0631\u0627\u06cc \u062d\u0645\u0644\u0647 \u0628\u0647 \u0631\u0648\u0633\u06cc\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u062f - \u0635\u0627\u062d\u0628\\u200c\u062e\u0628\u0631\",\n        \"url\": \"https://sahebkhabar.ir/news/61560502/\u0627\u06cc\u0644\u0627\u0646-\u0645\u0627\u0633\u06a9-\u0646\u0645\u06cc-\u062e\u0648\u0627\u0647\u062f-\u0627\u0648\u06a9\u0631\u0627\u06cc\u0646-\u0627\u0632-\u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9-\u0628\u0631\u0627\u06cc-\u062d\u0645\u0644\u0647-\u0628\u0647-\u0631\u0648\u0633\u06cc\u0647\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL2L_9KCCheoG0MiAIuxR1itGky1-PA7sIKcUs-QJbDEZPBkR9\"\n      },\n      {\n        \"title\": \"Moldova anti-govt protesters return amid energy crisis\",\n        \"url\": \"https://www.click2houston.com/news/world/2022/11/13/moldova-anti-govt-protesters-return-amid-energy-crisis/\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd1FHN5EDrKAikcpDP-gyFMiquBAJiJQbpQkdTfWVcYIA89sRC\"\n      }\n    ]\n  }\n]",
+            "pydantic": null,
+            "json_dict": null,
+            "tasks_output": [
+                {
+                    "description": "Analyze these images ['https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e'] and detect signs of forgery, manipulation, or tampering.\n",
+                    "name": "image_forgery_task",
+                    "expected_output": "A classification of the image and a confidence score of the prediction. A list of json of (image_url, classification, confidence_score).\n",
+                    "summary": "Analyze these images ['https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e'] and detect signs of forgery, manipulation,...",
+                    "raw": "[{\"image_url\": \"https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e\", \"classification\": \"human\", \"confidence_score\": 0.8575382232666016}]",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Image Forgery Expert\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Search for visually similar images to ['https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e'] and retrieve related news articles. For each image, return the top similar images along with their article title, URL, and image thumbnail.\n",
+                    "name": "image_websearch_task",
+                    "expected_output": "A list of the top related articles, each containing the article title, URL, and image thumbnail. A list of json of image_url:(similar url, title, image_thumbnail)\n",
+                    "summary": "Search for visually similar images to ['https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e'] and retrieve related...",
+                    "raw": "[\n  {\n    \"title\": \"Trump's Attacks Give Zelensky a Popularity Boost in Ukraine - The New York Times\",\n    \"url\": \"https://www.nytimes.com/2025/03/10/world/europe/trump-zelensky-ukraine-popularity.html\",\n    \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4znBztl8lMIzBVbVa4HfWTZPHNOeo-ampz7Je4GCD-oF4KNKp\"\n  },\n  {\n    \"title\": \"How Musk Foiled a Ukrainian Drone Attack on Russia's Black Sea Fleet Last Year - The New York Times\",\n    \"url\": \"https://www.nytimes.com/2023/09/08/world/europe/elon-musk-ukraine-starlink-drones.html\",\n    \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRDlt-mKqPT6-BvEe0MN0wXPLvaZrBjsWFwr5hf400o4k_ZvPVZ\"\n  },\n  {\n    \"title\": \"The Big Five - 2 February edition - by Mick Ryan\",\n    \"url\": \"https://mickryan.substack.com/p/the-big-five-2-february-edition\",\n    \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPOriklGNZ8Hi9SerpJYzE_KW0TzdTgZcFD58cjxUBnnkZkM2t\"\n  },\n  {\n    \"title\": \"Elon Musk's SpaceX wins Pentagon contract for satellite in Ukraine\",\n    \"url\": \"https://www.ft.com/content/8503ed5a-5ca2-4d34-8c69-66ae92fa80dd\",\n    \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdApJEvomMgX-2mpt6SP-QVysltxyiaXFZHsFGSFll2W6EPbID\"\n  },\n  {\n    \"title\": \"Two men are seen arguing near an exhibit with cut-out figures of presidential candidates including a figure of Russian president Vladimir Putin in Kyiv, Ukraine on March 29, 2019. The exhibit along\",\n    \"url\": \"https://www.alamy.com/two-men-are-seen-arguing-near-an-exhibit-with-cut-out-figures-of-presidential-candidates-including-a-figure-of-russian-president-vladimir-putin-in-kyiv-ukraine-on-march-29-2019-the-exhibit-along-one-of-the-citys-busiest-roads-leads-passersby-into-fierce-arguments-with-the-instigators-who-believe-all-candidates-except-incumbent-president-petro-poroshenko-are-russian-marionettes-photo-by-jaap-arriens-sipa-usa-image408632269.html\",\n    \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToiFenn3CK4KUMhorxB0GGW97e6B1vjkmQINLXwrb73fGjV23_\"\n  },\n  {\n    \"title\": \"Ukrainian Government Rushes to Dampen Secessionist Sentiment - The New York Times\",\n    \"url\": \"https://www.nytimes.com/2014/03/03/world/europe/ukraine.html\",\n    \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQpEPT21t2lazQaGP8oNOe_JjV2n4fSM1Oeh8lG5q-6ZoKj1d-u\"\n  },\n  {\n    \"title\": \"Russia-Ukraine War: Explosion in Poland Kills Two Near Border With Ukraine - The New York Times\",\n    \"url\": \"https://www.nytimes.com/live/2022/11/14/world/russia-ukraine-war-news-g20\",\n    \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSH2HqryGXdX0FnVz5FVBJZeIBQ-EtcRDcvMlDEmGiLy1qOR6bk\"\n  },\n  {\n    \"title\": \"The Humanitarian Crisis in Ukraine Is Getting Worse | Vanity Fair\",\n    \"url\": \"https://www.vanityfair.com/news/2022/03/war-crimes-are-part-of-russias-deliberate-strategy-the-humanitarian-crisis-in-ukraine-is-getting-worse\",\n    \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIp49oc_uo_zCc4XPirfOKFbatZ7LokJtPuBfJS_aQzPTWG9pB\"\n  },\n  {\n    \"title\": \"\u0627\u06cc\u0633\u0646\u0627 - \u0627\u06cc\u0644\u0627\u0646 \u0645\u0627\u0633\u06a9 \u0646\u0645\u06cc\\u200c\u062e\u0648\u0627\u0647\u062f \u0627\u0648\u06a9\u0631\u0627\u06cc\u0646 \u0627\u0632 \u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9 \u0628\u0631\u0627\u06cc \u062d\u0645\u0644\u0647 \u0628\u0647 \u0631\u0648\u0633\u06cc\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u062f - \u0635\u0627\u062d\u0628\\u200c\u062e\u0628\u0631\",\n    \"url\": \"https://sahebkhabar.ir/news/61560502/\u0627\u06cc\u0644\u0627\u0646-\u0645\u0627\u0633\u06a9-\u0646\u0645\u06cc-\u062e\u0648\u0627\u0647\u062f-\u0627\u0648\u06a9\u0631\u0627\u06cc\u0646-\u0627\u0632-\u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9-\u0628\u0631\u0627\u06cc-\u062d\u0645\u0644\u0647-\u0628\u0647-\u0631\u0648\u0633\u06cc\u0647\",\n    \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL2L_9KCCheoG0MiAIuxR1itGky1-PA7sIKcUs-QJbDEZPBkR9\"\n  },\n  {\n    \"title\": \"Moldova anti-govt protesters return amid energy crisis\",\n    \"url\": \"https://www.click2houston.com/news/world/2022/11/13/moldova-anti-govt-protesters-return-amid-energy-crisis/\",\n    \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd1FHN5EDrKAikcpDP-gyFMiquBAJiJQbpQkdTfWVcYIA89sRC\"\n  }\n]\n```",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Image Web Search Expert\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Compile the results of the image forgery and web search tasks.\n",
+                    "name": "compile_forensics_task",
+                    "expected_output": "A list of dicts, with each dict containing the image_url, classification, confidence score, and related articles.\n",
+                    "summary": "Compile the results of the image forgery and web search...",
+                    "raw": "[\n  {\n    \"image_url\": \"https://cassette.sphdigital.com.sg/image/straitstimes/9d4101504a83b3b13b395f45137da5fd6e9086c3b5a94b7ab8529e79f85d408e\",\n    \"classification\": \"human\",\n    \"confidence_score\": 0.8575382232666016,\n    \"related_articles\": [\n      {\n        \"title\": \"Trump's Attacks Give Zelensky a Popularity Boost in Ukraine - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2025/03/10/world/europe/trump-zelensky-ukraine-popularity.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4znBztl8lMIzBVbVa4HfWTZPHNOeo-ampz7Je4GCD-oF4KNKp\"\n      },\n      {\n        \"title\": \"How Musk Foiled a Ukrainian Drone Attack on Russia's Black Sea Fleet Last Year - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2023/09/08/world/europe/elon-musk-ukraine-starlink-drones.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRDlt-mKqPT6-BvEe0MN0wXPLvaZrBjsWFwr5hf400o4k_ZvPVZ\"\n      },\n      {\n        \"title\": \"The Big Five - 2 February edition - by Mick Ryan\",\n        \"url\": \"https://mickryan.substack.com/p/the-big-five-2-february-edition\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPOriklGNZ8Hi9SerpJYzE_KW0TzdTgZcFD58cjxUBnnkZkM2t\"\n      },\n      {\n        \"title\": \"Elon Musk's SpaceX wins Pentagon contract for satellite in Ukraine\",\n        \"url\": \"https://www.ft.com/content/8503ed5a-5ca2-4d34-8c69-66ae92fa80dd\",\n        \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdApJEvomMgX-2mpt6SP-QVysltxyiaXFZHsFGSFll2W6EPbID\"\n      },\n      {\n        \"title\": \"Two men are seen arguing near an exhibit with cut-out figures of presidential candidates including a figure of Russian president Vladimir Putin in Kyiv, Ukraine on March 29, 2019.\",\n        \"url\": \"https://www.alamy.com/two-men-are-seen-arguing-near-an-exhibit-with-cut-out-figures-of-presidential-candidates-including-a-figure-of-russian-president-vladimir-putin-in-kyiv-ukraine-on-march-29-2019-the-exhibit-along-one-of-the-citys-busiest-roads-leads-passersby-into-fierce-arguments-with-the-instigators-who-believe-all-candidates-except-incumbent-president-petro-poroshenko-are-russian-marionettes-photo-by-jaap-arriens-sipa-usa-image408632269.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToiFenn3CK4KUMhorxB0GGW97e6B1vjkmQINLXwrb73fGjV23_\"\n      },\n      {\n        \"title\": \"Ukrainian Government Rushes to Dampen Secessionist Sentiment - The New York Times\",\n        \"url\": \"https://www.nytimes.com/2014/03/03/world/europe/ukraine.html\",\n        \"image_thumbnail\": \"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQpEPT21t2lazQaGP8oNOe_JjV2n4fSM1Oeh8lG5q-6ZoKj1d-u\"\n      },\n      {\n        \"title\": \"Russia-Ukraine War: Explosion in Poland Kills Two Near Border With Ukraine - The New York Times\",\n        \"url\": \"https://www.nytimes.com/live/2022/11/14/world/russia-ukraine-war-news-g20\",\n        \"image_thumbnail\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSH2HqryGXdX0FnVz5FVBJZeIBQ-EtcRDcvMlDEmGiLy1qOR6bk\"\n      },\n      {\n        \"title\": \"The Humanitarian Crisis in Ukraine Is Getting Worse | Vanity Fair\",\n        \"url\": \"https://www.vanityfair.com/news/2022/03/war-crimes-are-part-of-russias-deliberate-strategy-the-humanitarian-crisis-in-ukraine-is-getting-worse\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIp49oc_uo_zCc4XPirfOKFbatZ7LokJtPuBfJS_aQzPTWG9pB\"\n      },\n      {\n        \"title\": \"\u0627\u06cc\u0633\u0646\u0627 - \u0627\u06cc\u0644\u0627\u0646 \u0645\u0627\u0633\u06a9 \u0646\u0645\u06cc\\u200c\u062e\u0648\u0627\u0647\u062f \u0627\u0648\u06a9\u0631\u0627\u06cc\u0646 \u0627\u0632 \u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9 \u0628\u0631\u0627\u06cc \u062d\u0645\u0644\u0647 \u0628\u0647 \u0631\u0648\u0633\u06cc\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u062f - \u0635\u0627\u062d\u0628\\u200c\u062e\u0628\u0631\",\n        \"url\": \"https://sahebkhabar.ir/news/61560502/\u0627\u06cc\u0644\u0627\u0646-\u0645\u0627\u0633\u06a9-\u0646\u0645\u06cc-\u062e\u0648\u0627\u0647\u062f-\u0627\u0648\u06a9\u0631\u0627\u06cc\u0646-\u0627\u0632-\u0627\u0633\u062a\u0627\u0631\u0644\u06cc\u0646\u06a9-\u0628\u0631\u0627\u06cc-\u062d\u0645\u0644\u0647-\u0628\u0647-\u0631\u0648\u0633\u06cc\u0647\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL2L_9KCCheoG0MiAIuxR1itGky1-PA7sIKcUs-QJbDEZPBkR9\"\n      },\n      {\n        \"title\": \"Moldova anti-govt protesters return amid energy crisis\",\n        \"url\": \"https://www.click2houston.com/news/world/2022/11/13/moldova-anti-govt-protesters-return-amid-energy-crisis/\",\n        \"image_thumbnail\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd1FHN5EDrKAikcpDP-gyFMiquBAJiJQbpQkdTfWVcYIA89sRC\"\n      }\n    ]\n  }\n]",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Forensics Compiler\n",
+                    "output_format": "raw"
+                }
+            ],
+            "token_usage": {
+                "total_tokens": 8510,
+                "prompt_tokens": 5383,
+                "cached_prompt_tokens": 0,
+                "completion_tokens": 3127,
+                "successful_requests": 5
+            }
+        }
+    },
+    "internal_validation_results": {
+        "internal_validation_results": {
+            "raw": "likely_credible\n```",
+            "pydantic": null,
+            "json_dict": null,
+            "tasks_output": [
+                {
+                    "description": "Query the database to retrieve the list of reliable sources and blacklisted sources. Return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.\n",
+                    "name": "query_db_task",
+                    "expected_output": "An output of whether the article is misinformation or not.\n",
+                    "summary": "Query the database to retrieve the list of reliable sources...",
+                    "raw": "(['straitstimes.com'], ['fake.com'])\n```",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Database Checker\n",
+                    "output_format": "raw"
+                },
+                {
+                    "description": "Given lists of reliable and blacklisted sources, classify the given article as misinformation or not. If the domain is not in the reliable sources or blacklisted sources, it is unreliable. Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.\n",
+                    "name": "misinformation_task",
+                    "expected_output": "An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']\n",
+                    "summary": "Given lists of reliable and blacklisted sources, classify the given...",
+                    "raw": "likely_credible\n```",
+                    "pydantic": null,
+                    "json_dict": null,
+                    "agent": "Misinformation Auditor\n",
+                    "output_format": "raw"
+                }
+            ],
+            "token_usage": {
+                "total_tokens": 2690,
+                "prompt_tokens": 2474,
+                "cached_prompt_tokens": 0,
+                "completion_tokens": 216,
+                "successful_requests": 5
+            }
+        }
+    },
+    "web_research_results": {
+        "web_research_results": [
+            {
+                "id": "0",
+                "content": "Asia is embracing Elon Musk\u2019s satellite internet to boost broadband \u2013 but must back alternatives to avoid reliance on one capricious provider.",
+                "to_fact_check": true,
+                "search_results": [
+                    {
+                        "title": "Elon Musk makes India inroads with two major deals",
+                        "url": "https://www.cnn.com/2025/03/12/tech/india-reliance-jio-bharti-airtel-starlink-deals-intl-hnk/index.html",
+                        "content": "Elon Musk makes India inroads with two major deals | CNN Business Follow CNN Business CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Elon Musk has secured a major win in India by signing two back-to-back deals to bring SpaceX\u2019s Starlink satellite internet services to the country. More from CNN CNN Business Videos Santiago/Getty ImagesVideo CNN reporter breaks down market meltdown 1:29 Mar 11, 2025 CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Follow CNN Business Dow Jones: The Dow Jones branded indices are proprietary to and are calculated, distributed and marketed by DJI Opco, a subsidiary of S&P Dow Jones Indices LLC and have been licensed for use to S&P Opco, LLC and CNN.",
+                        "score": 0.50065976,
+                        "raw_content": null
+                    },
+                    {
+                        "title": "Musk, Ambani join hands in surprise Starlink India internet deal",
+                        "url": "https://www.reuters.com/markets/deals/indias-reliance-jio-signs-deal-bring-spacexs-starlink-internet-india-2025-03-12/",
+                        "content": "Mukesh Ambani's Reliance Jio signed a deal with Elon Musk's SpaceX to bring Starlink satellite internet services to India, a surprise move from the billionaires after being at odds for months over",
+                        "score": 0.41948205,
+                        "raw_content": null
+                    },
+                    {
+                        "title": "Reliance Jio and SpaceX partner for Starlink internet in India after ...",
+                        "url": "https://apnews.com/article/india-starlink-elon-musk-ab8eb4c9b8e629763f411520e46b8dca",
+                        "content": "![Image 4: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](https://dims.apnews.com/dims4/default/1cc8369/2147483647/strip/true/crop/2200x1466+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ff6%2Fc4%2F4ff8593c635c219bcba0812e93e3%2Fcd64895d01b44c58a0c9156fcaaeb7d0) ![Image 8: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](blob:https://apnews.com/7fbd8254586292e1bc6d646fe8d717fc)",
+                        "score": 0.4186262,
+                        "raw_content": null
+                    }
+                ],
+                "fact_check": {
+                    "misinformation_score": 0.3,
+                    "explanation": "The statement acknowledges the positive impact of Elon Musk's satellite internet on broadband in Asia, which aligns with reported deals. However, it implies that reliance on a single provider like Musk's SpaceX could be risky, though it lacks specific evidence or context to fully substantiate this caution. Hence, while not outright misinformation, it may exaggerate concerns, meriting a moderate score."
+                }
+            },
+            {
+                "id": "1",
+                "content": "People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES",
+                "to_fact_check": true,
+                "search_results": [
+                    {
+                        "title": "Starlink to roll out direct-to-cell services in Ukraine",
+                        "url": "https://citinewsroom.com/2024/12/starlink-to-roll-out-direct-to-cell-services-in-ukraine/",
+                        "content": "KHERSON, UKRAINE - NOVEMBER 13: Local residents use internet from the Starlink network, set up by Ukrainian army on November 13, 2022 in Kherson, Ukraine. A curfew was introduced in the city from 17:00. until 8:00 a.m. filtration and demining will be carried out. The Ukrainian authorities promise to restore the connection within a few days",
+                        "score": 0.87218446,
+                        "raw_content": null
+                    },
+                    {
+                        "title": "Europe is best placed to break Starlink's global grip",
+                        "url": "https://www.straitstimes.com/opinion/europe-is-best-placed-to-break-starlinks-global-grip",
+                        "content": "People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES",
+                        "score": 0.86713725,
+                        "raw_content": null
+                    },
+                    {
+                        "title": "What happens if Ukraine loses access to Starlink? Can ... - Firstpost",
+                        "url": "https://www.firstpost.com/explainers/what-happens-if-ukraine-loses-access-to-starlink-can-europes-eutelsat-replace-it-13869161.html",
+                        "content": "Suggestions that Ukraine could lose access to Elon Musk's Starlink satellite internet system, which has been vital in maintaining its military communications as it fights Russia's invasion, have focused investor interest on Starlink's smaller European rival E utelsat. Sources familiar with the matter told Reuters last month that the United States might use Starlink access as a lever in",
+                        "score": 0.29431686,
+                        "raw_content": null
+                    }
+                ],
+                "fact_check": {
+                    "misinformation_score": 0.1,
+                    "explanation": "The given text closely aligns with the content of the second source, which states that people gather to use Starlink internet after a Russian attack on a communications tower in Kherson. There is no indication of misinformation; however, it lacks additional context about current developments with Starlink in Ukraine. Thus, a low misinformation score is assigned due to its factual basis but with some contextual gaps."
+                }
+            }
+        ]
+    },
+    "insights": {
+        "raw": "{'insights': 'The news site is likely credible based on the internal validation results and content cross-checking. The site is not listed among blacklisted sources and has been classified as \"likely credible\" by the misinformation auditor. The content cross-checking reveals that the information provided aligns with other reputable sources, although some statements may lack full context or evidence, they are not outright misinformation. This suggests a moderate to high level of reliability.', 'reliability_score': 75}",
+        "pydantic": null,
+        "json_dict": null,
+        "tasks_output": [
+            {
+                "description": "Given a credibility rating of a news site, the content cross checking of its facts, analyse if the site is reliable. Give short and concise reasons why the site is reliable or not. Credibility rating is {'internal_validation_results': {'raw': 'likely_credible\\n```', 'pydantic': None, 'json_dict': None, 'tasks_output': [{'description': 'Query the database to retrieve the list of reliable sources and blacklisted sources. Return the two lists as a tuple (reliable_sources, blacklisted_sources) to the misinformation_auditor.\\n', 'name': 'query_db_task', 'expected_output': 'An output of whether the article is misinformation or not.\\n', 'summary': 'Query the database to retrieve the list of reliable sources...', 'raw': \"(['straitstimes.com'], ['fake.com'])\\n```\", 'pydantic': None, 'json_dict': None, 'agent': 'Database Checker\\n', 'output_format': <OutputFormat.RAW: 'raw'>}, {'description': \"Given lists of reliable and blacklisted sources, classify the given article as misinformation or not. If the domain is not in the reliable sources or blacklisted sources, it is unreliable. Identify if the given article is 'misinformation', 'likely_credible' or 'unreliable'.\\n\", 'name': 'misinformation_task', 'expected_output': \"An output of whether the article is misinformation or not. ['misinformation', 'likely_credible', 'unreliable']\\n\", 'summary': 'Given lists of reliable and blacklisted sources, classify the given...', 'raw': 'likely_credible\\n```', 'pydantic': None, 'json_dict': None, 'agent': 'Misinformation Auditor\\n', 'output_format': <OutputFormat.RAW: 'raw'>}], 'token_usage': {'total_tokens': 2690, 'prompt_tokens': 2474, 'cached_prompt_tokens': 0, 'completion_tokens': 216, 'successful_requests': 5}}} and content cross checking is {'web_research_results': [{'id': '0', 'content': 'Asia is embracing Elon Musk\u2019s satellite internet to boost broadband \u2013 but must back alternatives to avoid reliance on one capricious provider.', 'to_fact_check': True, 'search_results': [{'title': 'Elon Musk makes India inroads with two major deals', 'url': 'https://www.cnn.com/2025/03/12/tech/india-reliance-jio-bharti-airtel-starlink-deals-intl-hnk/index.html', 'content': 'Elon Musk makes India inroads with two major deals | CNN Business Follow CNN Business CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Elon Musk has secured a major win in India by signing two back-to-back deals to bring SpaceX\u2019s Starlink satellite internet services to the country. More from CNN CNN Business Videos Santiago/Getty ImagesVideo CNN reporter breaks down market meltdown 1:29 Mar 11, 2025 CNN10 CNN 5 Things About CNN CNN Newsletters Work for CNN Follow CNN Business Dow Jones: The Dow Jones branded indices are proprietary to and are calculated, distributed and marketed by DJI Opco, a subsidiary of S&P Dow Jones Indices LLC and have been licensed for use to S&P Opco, LLC and CNN.', 'score': 0.50065976, 'raw_content': None}, {'title': 'Musk, Ambani join hands in surprise Starlink India internet deal', 'url': 'https://www.reuters.com/markets/deals/indias-reliance-jio-signs-deal-bring-spacexs-starlink-internet-india-2025-03-12/', 'content': \"Mukesh Ambani's Reliance Jio signed a deal with Elon Musk's SpaceX to bring Starlink satellite internet services to India, a surprise move from the billionaires after being at odds for months over\", 'score': 0.41948205, 'raw_content': None}, {'title': 'Reliance Jio and SpaceX partner for Starlink internet in India after ...', 'url': 'https://apnews.com/article/india-starlink-elon-musk-ab8eb4c9b8e629763f411520e46b8dca', 'content': \"![Image 4: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](https://dims.apnews.com/dims4/default/1cc8369/2147483647/strip/true/crop/2200x1466+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ff6%2Fc4%2F4ff8593c635c219bcba0812e93e3%2Fcd64895d01b44c58a0c9156fcaaeb7d0) ![Image 8: This Thursday, Feb. 13, 2025 combination photos show, on left, India's Prime Minister Narendra Modi speaking during a news conference with President Donald Trump in the East Room of the White House, and on right, Elon Musk listening as President Donald Trump meets with India's Prime Minister Narendra Modi in the Oval Office of the White House, in Washington.(AP Photos/Ben Curtis and Alex Brandon)](blob:https://apnews.com/7fbd8254586292e1bc6d646fe8d717fc)\", 'score': 0.4186262, 'raw_content': None}], 'fact_check': {'misinformation_score': 0.3, 'explanation': \"The statement acknowledges the positive impact of Elon Musk's satellite internet on broadband in Asia, which aligns with reported deals. However, it implies that reliance on a single provider like Musk's SpaceX could be risky, though it lacks specific evidence or context to fully substantiate this caution. Hence, while not outright misinformation, it may exaggerate concerns, meriting a moderate score.\"}}, {'id': '1', 'content': 'People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES', 'to_fact_check': True, 'search_results': [{'title': 'Starlink to roll out direct-to-cell services in Ukraine', 'url': 'https://citinewsroom.com/2024/12/starlink-to-roll-out-direct-to-cell-services-in-ukraine/', 'content': 'KHERSON, UKRAINE - NOVEMBER 13: Local residents use internet from the Starlink network, set up by Ukrainian army on November 13, 2022 in Kherson, Ukraine. A curfew was introduced in the city from 17:00. until 8:00 a.m. filtration and demining will be carried out. The Ukrainian authorities promise to restore the connection within a few days', 'score': 0.87218446, 'raw_content': None}, {'title': \"Europe is best placed to break Starlink's global grip\", 'url': 'https://www.straitstimes.com/opinion/europe-is-best-placed-to-break-starlinks-global-grip', 'content': 'People gather around to use satellite internet from a Starlink connection after the Russians blew up the communications tower in Kherson, Ukraine, in November 2022. PHOTO: LYNSEY ADDARIO/NYTIMES', 'score': 0.86713725, 'raw_content': None}, {'title': 'What happens if Ukraine loses access to Starlink? Can ... - Firstpost', 'url': 'https://www.firstpost.com/explainers/what-happens-if-ukraine-loses-access-to-starlink-can-europes-eutelsat-replace-it-13869161.html', 'content': \"Suggestions that Ukraine could lose access to Elon Musk's Starlink satellite internet system, which has been vital in maintaining its military communications as it fights Russia's invasion, have focused investor interest on Starlink's smaller European rival E utelsat. Sources familiar with the matter told Reuters last month that the United States might use Starlink access as a lever in\", 'score': 0.29431686, 'raw_content': None}], 'fact_check': {'misinformation_score': 0.1, 'explanation': 'The given text closely aligns with the content of the second source, which states that people gather to use Starlink internet after a Russian attack on a communications tower in Kherson. There is no indication of misinformation; however, it lacks additional context about current developments with Starlink in Ukraine. Thus, a low misinformation score is assigned due to its factual basis but with some contextual gaps.'}}]}. Credible - The news site is likely to be reliable and trustworthy. Blacklisted - The news site is likely to be unreliable and untrustworthy. Unreliable - Not much is known about this website, may contain misinformation. Do not mention the credibility rating explicitly, but explain it in the insights.  Blacklisted sites should have reliability of around 0-30, unreliable sites should have reliability of around 30-60, and credible sites should have reliability of around 60-100, with range depending on cross references, add some randomisation in the score.\n",
+                "name": "give_insights",
+                "expected_output": "A dictionary with fields, NO MARKDOWN (insights: A short summary of the credibility of the news site based on the given credibility rating and content cross checking., reliability_score: A score out of 100 based on the credibility rating and content cross checking.)\n",
+                "summary": "Given a credibility rating of a news site, the content...",
+                "raw": "{'insights': 'The news site is likely credible based on the internal validation results and content cross-checking. The site is not listed among blacklisted sources and has been classified as \"likely credible\" by the misinformation auditor. The content cross-checking reveals that the information provided aligns with other reputable sources, although some statements may lack full context or evidence, they are not outright misinformation. This suggests a moderate to high level of reliability.', 'reliability_score': 75}",
+                "pydantic": null,
+                "json_dict": null,
+                "agent": "Insight Generator\n",
+                "output_format": "raw"
+            }
+        ],
+        "token_usage": {
+            "total_tokens": 2419,
+            "prompt_tokens": 2311,
+            "cached_prompt_tokens": 0,
+            "completion_tokens": 108,
+            "successful_requests": 1
+        }
+    }
+}
