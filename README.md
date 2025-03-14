@@ -112,6 +112,6 @@ uvicorn main:app --host 0.0.0.0 --port 10000
 
 ## NTU Techfest 2025
 
-This project was submitted to the annual NTU Techfest hackathon, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
+This project was submitted to the annual NTU Techfest hackathon achieving 3rd palce among all contestants, and we are excited to showcase our efforts in addressing the challenge of fake news on the web.   
 [Find the Submission here!](https://devpost.com/software/are-u-real)
 
